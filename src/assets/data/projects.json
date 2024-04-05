@@ -1,0 +1,220 @@
+[
+  {
+    "title": "Luck",
+    "description": "Luck es una plataforma que se basa en crear sorteos como creadores de contenido, el propósito de esta aplicación es mejorar la comunicación entre el público y entregar premios a la comunidad más cercana.",
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "NgRx",
+      "RxJs",
+      "MySQL",
+      "Node.js",
+      "Express.js",
+      "ng-icons",
+      "HTML/SCSS",
+      "Jasmine/Karma",
+      "API REST",
+      "Responsive"
+    ],
+    "img": "assets/projects/luck.png",
+    "className": "desk-img"
+  },
+  {
+    "title": "AI Decisions",
+    "description": "AI Decisions es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario otorga ciertas decisiones y la IA hará ciertas evaluaciones para otorgar la decisión a tomar basado en tomar las mejores decisiones para la persona.",
+    "stack": [
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "API REST",
+      "Ionic",
+      "Ionic trapeze",
+      "Jasmine/Karma",
+      "Android/iOS",
+      "Inteligencia artificial"
+    ],
+    "img": "assets/projects/aidecisions.png",
+    "className": "mvl-img"
+  },
+  {
+    "title": "Fasfu Burgers",
+    "description": "Fasfu Burgers es una aplicación pick-up delivery en tiempo real realizada para el restaurante Fasfu Burgers. Este prototipo te permite ordenar tu comida favorita en linea. esta aplicación fue creada para la empresa de comida de Luisito comunica.",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive",
+      "React",
+      "React Hooks",
+      "React Context",
+      "Jest",
+      "SCSS",
+      "Styled-icons",
+      "Design Tools (Figma, GNU)"
+    ],
+    "img": "assets/projects/fasfu.png",
+    "className": "desk-img"
+  },
+  {
+    "title": "AI Driver",
+    "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción en distintos tipos de carnet (AM, A1, A2, A, B, B1, B+E, C1).",
+    "stack": [
+      "Angular Standalone",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "API REST",
+      "Ionic",
+      "Ionic trapeze",
+      "Jasmine/Karma",
+      "Android/iOS",
+      "Inteligencia artificial"
+    ],
+    "img": "assets/projects/aidriver.png",
+    "className": "mvl-img"
+  },
+  {
+    "title": "AI StoryBooks",
+    "description": "AI StoryBooks es una aplicación Web desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, está aplicación consiste en crear historias con IA en base a una descripción que enviemos, como por ejemplo: Al escribir 'una historia acerca de un gato jugando soccer en la luna', esta historia será generada automaticamente por la IA y nos la almacenará en una store local/Redux para que podamos leerla en cualquier momento.",
+    "stack": [
+      "Angular",
+      "Angular Material",
+      "NgRx",
+      "localStorage",
+      "HTML/SCSS",
+      "TypeScript",
+      "ng-icons",
+      "OpenAI API",
+      "API REST",
+      "Inteligencia artificial",
+      "Jasmine/Karma"
+    ],
+    "img": "assets/projects/ai-storybooks.png",
+    "className": "desk-small-img"
+  },
+  {
+    "title": "AI Chat - English/Spanish Learning",
+    "description": "AI Chat es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en generar diversos chats con distintos tipos de conversaciones/temas para mantener una conversación con una IA (GPT 3.5), la idea de la aplicación es aprender a mantener una conversación escrita en inglés, por ende al tener un error en nuestra ortografía, esta nos corregirá diciendo cual es la forma correcta de la oración enviada, también destacar que siempre nos tratará de buscar la mayor conversación posible.",
+    "stack": [
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "API REST",
+      "Ionic",
+      "Ionic trapeze",
+      "Jasmine/Karma",
+      "Android/iOS",
+      "Inteligencia artificial"
+    ],
+    "img": "assets/projects/aichat.png",
+    "className": "mvl-img"
+  },
+  {
+    "title": "inWork",
+    "description": "InWork es una plataforma web de aplicación de una sola página (SPA) que facilita la búsqueda de nuevas oportunidades laborales. En esta plataforma, los usuarios pueden registrarse como 'buscadores de trabajo', especificando su conjunto de habilidades (stack) y así buscar oportunidades laborales que se ajusten a sus habilidades. También pueden registrarse como empresas, y publicar ofertas de empleo que coincidan con el conjunto de habilidades requerido, para que coincida con los buscadores de trabajo que tengan un conjunto de habilidades similar.",
+    "stack": [
+      "JavaScript",
+      "React",
+      "React Context",
+      "React Hooks",
+      "HTML/CSS",
+      "AOS",
+      "MySQL",
+      "Node.js",
+      "Express.js",
+      "JWT Auth",
+      "API REST",
+      "Bootstrap",
+      "Responsive",
+      "Jest"
+    ],
+    "img": "assets/projects/inwork.png",
+    "className": "desk-img"
+  },
+  {
+    "title": "AI Calories",
+    "description": "AI Calories es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en llevar un control en las calorias que consumimos, está dividida en la calculadora de calorías y una IA que nos permite llevar un mejor control de nuestros alimentos dependiendo de nuestro peso, altura, etc.",
+    "stack": [
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "API REST",
+      "Ionic",
+      "Ionic trapeze",
+      "Jasmine/Karma",
+      "Android/iOS",
+      "Inteligencia artificial"
+    ],
+    "img": "assets/projects/aicalories.png",
+    "className": "mvl-img"
+  },
+  {
+    "title": "Bash Routing",
+    "description": "Bash Routing es una Web SPA creativa que consiste en un template muy guay en el cuál controlamos toda la app mediante una terminal creada en la web con diseños atractivos, en esta podemos ejecutar comandos como 'cd para navegar a una ruta' o 'ls para mostrar todas las rutas de la aplicación'.",
+    "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
+    "img": "assets/projects/bash_routing.png",
+    "className": "desk-img"
+  },
+  {
+    "title": "Quick Weather",
+    "description": "Quick Weather es una APP Móvil Híbrida para Android/iOS, su propósito es ver la temperatura apróximada actual de la ubicación actual mostrando un resumen de los próximos 6 días.",
+    "stack": [
+      "Angular Standalone",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript",
+      "API REST",
+      "Ionic",
+      "Ionic trapeze",
+      "Android/iOS"
+    ],
+    "img": "assets/projects/quickweather.png",
+    "className": "mvl-img"
+  },
+  {
+    "title": "EVERCODE",
+    "description": "EVERCODE es un landing page que deja en claro la presentación de una empresa que ofrece soluciones tecnológicas.",
+    "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
+    "img": "assets/projects/evercode.png",
+    "className": "desk-big-img"
+  },
+  {
+    "title": "EVERCODE Services",
+    "description": "EVERCODE Services es un landing page que deja en claro los servicios que ofrece EVERCODE, una empresa tecnológica.",
+    "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
+    "img": "assets/projects/evercode_services.png",
+    "className": "desk-big-img"
+  },
+  {
+    "title": "Dummy Store",
+    "description": "Dummy Store es un prototipo de venta de productos de una empresa de tecnología (smartphones, laptops, etc).",
+    "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
+    "img": "assets/projects/dummystore.png",
+    "className": "desk-small-img"
+  },
+  {
+    "title": "Besign Invest",
+    "description": "Besign Invest es un creativo landing template.",
+    "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
+    "img": "assets/projects/besigninvest.png",
+    "className": "desk-big-img"
+  },
+  {
+    "title": "Vanderbilt",
+    "description": "Vanderbilt Es una página web desarrollada para un negocio de resortes en Ecuador, Quito, esta página web da una clara representación a su empresa y sus productos disponibles.",
+    "stack": ["HTML/CSS", "JavaScript", "jQuery"],
+    "img": "assets/projects/vanderbilt.png",
+    "className": "desk-small-img"
+  }
+]

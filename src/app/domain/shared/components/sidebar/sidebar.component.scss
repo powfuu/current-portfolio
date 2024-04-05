@@ -1,0 +1,249 @@
+.sidebar-content {
+  padding-top: 5.75rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  margin-right: 60px;
+  margin-left: 60px;
+  align-items: flex-end;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  h1 {
+    color: var(--white);
+    font-size: var(--fz-heading);
+    font-weight: 700;
+  }
+  h3 {
+    font-size: var(--fz-sm);
+    font-weight: 500;
+    line-height: 1.75rem;
+    margin-bottom: 0.45rem;
+    margin-top: 0.25rem;
+  }
+  p {
+    font-size: var(--fz-xxs);
+    color: var(--slate);
+    line-height: 1.5;
+    max-width: 20rem;
+  }
+}
+
+main {
+  margin: 45px 0;
+}
+
+ul {
+  list-style: none;
+  min-width: 300px;
+}
+
+ul li {
+  height: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+ul li a {
+  color: var(--slate);
+  font-size: var(--fz-x);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.selector {
+  width: 25px;
+  height: 1.3px;
+  background-color: var(--slate);
+  transition: 0.5s all ease;
+}
+
+ul li:hover {
+  .selector {
+    background-color: var(--important-light);
+    width: 50px;
+  }
+  a {
+    color: var(--important-light);
+  }
+}
+
+.active {
+  .selector {
+    background-color: var(--important-light);
+    width: 50px;
+  }
+  a {
+    color: var(--important-light) !important;
+  }
+}
+
+footer {
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  align-self: center;
+  margin-left: 10px;
+  gap: 15px;
+  #cv {
+    scale: 1.1;
+    margin-top: -6px;
+  }
+  ng-icon {
+    transition: 0.4s all ease;
+    color: var(--slate);
+    cursor: pointer;
+    font-size: 24px;
+  }
+  ng-icon:hover {
+    color: var(--important-light);
+  }
+}
+
+.logo {
+  user-select: none;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 180px;
+  margin-left: 40px;
+  margin-top: 8px;
+  transform: translateY(18px) translateX(0);
+}
+
+.logo .start-ring,
+a .end-ring {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 1px var(--green) solid;
+  opacity: 0;
+}
+
+.logo .start-ring {
+  animation-name: start-ring;
+  animation-delay: 0s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.logo .end-ring {
+  animation-name: start-ring;
+  animation-delay: 2.5s;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.logo .ring-border {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-sizing: border-box;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: 2px solid var(--green);
+  animation-name: start-heartbeat;
+  animation-delay: 3.5s;
+  animation-duration: 5.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.logo .ring-text {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  font-size: var(--fz-xxs);
+  box-sizing: border-box;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+@keyframes start-ring {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  10% {
+    opacity: 0;
+    transform: scale(0.995);
+  }
+  16.667% {
+    opacity: 1;
+  }
+  26.667% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  46.667% {
+    opacity: 1;
+  }
+  56.667% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  76.667% {
+    opacity: 1;
+  }
+  86.667% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

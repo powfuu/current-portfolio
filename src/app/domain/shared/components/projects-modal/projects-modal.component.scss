@@ -1,0 +1,103 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 35%;
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: scroll;
+  background-color: var(--navy-shadow-dark);
+  padding: 28px 40px;
+  border-radius: 5px;
+  z-index: 99999;
+  animation: slideFromBottom 0.2s forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.img-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .desk-img {
+    margin-top: -20px;
+    margin-bottom: -20px;
+    width: 550px;
+    height: 350px;
+  }
+  .desk-small-img {
+    width: 530px;
+    height: 330px;
+  }
+  .desk-big-img {
+    width: 600px;
+    height: 350px;
+  }
+  .mvl-img {
+    height: 430px;
+    max-width: 580px;
+  }
+}
+
+.modal-content ng-icon {
+  font-size: var(--fz-lg);
+  cursor: pointer;
+  float: right;
+  margin-top: -19px;
+}
+
+.modal-content h1 {
+  color: var(--white);
+  font-size: var(--fz-md);
+}
+
+.modal-content h3 {
+  color: var(--white);
+  font-size: var(--fz-x);
+  flex-wrap: nowrap;
+  font-weight: 500;
+}
+
+.modal-content p {
+  color: var(--light-slate);
+  font-size: var(--fz-xx);
+  white-space: pre-line;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+@keyframes slideFromBottom {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+.stack-content {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.stack-content .tec p {
+  color: var(--green);
+  background: var(--green-tint);
+  font-size: var(--fz-s);
+  padding: 6px 9px;
+  border-radius: 30px;
+  margin-bottom: 0px;
+}

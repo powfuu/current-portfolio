@@ -1,0 +1,24 @@
+<div class="experience-container">
+    <ng-container *ngIf="(experience$ | async) as experience">
+        <div class="experience-content">
+            <div (click)="openExperienceModal(exp)" class="experience" *ngFor="let exp of experience"
+                [ngClass]="{'notselected': isHovered !== exp.title}" (mouseenter)="isHovered = exp.title"
+                (mouseleave)="isHovered = null">
+                <div class="date-content">
+                    <p>{{exp.date}}</p>
+                </div>
+                <div class="content">
+                    <p class="title">{{exp.title}}</p>
+                    <p class="description">{{exp.description}}</p>
+                    <div class="skills-content">
+                        <div class="skill" *ngFor="let skill of exp.skills">
+                            <p>{{skill}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ng-container>
+</div>
+<experience-modal [experience]="experienceSelected"></experience-modal>

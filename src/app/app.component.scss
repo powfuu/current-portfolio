@@ -1,0 +1,18 @@
+/* app.component.scss */
+.bgEffect {
+  position: fixed;
+  z-index: -1;
+  width: 115%;
+  height: 115%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle farthest-side,
+    /* Utiliza farthest-side para asegurar una alta resolución */
+      var(--light-navy),
+    /* Opacidad inicial más baja */ var(--navy),
+    /* Opacidad final más baja */ var(--navy)
+  );
+  pointer-events: none;
+  top: calc(var(--mouse-y, 0px) - 55.5%);
+  left: calc(var(--mouse-x, 0px) - 57%);
+}

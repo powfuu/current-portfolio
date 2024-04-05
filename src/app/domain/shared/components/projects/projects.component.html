@@ -1,0 +1,25 @@
+<div class="projects-container">
+    <h2 class="head-title">Algunos de mis Proyectos</h2>
+    <ng-container *ngIf="(projects$ | async) as projects">
+        <div class="projects-content">
+            <div (click)="openProjectsModal(p)" class="projects" *ngFor="let p of projects"
+                [ngClass]="{'notselected': isHovered !== p.title}" (mouseenter)="isHovered = p.title"
+                (mouseleave)="isHovered = null">
+                <div class="img-content">
+                    <img [class]="p.className" [src]="p.img" [alt]="p.title" />
+                </div>
+                <div class="content">
+                    <p class="title">{{p.title}}</p>
+                    <p class="description">{{p.description}}</p>
+                    <div class="stack-content">
+                        <div class="stack" *ngFor="let tec of p.stack">
+                            <p>{{tec}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ng-container>
+</div>
+<projects-modal [project]="projectSelected"></projects-modal>

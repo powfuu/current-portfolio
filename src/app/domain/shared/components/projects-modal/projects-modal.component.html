@@ -1,0 +1,17 @@
+<div *ngIf="(isModalOpen$ | async) as modalOpen" class="modal-background" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="header">
+            <h1>{{project.title}}</h1>
+            <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+        </div>
+        <p>{{project.description}}</p>
+        <div class="img-content">
+            <img [class]="project.className" [src]="project.img" [alt]="project.title" />
+        </div>
+        <div class="stack-content">
+            <div class="tec" *ngFor="let tec of project.stack">
+                <p>{{tec}}</p>
+            </div>
+        </div>
+    </div>
+</div>

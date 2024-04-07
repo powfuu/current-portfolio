@@ -29,12 +29,13 @@
   font-size: var(--fz-lg);
   cursor: pointer;
   float: right;
-  margin-top: -19px;
+  margin-top: 0px;
 }
 
 .modal-content h1 {
   color: var(--white);
   font-size: var(--fz-md);
+  width: 87%;
 }
 
 .modal-content h3 {
@@ -74,4 +75,16 @@
   font-size: var(--fz-s);
   padding: 6px 9px;
   border-radius: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal-content {
+    width: 70%;
+  }
 }

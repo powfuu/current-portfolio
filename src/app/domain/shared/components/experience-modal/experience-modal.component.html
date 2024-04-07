@@ -1,8 +1,8 @@
 <div *ngIf="(isModalOpen$ | async) as modalOpen" class="modal-background" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
         <div class="header">
-            <h1>{{experience.title}}</h1>
             <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+            <h1>{{experience.title}}</h1>
         </div>
         <h3>{{experience.date}}</h3>
         <p>{{experience.description}}</p>

@@ -34,3 +34,30 @@
     color: var(--light-slate);
   }
 }
+
+@media screen and (max-width: 999px) {
+  .content {
+    width: 60%;
+  }
+  .about-content {
+    padding-top: 95px;
+    width: 95%;
+  }
+  .sidebar {
+    padding-left: 0px;
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .base-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static;
+    min-width: auto;
+  }
+  .content {
+    width: 90%;
+    margin-left: 12%;
+  }
+}

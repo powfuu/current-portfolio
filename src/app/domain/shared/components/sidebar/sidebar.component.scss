@@ -247,3 +247,26 @@ a .end-ring {
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 860px) {
+  .logo {
+    margin-left: 35px;
+  }
+  .sidebar-content {
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    margin-left: 40px;
+    align-items: flex-start;
+    margin-bottom: -80px;
+  }
+  main {
+    display: none;
+  }
+  footer {
+    margin-top: 25px;
+    align-self: flex-start;
+    margin-left: 0px;
+  }
+}

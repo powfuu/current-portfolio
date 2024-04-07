@@ -26,14 +26,14 @@
     }
     background: var(--green-tint-opaque);
   }
-}
 
-.experience-content:hover .experience {
-  opacity: 0.35;
-}
+  .experience-content:hover .experience {
+    opacity: 0.35;
+  }
 
-.experience-content:hover .experience:hover {
-  opacity: 1;
+  .experience-content:hover .experience:hover {
+    opacity: 1;
+  }
 }
 
 .date-content {

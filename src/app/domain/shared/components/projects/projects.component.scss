@@ -27,14 +27,13 @@
     }
     background: var(--green-tint-opaque);
   }
-}
+  .projects-content:hover .projects {
+    opacity: 0.35;
+  }
 
-.projects-content:hover .projects {
-  opacity: 0.35;
-}
-
-.projects-content:hover .projects:hover {
-  opacity: 1;
+  .projects-content:hover .projects:hover {
+    opacity: 1;
+  }
 }
 
 .content {

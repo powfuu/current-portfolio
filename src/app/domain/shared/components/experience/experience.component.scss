@@ -16,13 +16,16 @@
   padding: 20px 25px;
   transition: 0.4s all ease;
 }
-.experience:hover {
-  .content {
-    .title {
-      color: var(--green);
+
+@media screen and (min-width: 600px) {
+  .experience:hover {
+    .content {
+      .title {
+        color: var(--green);
+      }
     }
+    background: var(--green-tint-opaque);
   }
-  background: var(--green-tint-opaque);
 }
 
 .experience-content:hover .experience {

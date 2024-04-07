@@ -8,6 +8,7 @@ import {
   ionMail,
   ionDownload,
   ionClose,
+  ionChevronUp,
 } from '@ng-icons/ionicons';
 import { NgIconsModule } from '@ng-icons/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,6 +32,7 @@ import { ExperienceModalComponent } from './components/experience-modal/experien
       ionMail,
       ionClose,
       ionDownload,
+      ionChevronUp,
     }),
   ],
   providers: [PortfolioService],

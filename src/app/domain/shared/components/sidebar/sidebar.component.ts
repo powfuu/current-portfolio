@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   activeSection: string = 'about';
+  scrollToState: boolean = false;
 
   constructor(
     private viewportScroller: ViewportScroller,
@@ -25,6 +26,10 @@ export class SidebarComponent {
     }
   }
 
+  scrollToInit() {
+    window.scrollTo(0, 0);
+  }
+
   @HostListener('window:scroll', ['$event'])
   onScroll(event: UIEvent) {
     const aboutSection = document.getElementById('about');
@@ -33,6 +38,8 @@ export class SidebarComponent {
 
     const scrollPosition = window.scrollY;
     const offset = 2; // Ajuste adicional de 2px
+
+    this.scrollToState = scrollPosition > 100;
 
     if (aboutSection && experienceSection && projectsSection) {
       if (

@@ -37,4 +37,7 @@
             <ng-icon name="ionDownload"></ng-icon>
         </a>
     </footer>
+    <div class="scroll-top" [ngClass]="{'hidden': !scrollToState}" (click)="scrollToInit()">
+        <ng-icon name="ionChevronUp"></ng-icon>
+    </div>
 </div>

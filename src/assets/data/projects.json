@@ -80,7 +80,7 @@
   },
   {
     "title": "AI StoryBooks",
-    "description": "AI StoryBooks es una aplicación Web desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, está aplicación consiste en crear historias con IA en base a una descripción que enviemos, como por ejemplo: Al escribir 'una historia acerca de un gato jugando soccer en la luna', esta historia será generada automaticamente por la IA y nos la almacenará en una store local/Redux para que podamos leerla en cualquier momento.",
+    "description": "AI StoryBooks es una aplicación Web desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, está aplicación consiste en crear historias con IA en base a una descripción que enviemos, como por ejemplo: Al escribir 'una historia acerca de un gato jugando soccer en la luna', esta historia será generada automáticamente por la IA y nos la almacenará en una store local/Redux para que podamos leerla en cualquier momento.",
     "stack": [
       "Angular",
       "Angular Material",

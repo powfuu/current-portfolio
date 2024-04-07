@@ -26,7 +26,6 @@ export class SidebarComponent {
   }
 
   @HostListener('window:scroll', ['$event'])
-  @HostListener('window:scroll', ['$event'])
   onScroll(event: UIEvent) {
     const aboutSection = document.getElementById('about');
     const experienceSection = document.getElementById('experience');

@@ -291,6 +291,9 @@ a .end-ring {
   .scroll-top {
     margin-bottom: 20px;
     margin-right: 20px;
+    ng-icon {
+      font-size: 24px;
+    }
   }
 }
 @media screen and (max-width: 860px) {

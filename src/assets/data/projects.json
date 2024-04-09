@@ -1,5 +1,44 @@
 [
   {
+    "title": "AI Driver",
+    "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción en distintos tipos de carnet (AM, A1, A2, A, B, B1, B+E, C1).",
+    "stack": [
+      "Angular Standalone",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "API REST",
+      "Ionic",
+      "Ionic trapeze",
+      "Jasmine/Karma",
+      "Android/iOS",
+      "Inteligencia artificial"
+    ],
+    "img": "assets/projects/aidriver.png",
+    "className": "mvl-img"
+  },
+  {
+    "title": "Fasfu Burgers",
+    "description": "Fasfu Burgers es una aplicación pick-up delivery en tiempo real realizada para el restaurante Fasfu Burgers. Este prototipo te permite ordenar tu comida favorita en linea. esta aplicación fue creada para la empresa de comida de Luisito comunica.",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive",
+      "React",
+      "React Hooks",
+      "React Context",
+      "Jest",
+      "SCSS",
+      "Styled-icons",
+      "Design Tools (Figma, GNU)"
+    ],
+    "img": "assets/projects/fasfu.png",
+    "className": "desk-img"
+  },
+  {
     "title": "Luck",
     "description": "Luck es una plataforma que se basa en crear sorteos como creadores de contenido, el propósito de esta aplicación es mejorar la comunicación entre el público y entregar premios a la comunidad más cercana.",
     "stack": [
@@ -37,45 +76,6 @@
       "Inteligencia artificial"
     ],
     "img": "assets/projects/aidecisions.png",
-    "className": "mvl-img"
-  },
-  {
-    "title": "Fasfu Burgers",
-    "description": "Fasfu Burgers es una aplicación pick-up delivery en tiempo real realizada para el restaurante Fasfu Burgers. Este prototipo te permite ordenar tu comida favorita en linea. esta aplicación fue creada para la empresa de comida de Luisito comunica.",
-    "stack": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive",
-      "React",
-      "React Hooks",
-      "React Context",
-      "Jest",
-      "SCSS",
-      "Styled-icons",
-      "Design Tools (Figma, GNU)"
-    ],
-    "img": "assets/projects/fasfu.png",
-    "className": "desk-img"
-  },
-  {
-    "title": "AI Driver",
-    "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción en distintos tipos de carnet (AM, A1, A2, A, B, B1, B+E, C1).",
-    "stack": [
-      "Angular Standalone",
-      "RxJs",
-      "NgRx",
-      "HTML/SCSS",
-      "TypeScript",
-      "OpenAI API",
-      "API REST",
-      "Ionic",
-      "Ionic trapeze",
-      "Jasmine/Karma",
-      "Android/iOS",
-      "Inteligencia artificial"
-    ],
-    "img": "assets/projects/aidriver.png",
     "className": "mvl-img"
   },
   {

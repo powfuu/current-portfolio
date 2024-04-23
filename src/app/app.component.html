@@ -1,2 +1,14 @@
 <div class="bgEffect" [style.--mouse-x.px]="mouseX" [style.--mouse-y.px]="mouseY"></div>
-<router-outlet></router-outlet>
+<ng-container *ngIf="!loadingScreen; else loadingScreenTemplate">
+  <router-outlet></router-outlet>
+</ng-container>
+<ng-template #loadingScreenTemplate>
+  <ng-container>
+    <a class="logo">
+      <span class="start-ring"></span>
+      <span class="end-ring"></span>
+      <span class="ring-border"></span>
+      <span class="ring-text">E</span>
+    </a>
+  </ng-container>
+</ng-template>

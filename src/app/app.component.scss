@@ -107,6 +107,27 @@ a .end-ring {
   opacity: 1;
 }
 
+.theme-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin-right: 31px;
+  margin-top: 20px;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  font-size: 33px;
+  color: var(--white);
+  outline: none;
+  padding: 15px 20px;
+  transition: 0.5s all;
+  background: transparent;
+  border-radius: 8px;
+  &:hover {
+    background: var(--green-tint-opaque);
+  }
+}
+
 @keyframes start-ring {
   0% {
     opacity: 0;
@@ -185,6 +206,14 @@ a .end-ring {
   .logo .ring-text {
     font-size: 25px;
     margin-top: 13px;
+  }
+
+  .theme-toggle {
+    margin-right: 16px;
+    margin-top: 20px;
+    font-size: 28px;
+    background: var(--green-tint-opaque);
+    padding: 10px 15px;
   }
 }
 

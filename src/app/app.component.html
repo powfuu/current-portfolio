@@ -1,5 +1,15 @@
 <div class="bgEffect" [style.--mouse-x.px]="mouseX" [style.--mouse-y.px]="mouseY"></div>
 <ng-container *ngIf="!loadingScreen; else loadingScreenTemplate">
+  <div class="fixed-container">
+    <button (click)="toggleTheme()" class="theme-toggle">
+      <span *ngIf="theme === 'light'">
+        <i class="fa-solid fa-sun"></i>
+      </span>
+      <span *ngIf="theme === 'dark'">
+        <i class="fa-solid fa-moon"></i>
+      </span>
+    </button>
+  </div>
   <router-outlet></router-outlet>
 </ng-container>
 <ng-template #loadingScreenTemplate>

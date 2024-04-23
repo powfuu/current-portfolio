@@ -21,9 +21,19 @@ div {
 }
 
 .important {
+  transition: 0.4s all;
   color: var(--important);
+  &:hover {
+    cursor: pointer;
+    color: var(--important-light);
+  }
 }
 
 .important-light {
+  transition: 0.4s all;
   color: var(--important-light);
+  &:hover {
+    cursor: pointer;
+    color: var(--important);
+  }
 }

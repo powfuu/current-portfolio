@@ -6,7 +6,7 @@ import { Component, HostListener, NgZone, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  theme!: string;
+  theme: string = "dark";
   loadingScreen: boolean = true;
   mouseX: number = 0;
   mouseY: number = 0;

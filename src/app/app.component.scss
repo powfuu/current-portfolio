@@ -37,7 +37,11 @@
   line-height: 42px;
   border-radius: 180px;
   transform: translateY(18px) translateX(0);
-  animation: zoomInFadeIn 1.2s forwards, zoomOut 0.5s 1.4s forwards;
+  animation: zoomInFadeIn 1.2s forwards;
+}
+
+.logo.finished {
+  animation: zoomOut 0.5s forwards;
 }
 
 .logo .start-ring,
@@ -56,7 +60,7 @@ a .end-ring {
 
 .logo .start-ring {
   animation-name: start-ring;
-  animation-duration: 2.6s;
+  animation-duration: 2.85s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -64,7 +68,7 @@ a .end-ring {
 .logo .end-ring {
   animation-name: start-ring;
   animation-delay: 0.2s;
-  animation-duration: 4.1s;
+  animation-duration: 4.5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -83,7 +87,7 @@ a .end-ring {
   background-clip: content-box, border-box;
   animation-name: start-heartbeat;
   animation-delay: 1.8s;
-  animation-duration: 4.2s;
+  animation-duration: 4.4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }

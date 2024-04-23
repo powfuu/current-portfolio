@@ -13,9 +13,14 @@ export class AppComponent implements OnInit {
   constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
+    //add finished class
+    setTimeout(() => {
+      document.querySelector('.logo')?.classList.add('finished');
+    }, 1570);
+    //stop loading screen after 1800ms
     setTimeout(() => {
       this.loadingScreen = false;
-    }, 1700);
+    }, 1800);
   }
 
   @HostListener('document:mousemove', ['$event'])

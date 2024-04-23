@@ -25,6 +25,8 @@
 }
 
 .about-content {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
   padding-top: 85px;
   pre {
     line-height: 17px;

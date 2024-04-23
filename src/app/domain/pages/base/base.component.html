@@ -1,12 +1,12 @@
 <div class="base-container">
-    <div class="sidebar">
-        <app-sidebar></app-sidebar>
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="content">
+    <div id="about" class="about-content">
+      <pre [innerHTML]="aboutContent"></pre>
     </div>
-    <div class="content">
-        <div id="about" class="about-content">
-            <pre [innerHTML]="aboutContent"></pre>
-        </div>
-        <app-experience id="experience"></app-experience>
-        <app-projects id="projects"></app-projects>
-    </div>
+    <app-experience id="experience"></app-experience>
+    <app-projects id="projects"></app-projects>
+  </div>
 </div>

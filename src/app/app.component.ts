@@ -6,7 +6,7 @@ import { Component, HostListener, NgZone, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  theme: string = 'light';
+  theme!: string;
   loadingScreen: boolean = true;
   mouseX: number = 0;
   mouseY: number = 0;
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
-    this.theme = localStorage.getItem('theme') || 'light';
+    this.theme = localStorage.getItem('theme') || 'dark';
     this.applyTheme(this.theme);
     //add finished class
     setTimeout(() => {

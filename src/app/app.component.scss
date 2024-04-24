@@ -249,21 +249,22 @@ a .end-ring {
 
   .language-select {
     margin-right: 63px;
-    margin-top: 18px;
+    margin-top: 28px;
+    font-size: 18px;
     background: var(--green-tint-opaque-semi);
   }
 
   .flag {
-    margin-right: 120.5px;
-    margin-top: 22px;
+    margin-right: 100.5px;
+    margin-top: 32px;
   }
 
   .theme-toggle {
     margin-right: 15px;
-    margin-top: 14px;
-    height: 40px;
-    width: 40px;
-    font-size: 22px;
+    margin-top: 24px;
+    height: 44px;
+    width: 44px;
+    font-size: 25px;
     background: var(--green-tint-opaque-semi);
   }
 }

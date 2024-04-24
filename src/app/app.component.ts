@@ -1,4 +1,5 @@
 import { Component, HostListener, NgZone, OnInit } from '@angular/core';
+import { inject } from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
+    inject();
     this.theme = localStorage.getItem('theme') || 'dark';
     this.applyTheme(this.theme);
     //add finished class

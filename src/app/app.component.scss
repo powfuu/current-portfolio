@@ -120,7 +120,7 @@ a .end-ring {
   outline: none;
   border-radius: 8px;
   background: var(--green-tint-opaque);
-  color: var(--white);
+  color: #e6f1ff;
   border-color: transparent;
   animation: slideFromBottom 0.6s forwards;
   & > option {
@@ -153,7 +153,7 @@ a .end-ring {
   border: none;
   cursor: pointer;
   font-size: 25px;
-  color: var(--white);
+  color: #e6f1ff;
   outline: none;
   height: 45px;
   width: 45px;
@@ -266,6 +266,9 @@ a .end-ring {
     width: 44px;
     font-size: 25px;
     background: var(--green-tint-opaque-semi);
+    &:hover {
+      background: var(--green-tint-opaque-semi);
+    }
   }
 }
 

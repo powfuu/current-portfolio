@@ -1,6 +1,8 @@
 <div class="projects-container">
   <ng-container *ngIf="(projects$ | async) as projects">
-    <h2 class="head-title">Algunos de mis Proyectos</h2>
+    <ng-container *ngIf="(projectsText$ | async) as projectsText">
+      <h2 class="head-title">{{projectsText}}</h2>
+    </ng-container>
     <div class="projects-content">
       <div (click)="openProjectsModal(p)" class="projects" *ngFor="let p of projects"
         [ngClass]="{'notselected': isHovered !== p.title}" (mouseenter)="isHovered = p.title"

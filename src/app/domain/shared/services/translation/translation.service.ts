@@ -12,6 +12,7 @@ export class TranslationService {
   about$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   description$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   aboutSideBar$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  projectsText$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   experience$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   projects$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   experienceData$: BehaviorSubject<Experience[]> = new BehaviorSubject<
@@ -30,6 +31,7 @@ export class TranslationService {
     this.refreshAbout();
     this.refreshSideBar();
     this.refreshExperienceProjectsData();
+    this.refreshProjectsTexts();
   }
 
   getExperienceData(): Observable<Experience[]> {
@@ -42,6 +44,10 @@ export class TranslationService {
 
   getAbout(): Observable<string> {
     return this.about$;
+  }
+
+  getProjectsText(): Observable<string> {
+    return this.projectsText$;
   }
 
   getDescription(): Observable<string> {
@@ -58,6 +64,14 @@ export class TranslationService {
 
   getProjects(): Observable<string> {
     return this.projects$;
+  }
+
+  refreshProjectsTexts(): void {
+    if (this.utilService.langIsEs()) {
+      this.projectsText$.next('Algunos de mis proyectos');
+    } else {
+      this.projectsText$.next('Some of my projects');
+    }
   }
 
   refreshExperienceProjectsData(): void {

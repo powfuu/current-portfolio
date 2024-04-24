@@ -13,14 +13,21 @@ import { TranslationService } from '../../services/translation/translation.servi
 export class ProjectsComponent {
   isHovered: string | null = null;
   projects$!: Observable<Projects[]>;
+  projectsText$!: Observable<string>;
   projectSelected!: Projects;
 
   constructor(
     private modalService: ModalService,
     private translationService: TranslationService
   ) {}
+
   ngOnInit(): void {
     this.getProjects();
+    this.getTranslations();
+  }
+
+  getTranslations(): void {
+    this.projectsText$ = this.translationService.getProjectsText();
   }
 
   getProjects(): void {

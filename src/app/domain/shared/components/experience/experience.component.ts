@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+import { PortfolioService } from '../../services/portfolio/portfolio.service';
 import { Observable } from 'rxjs';
 import { Experience } from '../../models/experience.model';
-import { ModalService } from '../../services/modal.service';
+import { ModalService } from '../../services/modal/modal.service';
+import { TranslationService } from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-experience',
@@ -14,15 +15,15 @@ export class ExperienceComponent implements OnInit {
   experience$!: Observable<Experience[]>;
   experienceSelected!: Experience;
   constructor(
-    private portfolioService: PortfolioService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private translationService: TranslationService
   ) {}
   ngOnInit(): void {
     this.getExperience();
   }
 
   getExperience(): void {
-    this.experience$ = this.portfolioService.getExperience();
+    this.experience$ = this.translationService.getExperienceData();
   }
 
   openExperienceModal(experience: Experience): void {

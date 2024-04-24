@@ -4,7 +4,9 @@
   </div>
   <div class="content">
     <div id="about" class="about-content">
-      <pre [innerHTML]="aboutContent"></pre>
+      <ng-container *ngIf="(aboutContent$ | async) as about">
+        <pre [innerHTML]="about"></pre>
+      </ng-container>
     </div>
     <app-experience id="experience"></app-experience>
     <app-projects id="projects"></app-projects>

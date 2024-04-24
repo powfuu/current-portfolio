@@ -12,7 +12,7 @@ import {
 } from '@ng-icons/ionicons';
 import { NgIconsModule } from '@ng-icons/core';
 import { HttpClientModule } from '@angular/common/http';
-import { PortfolioService } from './services/portfolio.service';
+import { PortfolioService } from './services/portfolio/portfolio.service';
 import { ProjectsModalComponent } from './components/projects-modal/projects-modal.component';
 import { ExperienceModalComponent } from './components/experience-modal/experience-modal.component';
 

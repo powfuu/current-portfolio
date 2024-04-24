@@ -1,6 +1,15 @@
 <div class="bgEffect" [style.--mouse-x.px]="mouseX" [style.--mouse-y.px]="mouseY"></div>
 <ng-container *ngIf="!loadingScreen; else loadingScreenTemplate">
   <div class="fixed-container">
+    <img class="flag" [src]="'assets/flags/'+langState+'.jpg'" />
+    <select (change)="changeStateLanguage($event)" [(ngModel)]="langState" class="language-select">
+      <option value="es">
+        es
+      </option>
+      <option value="en">
+        en
+      </option>
+    </select>
     <button (click)="toggleTheme()" class="theme-toggle">
       <span *ngIf="theme === 'light'">
         <i class="fa-solid fa-sun"></i>

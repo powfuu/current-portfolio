@@ -270,14 +270,14 @@ a .end-ring {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 12.5px;
+  padding: 10px;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   z-index: 9999;
-  margin-right: 50px;
+  margin-right: 40px;
   transform: translateY(200%);
   ng-icon {
-    font-size: 28px;
+    font-size: 26px;
     color: var(--white);
   }
 }

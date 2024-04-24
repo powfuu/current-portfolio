@@ -1,24 +1,35 @@
 import { Component, HostListener, NgZone, OnInit } from '@angular/core';
 import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
+import { TranslationService } from './domain/shared/services/translation/translation.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  langState: string = 'es';
   theme: string = 'dark';
   loadingScreen: boolean = true;
   mouseX: number = 0;
   mouseY: number = 0;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(
+    private ngZone: NgZone,
+    private translationService: TranslationService
+  ) {}
 
   ngOnInit() {
     this.initVercelAnalyticsAndSpeedInsights();
     this.initTheme();
+    this.initLang();
     this.applyTheme(this.theme);
     this.manageTimers();
+    this.refreshTranslations();
+  }
+
+  refreshTranslations(): void {
+    this.translationService.refreshTranslations();
   }
 
   initVercelAnalyticsAndSpeedInsights(): void {
@@ -28,8 +39,21 @@ export class AppComponent implements OnInit {
     injectSpeedInsights();
   }
 
+  changeStateLanguage(e: Event): void {
+    const lang = (e.target as HTMLSelectElement).value;
+    localStorage.setItem('lang', lang);
+    this.refreshTranslations();
+  }
+
   initTheme(): void {
     this.theme = localStorage.getItem('theme') || 'dark';
+  }
+
+  initLang(): void {
+    this.langState = localStorage.getItem('lang') || 'es';
+    if (!localStorage.getItem('lang')) {
+      localStorage.setItem('lang', 'es');
+    }
   }
 
   manageTimers(): void {

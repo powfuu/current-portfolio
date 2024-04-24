@@ -1,21 +1,35 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { TranslationService } from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   activeSection: string = 'about';
   scrollToState: boolean = false;
+  description$!: Observable<string>;
+  about$!: Observable<string>;
+  experience$!: Observable<string>;
+  projects$!: Observable<string>;
 
   constructor(
     private viewportScroller: ViewportScroller,
     private elRef: ElementRef,
-    private router: Router
+    private router: Router,
+    private translationService: TranslationService
   ) {}
+
+  ngOnInit(): void {
+    this.description$ = this.translationService.getDescription();
+    this.about$ = this.translationService.getAboutSideBar();
+    this.experience$ = this.translationService.getExperience();
+    this.projects$ = this.translationService.getProjects();
+  }
 
   scrollToSection(sectionId: string) {
     const targetElement = this.elRef.nativeElement.querySelector(

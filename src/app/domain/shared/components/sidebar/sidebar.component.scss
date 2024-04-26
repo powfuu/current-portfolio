@@ -110,7 +110,7 @@ footer {
     transition: 0.4s all ease;
     color: var(--slate);
     cursor: pointer;
-    font-size: 24px;
+    font-size: 26px;
   }
   ng-icon:hover {
     color: var(--important-light);
@@ -330,5 +330,6 @@ a .end-ring {
     margin-top: 25px;
     align-self: flex-start;
     margin-left: 0px;
+    z-index: 999;
   }
 }

@@ -8,6 +8,20 @@
     "url": "https://www.npmjs.com/package/ngx-ever-components"
   },
   {
+    "title": "ngx-ever-components - Documentation",
+    "description": "Official documentation for the ngx-ever-components library, a styling library for Angular. Here you will find comprehensive information about the npm package, repository, installation guide, usage, and detailed documentation for each component of the library.",
+    "stack": [
+      "Angular",
+      "ngx-ever-components",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript"
+    ],
+    "img": "assets/projects/ngx-ever-components-docs.png",
+    "className": "desk-small-img",
+    "url": "https://ngx-ever-components.vercel.app"
+  },
+  {
     "title": "AI Driver",
     "description": "AI Driver is a Hybrid Mobile App for Android/iOS developed in conjunction with OpenAI's API to perform applications with artificial intelligence. The app allows the user to learn and take theoretical tests for driving evaluations in different types of licenses (AM, A1, A2, A, B, B1, B+E, C1).",
     "stack": [

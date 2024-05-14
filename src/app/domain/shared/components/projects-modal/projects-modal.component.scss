@@ -26,18 +26,17 @@
 }
 
 .visitar {
-  background-color: var(--dark-slate);
   background: var(--green-tint-opaque);
   border-radius: 8px;
   cursor: pointer;
-  color: var(--important-light);
   width: max-content;
   padding: 8px 12px;
   font-size: 14px !important;
+  color: var(--white) !important;
 }
 
 .header {
-  margin-bottom: -10.5px;
+  margin-bottom: -18.5px;
 }
 
 .header-with-url {
@@ -57,12 +56,16 @@ a {
   margin-right: 5px;
   margin-left: 5px;
   padding: 6px 8px;
+  color: var(--white) !important;
 }
 
 .img-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    border-radius: var(--border-radius);
+  }
   .desk-img {
     margin-top: -20px;
     margin-bottom: -20px;

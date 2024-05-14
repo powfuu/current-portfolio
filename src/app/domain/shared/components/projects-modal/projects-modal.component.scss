@@ -25,6 +25,40 @@
   gap: 6px;
 }
 
+.visitar {
+  background-color: var(--dark-slate);
+  background: var(--green-tint-opaque);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--important-light);
+  width: max-content;
+  padding: 8px 12px;
+  font-size: 14px !important;
+}
+
+.header {
+  margin-bottom: -10.5px;
+}
+
+.header-with-url {
+  margin-bottom: 0px;
+}
+
+.project-title-mvl {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  float: right;
+  transition: 0.5s all;
+  margin-top: -15.5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 6px 8px;
+}
+
 .img-content {
   display: flex;
   justify-content: center;
@@ -46,6 +80,10 @@
   .mvl-img {
     height: 430px;
     max-width: 580px;
+  }
+  .logo-img {
+    height: 90px;
+    max-width: 90px;
   }
 }
 
@@ -111,6 +149,22 @@
 @media screen and (max-width: 1250px) {
   .modal-content {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .project-title-mvl {
+    display: block !important;
+  }
+  a {
+    float: left;
+    margin-left: -18px;
+  }
+  .cannot_define {
+    margin-top: -20px;
+  }
+  .modal-content h1 {
+    display: none;
   }
 }
 

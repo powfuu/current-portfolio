@@ -4,4 +4,5 @@ export interface Projects {
   stack: string[];
   img: string;
   className: string;
+  url?: string;
 }

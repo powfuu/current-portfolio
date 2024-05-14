@@ -1,5 +1,13 @@
 [
   {
+    "title": "ngx-ever-components - Librería Angular",
+    "description": "ngx-ever-components es una moderna biblioteca de componentes de interfaz de usuario (UI) para Angular, diseñada para mejorar la interfaz de usuario de las aplicaciones mientras simplifica el tiempo de desarrollo. Con una amplia colección de componentes elegantes, capacita a los desarrolladores de Angular para crear interfaces visualmente atractivas e intuitivas con facilidad. Ya sea que estés construyendo una aplicación web, un panel de control o cualquier otro proyecto basado en Angular, ngx-ever-components proporciona las herramientas que necesitas para elevar tanto la estética como la productividad.",
+    "stack": ["Angular", "Angular library", "RxJs", "HTML/SCSS", "TypeScript"],
+    "img": "assets/projects/ngx-ever-components.png",
+    "className": "logo-img",
+    "url": "https://www.npmjs.com/package/ngx-ever-components"
+  },
+  {
     "title": "AI Driver",
     "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción en distintos tipos de carnet (AM, A1, A2, A, B, B1, B+E, C1).",
     "stack": [

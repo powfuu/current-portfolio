@@ -31,6 +31,12 @@
             <a href="#projects">{{projects}}</a>
           </ng-container>
         </li>
+        <li (click)="scrollToSection('technologies')" [class.active]="activeSection === 'technologies'">
+          <div class="selector"></div>
+          <ng-container *ngIf="(technologies$ | async) as tech">
+            <a href="#technologies">{{tech}}</a>
+          </ng-container>
+        </li>
       </ul>
     </main>
   </header>

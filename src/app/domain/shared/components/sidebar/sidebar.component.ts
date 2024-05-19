@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
   about$!: Observable<string>;
   experience$!: Observable<string>;
   projects$!: Observable<string>;
+  technologies$!: Observable<string>;
 
   constructor(
     private viewportScroller: ViewportScroller,
@@ -29,6 +30,7 @@ export class SidebarComponent implements OnInit {
     this.about$ = this.translationService.getAboutSideBar();
     this.experience$ = this.translationService.getExperience();
     this.projects$ = this.translationService.getProjects();
+    this.technologies$ = this.translationService.getTech();
   }
 
   scrollToSection(sectionId: string) {
@@ -49,13 +51,19 @@ export class SidebarComponent implements OnInit {
     const aboutSection = document.getElementById('about');
     const experienceSection = document.getElementById('experience');
     const projectsSection = document.getElementById('projects');
+    const technologiesSection = document.getElementById('technologies');
 
     const scrollPosition = window.scrollY;
     const offset = 2; // Ajuste adicional de 2px
 
     this.scrollToState = scrollPosition > 100;
 
-    if (aboutSection && experienceSection && projectsSection) {
+    if (
+      aboutSection &&
+      experienceSection &&
+      projectsSection &&
+      technologiesSection
+    ) {
       if (
         scrollPosition >= aboutSection.offsetTop - offset &&
         scrollPosition < experienceSection.offsetTop - offset
@@ -68,9 +76,15 @@ export class SidebarComponent implements OnInit {
       ) {
         this.activeSection = 'experience';
         this.router.navigate([], { fragment: 'experience' });
-      } else if (scrollPosition >= projectsSection.offsetTop - offset) {
+      } else if (
+        scrollPosition >= projectsSection.offsetTop - offset &&
+        scrollPosition < technologiesSection.offsetTop - offset
+      ) {
         this.activeSection = 'projects';
         this.router.navigate([], { fragment: 'projects' });
+      } else if (scrollPosition >= technologiesSection.offsetTop - offset) {
+        this.activeSection = 'technologies';
+        this.router.navigate([], { fragment: 'technologies' });
       } else {
         this.activeSection = 'about';
         this.router.navigate([], { fragment: 'about' });

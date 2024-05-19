@@ -4,6 +4,7 @@ import { BehaviorSubject, forkJoin, Observable, take } from 'rxjs';
 import { Experience } from '../../models/experience.model';
 import { Projects } from '../../models/projects.model';
 import { PortfolioService } from '../portfolio/portfolio.service';
+import { Technologies } from '../../models/technologies.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,12 +16,16 @@ export class TranslationService {
   projectsText$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   experience$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   projects$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  technologies$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   experienceData$: BehaviorSubject<Experience[]> = new BehaviorSubject<
     Experience[]
   >([]);
   projectsData$: BehaviorSubject<Projects[]> = new BehaviorSubject<Projects[]>(
     []
   );
+  technologiesData$: BehaviorSubject<Technologies[]> = new BehaviorSubject<
+    Technologies[]
+  >([]);
 
   constructor(
     private utilService: UtilService,
@@ -30,7 +35,7 @@ export class TranslationService {
   refreshTranslations(): void {
     this.refreshAbout();
     this.refreshSideBar();
-    this.refreshExperienceProjectsData();
+    this.refreshData();
     this.refreshProjectsTexts();
   }
 
@@ -40,6 +45,10 @@ export class TranslationService {
 
   getProjectsData(): Observable<Projects[]> {
     return this.projectsData$;
+  }
+
+  getTechnologiesData(): Observable<Technologies[]> {
+    return this.technologiesData$;
   }
 
   getAbout(): Observable<string> {
@@ -66,6 +75,10 @@ export class TranslationService {
     return this.projects$;
   }
 
+  getTech(): Observable<string> {
+    return this.technologies$;
+  }
+
   refreshProjectsTexts(): void {
     if (this.utilService.langIsEs()) {
       this.projectsText$.next('Algunos de mis proyectos');
@@ -74,13 +87,17 @@ export class TranslationService {
     }
   }
 
-  refreshExperienceProjectsData(): void {
+  refreshData(): void {
     forkJoin([
       this.portfolioService.getExperience().pipe(take(1)),
       this.portfolioService.getProjects().pipe(take(1)),
-    ]).subscribe(([experience, projects]) => {
+      this.portfolioService.getTechnologies().pipe(take(1)),
+    ]).subscribe(([experience, projects, technologies]) => {
       this.experienceData$.next(experience);
       this.projectsData$.next(projects);
+      if (this.technologiesData$.getValue().length === 0) {
+        this.technologiesData$.next(technologies);
+      }
     });
   }
 
@@ -93,6 +110,7 @@ export class TranslationService {
       this.aboutSideBar$.next('ACERCA DE MÍ');
       this.experience$.next('EXPERIENCIA');
       this.projects$.next('PROYECTOS');
+      this.technologies$.next('TECNOLOGÍAS');
     } else {
       this.description$.next(
         'Development of attractive, scalable, and maintainable IT solutions.'
@@ -100,6 +118,7 @@ export class TranslationService {
       this.aboutSideBar$.next('ABOUT ME');
       this.experience$.next('EXPERIENCE');
       this.projects$.next('PROJECTS');
+      this.technologies$.next('TECHNOLOGIES');
     }
   }
 

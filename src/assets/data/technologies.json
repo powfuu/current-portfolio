@@ -1,0 +1,162 @@
+[
+  {
+    "tech": "Angular",
+    "src": "https://angular.io/assets/images/logos/angular/angular.png"
+  },
+  {
+    "tech": "RxJs",
+    "src": "https://rxjs.dev/assets/images/logos/Rx_Logo_S.png"
+  },
+  {
+    "tech": "NgRx",
+    "src": "https://ngrx.io/assets/images/badge.svg"
+  },
+  {
+    "tech": "Redux",
+    "src": "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png"
+  },
+  {
+    "tech": "TypeScript",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png"
+  },
+  {
+    "tech": "JavaScript",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+  },
+  {
+    "tech": "Git",
+    "src": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+  },
+  {
+    "tech": "Angular Material",
+    "src": "https://play-lh.googleusercontent.com/chjR4I5l3IvecljLsVUh0Agz7HetYQiZYZD8KDMXoYm-kZDI-pKvg4qEzzt9596aOOs"
+  },
+  {
+    "tech": "Jasmine",
+    "src": "https://upload.wikimedia.org/wikipedia/en/2/22/Logo_jasmine.svg"
+  },
+  {
+    "tech": "Karma",
+    "src": "https://www.testautomatisierung.org/wp-content/uploads/Karma-Logo.png"
+  },
+  {
+    "tech": "API REST",
+    "src": "https://miro.medium.com/v2/resize:fit:1200/1*J3G3akaMpUOLegw0p0qthA.png"
+  },
+  {
+    "tech": "Ionic",
+    "src": "https://ionicframework.com/img/meta/logo.png"
+  },
+  {
+    "tech": "Capacitor",
+    "src": "https://seeklogo.com/images/C/capacitor-logo-DF3634DD70-seeklogo.com.png"
+  },
+  {
+    "tech": "Cordova",
+    "src": "https://cordova.apache.org/static/img/cordova_bot.png"
+  },
+  {
+    "tech": "Stencil.js",
+    "src": "https://pbs.twimg.com/profile_images/1516076078229512196/ofYPrQSl_400x400.jpg"
+  },
+  {
+    "tech": "Web Components",
+    "src": "https://miro.medium.com/v2/resize:fit:1400/1*--69eZ7Mh28oE6udIATmMA.jpeg"
+  },
+  {
+    "tech": "HTML",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+  },
+  {
+    "tech": "CSS",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+  },
+  {
+    "tech": "SCSS",
+    "src": "https://sass-lang.com/assets/img/styleguide/seal-color.png"
+  },
+  {
+    "tech": "jQuery",
+    "src": "https://miro.medium.com/v2/resize:fit:450/1*NCDlcbPXpKNI2PrZHjv9pA.png"
+  },
+  {
+    "tech": "React",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+  },
+  {
+    "tech": "Keycloak",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/2/29/Keycloak_Logo.png"
+  },
+  {
+    "tech": "Jira",
+    "src": "https://cdn.icon-icons.com/icons2/2699/PNG/512/atlassian_jira_logo_icon_170511.png"
+  },
+  {
+    "tech": "Confluence",
+    "src": "https://seeklogo.com/images/C/confluence-logo-D9B07137C2-seeklogo.com.png"
+  },
+  {
+    "tech": "MySQL",
+    "src": "https://www.mysql.com/common/logos/logo-mysql-170x115.png"
+  },
+  {
+    "tech": "CI/CD",
+    "src": "https://trapeze.dev/assets/ideal-img/features-2.e969bde.116.png"
+  },
+  {
+    "tech": "Jenkins",
+    "src": "https://www.jenkins.io/images/logos/jenkins/jenkins.svg"
+  },
+  {
+    "tech": "Android",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
+  },
+  {
+    "tech": "Ionic Trapeze",
+    "src": "https://global.discourse-cdn.com/ionicframework/optimized/3X/a/2/a25c7d418ba56b5747a240473048677975956cba_2_500x500.png"
+  },
+  {
+    "tech": "SOLID",
+    "src": "https://media.licdn.com/dms/image/C4E12AQFNAv6SNpxoyA/article-cover_image-shrink_600_2000/0/1617798596409?e=2147483647&v=beta&t=lafOXhIq8G0N4sdhJs7-aMnL-iBZ_idYIX5opVObV3A"
+  },
+  {
+    "tech": "iOS",
+    "src": "https://scontent.fvgo3-1.fna.fbcdn.net/v/t39.30808-6/301528147_484477930351751_5008045962051132105_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=o-bw02x31M0Q7kNvgEtSo98&_nc_ht=scontent.fvgo3-1.fna&oh=00_AYDMw28LHtWYMl7dBs9YDsuQqkytwB1YPkdvtvmq6IcPzA&oe=664F51BA"
+  },
+  {
+    "tech": "Swift",
+    "src": "https://cdn.iconscout.com/icon/free/png-256/free-swift-2038869-1720082.png"
+  },
+  {
+    "tech": "Jest",
+    "src": "https://jestjs.io/img/jest.svg"
+  },
+  {
+    "tech": "Responsive",
+    "src": "https://trapeze.dev/assets/ideal-img/features-1.bb39a37.80.png"
+  },
+  {
+    "tech": "Styled Components",
+    "src": "https://styled-components.com/logo.png"
+  },
+  {
+    "tech": "PrimeNG",
+    "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOV9feQ5oTogp_Gua7j6l27fb9Zhvp40sBc10AwCLd_w&s"
+  },
+  {
+    "tech": "Bootstrap",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
+  },
+  {
+    "tech": "Node.js",
+    "src": "https://nodejs.org/static/images/logo.svg"
+  },
+  {
+    "tech": "Express.js",
+    "src": "https://miro.medium.com/v2/resize:fit:679/0*vq-JSMynSHUPXx70"
+  },
+  {
+    "tech": "JSON",
+    "src": "https://joinup.ec.europa.eu/sites/default/files/styles/wysiwyg_half_width/public/inline-images/json-logo.png?itok=B-9chNHT"
+  }
+]

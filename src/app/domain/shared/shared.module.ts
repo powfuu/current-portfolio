@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PortfolioService } from './services/portfolio/portfolio.service';
 import { ProjectsModalComponent } from './components/projects-modal/projects-modal.component';
 import { ExperienceModalComponent } from './components/experience-modal/experience-modal.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ExperienceModalComponent } from './components/experience-modal/experien
     SidebarComponent,
     ExperienceModalComponent,
     ProjectsModalComponent,
+    TechnologiesComponent,
   ],
   imports: [
     CommonModule,
@@ -43,6 +45,7 @@ import { ExperienceModalComponent } from './components/experience-modal/experien
     SidebarComponent,
     ExperienceModalComponent,
     ProjectsModalComponent,
+    TechnologiesComponent,
   ],
 })
 export class SharedModule {}

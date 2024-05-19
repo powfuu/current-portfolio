@@ -4,9 +4,8 @@
 .projects-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   width: 90%;
-  margin-bottom: 60px;
 }
 .projects {
   display: flex;
@@ -32,6 +31,7 @@
 
   .projects-content:hover .projects:hover {
     opacity: 1;
+    scale: 1.05;
   }
 }
 

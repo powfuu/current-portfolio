@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Experience } from '../../models/experience.model';
 import { Projects } from '../../models/projects.model';
 import { UtilService } from '../util/util.service';
+import { Technologies } from '../../models/technologies.model';
 
 @Injectable({
   providedIn: 'root',
@@ -23,5 +24,9 @@ export class PortfolioService {
       return this.http.get<Projects[]>(`assets/data/es/projects.json`);
     }
     return this.http.get<Projects[]>(`assets/data/en/projects.json`);
+  }
+
+  getTechnologies(): Observable<Technologies[]> {
+    return this.http.get<Technologies[]>(`assets/data/technologies.json`);
   }
 }

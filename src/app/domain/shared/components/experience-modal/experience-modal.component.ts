@@ -21,4 +21,8 @@ export class ExperienceModalComponent implements OnInit {
   closeModal() {
     this.modalService.closeExperienceModal();
   }
+
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }

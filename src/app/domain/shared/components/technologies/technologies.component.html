@@ -4,8 +4,8 @@
             <h2 class="head-title">{{ technologiesText | titlecase }}</h2>
         </ng-container>
         <div class="technologies-content">
-            <div class="technologies" *ngFor="let tec of tech">
-                <img [alt]="tec.tech" [src]="tec.src" />
+            <div class="technologies" *ngFor="let tec of tech; trackBy: trackByFn">
+                <img loading="lazy" [alt]="tec.tech" [src]="tec.src" />
                 <p class="title">{{tec.tech}}</p>
             </div>
         </div>

@@ -38,4 +38,7 @@ export class ProjectsComponent {
     this.projectSelected = project;
     this.modalService.openProjectsModal();
   }
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }

@@ -1,7 +1,7 @@
 <div class="bgEffect" [style.--mouse-x.px]="mouseX" [style.--mouse-y.px]="mouseY"></div>
 <ng-container *ngIf="!loadingScreen; else loadingScreenTemplate">
   <div class="fixed-container">
-    <img class="flag" [src]="'assets/flags/'+langState+'.jpg'" />
+    <img loading="lazy" class="flag" [src]="'assets/flags/'+langState+'.jpg'" />
     <select (change)="changeStateLanguage($event)" [(ngModel)]="langState" class="language-select">
       <option value="es">
         es

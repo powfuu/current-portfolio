@@ -30,4 +30,8 @@ export class ExperienceComponent implements OnInit {
     this.experienceSelected = experience;
     this.modalService.openExperienceModal();
   }
+
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }

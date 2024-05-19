@@ -21,4 +21,8 @@ export class ProjectsModalComponent implements OnInit {
   closeModal() {
     this.modalService.closeProjectsModal();
   }
+
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }

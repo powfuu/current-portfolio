@@ -26,4 +26,8 @@ export class TechnologiesComponent implements OnInit {
   getTranslations(): void {
     this.technologiesText$ = this.translationService.getTech();
   }
+
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }

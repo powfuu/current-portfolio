@@ -4,17 +4,17 @@
       <h2 class="head-title">{{projectsText}}</h2>
     </ng-container>
     <div class="projects-content">
-      <div (click)="openProjectsModal(p)" class="projects" *ngFor="let p of projects"
+      <div (click)="openProjectsModal(p)" class="projects" *ngFor="let p of projects; trackBy: trackByFn"
         [ngClass]="{'notselected': isHovered !== p.title}" (mouseenter)="isHovered = p.title"
         (mouseleave)="isHovered = null">
         <div class="img-content">
-          <img [class]="p.className" [src]="p.img" [alt]="p.title" />
+          <img loading="lazy" [class]="p.className" [src]="p.img" [alt]="p.title" />
         </div>
         <div class="content">
           <p class="title">{{p.title}}</p>
           <p class="description">{{p.description}}</p>
           <div class="stack-content">
-            <div class="stack" *ngFor="let tec of p.stack">
+            <div class="stack" *ngFor="let tec of p.stack; trackBy: trackByFn">
               <p>{{tec}}</p>
             </div>
           </div>

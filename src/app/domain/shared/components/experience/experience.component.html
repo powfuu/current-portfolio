@@ -11,7 +11,7 @@
                     <p class="title">{{exp.title}}</p>
                     <p class="description">{{exp.description}}</p>
                     <div class="skills-content">
-                        <div class="skill" *ngFor="let skill of exp.skills">
+                        <div class="skill" *ngFor="let skill of exp.skills; trackBy: trackByFn">
                             <p>{{skill}}</p>
                         </div>
                     </div>

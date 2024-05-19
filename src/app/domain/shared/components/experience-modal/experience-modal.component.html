@@ -7,7 +7,7 @@
         <h3>{{experience.date}}</h3>
         <p>{{experience.description}}</p>
         <div class="skills-content">
-            <div class="skill" *ngFor="let skill of experience.skills">
+            <div class="skill" *ngFor="let skill of experience.skills; trackBy: trackByFn">
                 <p>{{skill}}</p>
             </div>
         </div>

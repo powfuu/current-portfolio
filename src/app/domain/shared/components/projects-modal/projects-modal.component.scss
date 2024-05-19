@@ -19,7 +19,9 @@
   padding: 28px 40px;
   border-radius: 5px;
   z-index: 99999;
-  animation: slideFromBottom 0.2s forwards;
+  animation: slideFromBottom 0.4s forwards;
+  opacity: 0;
+  will-change: transform;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -126,9 +128,11 @@ a {
 @keyframes slideFromBottom {
   from {
     top: 100%;
+    opacity: 0;
   }
   to {
     top: 50%;
+    opacity: 1;
   }
 }
 

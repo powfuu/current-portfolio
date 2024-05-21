@@ -2,11 +2,21 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal/modal.service';
 import { Observable } from 'rxjs';
 import { Projects } from '../../models/projects.model';
+import { NgIcon } from '@ng-icons/core';
+import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'projects-modal',
-  templateUrl: './projects-modal.component.html',
-  styleUrls: ['./projects-modal.component.scss'],
+    selector: 'projects-modal',
+    templateUrl: './projects-modal.component.html',
+    styleUrls: ['./projects-modal.component.scss'],
+    standalone: true,
+    imports: [
+        NgIf,
+        NgClass,
+        NgIcon,
+        NgFor,
+        AsyncPipe,
+    ],
 })
 export class ProjectsModalComponent implements OnInit {
   @Input() project!: Projects;

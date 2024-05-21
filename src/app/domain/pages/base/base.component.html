@@ -8,8 +8,20 @@
         <pre [innerHTML]="about"></pre>
       </ng-container>
     </div>
+    @defer (on viewport) {
     <app-experience id="experience"></app-experience>
+    }@placeholder {
+    <p>Experience View</p>
+    }
+    @defer (on viewport) {
     <app-projects id="projects"></app-projects>
+    }@placeholder {
+    <p>Projects View</p>
+    }
+    @defer (on viewport) {
     <app-technologies id="technologies"></app-technologies>
+    }@placeholder {
+    <p>Technologies View</p>
+    }
   </div>
 </div>

@@ -2,11 +2,20 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal/modal.service';
 import { Observable } from 'rxjs';
 import { Experience } from '../../models/experience.model';
+import { NgIcon } from '@ng-icons/core';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'experience-modal',
-  templateUrl: './experience-modal.component.html',
-  styleUrls: ['./experience-modal.component.scss'],
+    selector: 'experience-modal',
+    templateUrl: './experience-modal.component.html',
+    styleUrls: ['./experience-modal.component.scss'],
+    standalone: true,
+    imports: [
+        NgIf,
+        NgIcon,
+        NgFor,
+        AsyncPipe,
+    ],
 })
 export class ExperienceModalComponent implements OnInit {
   @Input() experience!: Experience;

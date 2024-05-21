@@ -18,34 +18,32 @@ import { ExperienceModalComponent } from './components/experience-modal/experien
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 @NgModule({
-  declarations: [
-    ExperienceComponent,
-    ProjectsComponent,
-    SidebarComponent,
-    ExperienceModalComponent,
-    ProjectsModalComponent,
-    TechnologiesComponent,
-  ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    NgIconsModule.withIcons({
-      ionLogoLinkedin,
-      ionMail,
-      ionClose,
-      ionDownload,
-      ionChevronUp,
-    }),
-  ],
-  providers: [PortfolioService],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [
-    ExperienceComponent,
-    ProjectsComponent,
-    SidebarComponent,
-    ExperienceModalComponent,
-    ProjectsModalComponent,
-    TechnologiesComponent,
-  ],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        NgIconsModule.withIcons({
+            ionLogoLinkedin,
+            ionMail,
+            ionClose,
+            ionDownload,
+            ionChevronUp,
+        }),
+        ExperienceComponent,
+        ProjectsComponent,
+        SidebarComponent,
+        ExperienceModalComponent,
+        ProjectsModalComponent,
+        TechnologiesComponent,
+    ],
+    providers: [PortfolioService],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    exports: [
+        ExperienceComponent,
+        ProjectsComponent,
+        SidebarComponent,
+        ExperienceModalComponent,
+        ProjectsModalComponent,
+        TechnologiesComponent,
+    ],
 })
 export class SharedModule {}

@@ -2,11 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TranslationService } from '../../services/translation/translation.service';
 import { Technologies } from '../../models/technologies.model';
+import { NgIf, NgFor, AsyncPipe, TitleCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-technologies',
-  templateUrl: './technologies.component.html',
-  styleUrls: ['./technologies.component.scss'],
+    selector: 'app-technologies',
+    templateUrl: './technologies.component.html',
+    styleUrls: ['./technologies.component.scss'],
+    standalone: true,
+    imports: [
+        NgIf,
+        NgFor,
+        AsyncPipe,
+        TitleCasePipe,
+    ],
 })
 export class TechnologiesComponent implements OnInit {
   technologiesText$!: Observable<string>;

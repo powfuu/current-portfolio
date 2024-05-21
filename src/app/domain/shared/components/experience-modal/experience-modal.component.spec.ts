@@ -8,8 +8,8 @@ describe('ExperienceModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExperienceModalComponent]
-    });
+    imports: [ExperienceModalComponent]
+});
     fixture = TestBed.createComponent(ExperienceModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

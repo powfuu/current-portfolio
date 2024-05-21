@@ -4,11 +4,21 @@ import { Projects } from '../../models/projects.model';
 import { PortfolioService } from '../../services/portfolio/portfolio.service';
 import { ModalService } from '../../services/modal/modal.service';
 import { TranslationService } from '../../services/translation/translation.service';
+import { ProjectsModalComponent } from '../projects-modal/projects-modal.component';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.scss'],
+    standalone: true,
+    imports: [
+        NgIf,
+        NgFor,
+        NgClass,
+        ProjectsModalComponent,
+        AsyncPipe,
+    ],
 })
 export class ProjectsComponent {
   isHovered: string | null = null;

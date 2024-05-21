@@ -97,3 +97,26 @@ div {
     transform: translateY(0);
   }
 }
+
+//TODO: overflow
+
+/* Ocultar el fondo del track de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 5px; /* Ancho de la barra de desplazamiento vertical */
+}
+
+/* Estilo del track de la barra de desplazamiento (la pista) */
+::-webkit-scrollbar-track {
+  background: transparent; /* Fondo transparente */
+}
+
+/* Estilo del thumb de la barra de desplazamiento (la barra) */
+::-webkit-scrollbar-thumb {
+  background-color: grey; /* Color de la barra */
+  border-radius: 10px; /* Opcional: hace que la barra tenga bordes redondeados */
+}
+
+/* Opcional: cambiar el color de la barra al pasar el mouse sobre ella */
+::-webkit-scrollbar-thumb:hover {
+  background-color: darkgrey; /* Color de la barra al pasar el mouse */
+}

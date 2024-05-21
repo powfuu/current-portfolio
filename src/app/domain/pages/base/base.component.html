@@ -11,7 +11,7 @@
     <app-experience id="experience"></app-experience>
     @defer (on viewport; on hover(sidebar)) {
     <app-projects id="projects"></app-projects>
-    }@placeholder(minimum 2s) {
+    }@placeholder {
     <div class="skeleton-loader">
       @for(sk of skeleton; track sk) {
       <div class="skeleton-item"></div>
@@ -20,7 +20,7 @@
     }
     @defer (on viewport; on hover(sidebar)) {
     <app-technologies id="technologies"></app-technologies>
-    }@placeholder(minimum 2s) {
+    }@placeholder {
     <div class="skeleton-loader">
       @for(sk of skeleton; track sk) {
       <div class="skeleton-item"></div>

@@ -6,16 +6,11 @@ import { TranslationService } from '../../services/translation/translation.servi
 import { NgIcon } from '@ng-icons/core';
 
 @Component({
-    selector: 'app-sidebar',
-    templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss'],
-    standalone: true,
-    imports: [
-        NgIf,
-        NgIcon,
-        NgClass,
-        AsyncPipe,
-    ],
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss'],
+  standalone: true,
+  imports: [NgIf, NgIcon, NgClass, AsyncPipe],
 })
 export class SidebarComponent implements OnInit {
   activeSection: string = 'about';

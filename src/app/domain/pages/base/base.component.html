@@ -1,6 +1,6 @@
 <div class="base-container">
   <div class="sidebar">
-    <app-sidebar></app-sidebar>
+    <app-sidebar #sidebar></app-sidebar>
   </div>
   <div class="content">
     <div id="about" class="about-content">
@@ -9,18 +9,18 @@
       </ng-container>
     </div>
     <app-experience id="experience"></app-experience>
-    @defer (on viewport) {
+    @defer (on viewport; on hover(sidebar)) {
     <app-projects id="projects"></app-projects>
-    }@placeholder {
+    }@placeholder(minimum 2s) {
     <div class="skeleton-loader">
       @for(sk of skeleton; track sk) {
       <div class="skeleton-item"></div>
       }
     </div>
     }
-    @defer (on viewport) {
+    @defer (on viewport; on hover(sidebar)) {
     <app-technologies id="technologies"></app-technologies>
-    }@placeholder {
+    }@placeholder(minimum 2s) {
     <div class="skeleton-loader">
       @for(sk of skeleton; track sk) {
       <div class="skeleton-item"></div>

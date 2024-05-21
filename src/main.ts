@@ -1,19 +1,30 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
 import { importProvidersFrom } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
-import { FormsModule } from '@angular/forms';
-import { BaseModule } from './app/domain/pages/base/base.module';
-import { AppRoutingModule } from './app/app-routing.module';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { appRoutes } from './app/app.routes';
+import { NgIconsModule } from '@ng-icons/core';
+import {
+  ionChevronUp,
+  ionClose,
+  ionDownload,
+  ionLogoLinkedin,
+  ionMail,
+} from '@ng-icons/ionicons';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideRouter(appRoutes),
     importProvidersFrom(
-      BrowserModule,
-      AppRoutingModule,
-      BaseModule,
-      FormsModule
+      HttpClientModule,
+      NgIconsModule.withIcons({
+        ionLogoLinkedin,
+        ionMail,
+        ionClose,
+        ionDownload,
+        ionChevronUp,
+      })
     ),
   ],
 }).catch((err) => console.error(err));

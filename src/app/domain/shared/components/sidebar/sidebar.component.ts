@@ -38,12 +38,17 @@ export class SidebarComponent implements OnInit {
       '#' + sectionId
     );
     if (targetElement) {
-      this.viewportScroller.scrollToAnchor(sectionId);
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+      });
     }
   }
 
   scrollToInit() {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 
   @HostListener('window:scroll', ['$event'])

@@ -65,3 +65,28 @@
     padding-right: 0px;
   }
 }
+
+.skeleton-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-item {
+  height: 20px;
+  background-color: var(--navy);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: var(--light-navy);
+  }
+  50% {
+    background-color: var(--navy-shadow-dark);
+  }
+  100% {
+    background-color: var(--slate);
+  }
+}

@@ -12,12 +12,20 @@
     @defer (on viewport) {
     <app-projects id="projects"></app-projects>
     }@placeholder {
-    <p></p>
+    <div class="skeleton-loader">
+      @for(sk of skeleton; track sk) {
+      <div class="skeleton-item"></div>
+      }
+    </div>
     }
     @defer (on viewport) {
     <app-technologies id="technologies"></app-technologies>
     }@placeholder {
-    <p></p>
+    <div class="skeleton-loader">
+      @for(sk of skeleton; track sk) {
+      <div class="skeleton-item"></div>
+      }
+    </div>
     }
   </div>
 </div>

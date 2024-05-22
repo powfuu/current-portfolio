@@ -7,7 +7,7 @@ describe("validar idiomas", () => {
   it("validar idioma es", () => {
     //en español
     cy.get(".language-select").select("es");
-    cy.get(".language-selectt").contains("es");
+    cy.get(".language-select").contains("es");
   });
 
   it("validar idioma en", () => {

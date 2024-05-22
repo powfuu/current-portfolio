@@ -66,3 +66,14 @@ img {
     max-width: 90px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .technologies {
+    height: 40px;
+    width: 130px;
+  }
+  img {
+    height: 45px;
+    max-width: 75px;
+  }
+}

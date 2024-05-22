@@ -12,7 +12,7 @@ describe("validar idiomas", () => {
 
   it("validar idioma en", () => {
     // en ingles
-    cy.get(".language-select").select("en");
+    cy.get(".language-select").select("ena");
     cy.get(".language-select").contains("en");
   });
 });

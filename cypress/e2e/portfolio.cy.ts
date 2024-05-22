@@ -18,7 +18,9 @@ describe('Prueba de portfolio', () => {
   });
 
   it('validar que el link de enviar correo abra ', () => {
-    cy.get('[href=> ng-icon > svg > path');
+    cy.get(
+      '[href="mailto:everitjhon@gmail.com?subject=Contacto - Everit Jhon, Frontend Developer"] > ng-icon > svg > path'
+    );
   });
 
   it('validar que la flecha se presente y suba', () => {

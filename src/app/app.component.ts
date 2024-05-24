@@ -4,17 +4,16 @@ import { injectSpeedInsights } from '@vercel/speed-insights';
 import { TranslationService } from './domain/shared/services/translation/translation.service';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     standalone: true,
     imports: [
-        NgIf,
-        FormsModule,
-        RouterOutlet,
-    ],
+    FormsModule,
+    RouterOutlet
+],
 })
 export class AppComponent implements OnInit {
   langState: string = 'es';

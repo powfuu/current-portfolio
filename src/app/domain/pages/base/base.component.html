@@ -4,9 +4,9 @@
   </div>
   <div class="content">
     <div id="about" class="about-content">
-      <ng-container *ngIf="(aboutContent$ | async) as about">
+      @if ((aboutContent$ | async); as about) {
         <pre [innerHTML]="about"></pre>
-      </ng-container>
+      }
     </div>
     <app-experience id="experience"></app-experience>
     @defer (on viewport; on hover(sidebar)) {
@@ -14,18 +14,18 @@
     }@placeholder {
     <div class="skeleton-loader">
       @for(sk of skeleton; track sk) {
-      <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
       }
     </div>
-    }
-    @defer (on viewport; on hover(sidebar)) {
-    <app-technologies id="technologies"></app-technologies>
-    }@placeholder {
-    <div class="skeleton-loader">
-      @for(sk of skeleton; track sk) {
+  }
+  @defer (on viewport; on hover(sidebar)) {
+  <app-technologies id="technologies"></app-technologies>
+  }@placeholder {
+  <div class="skeleton-loader">
+    @for(sk of skeleton; track sk) {
       <div class="skeleton-item"></div>
-      }
-    </div>
     }
   </div>
+}
+</div>
 </div>

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { TechnologiesComponent } from '../../shared/components/technologies/technologies.component';
 import { ProjectsComponent } from '../../shared/components/projects/projects.component';
 import { ExperienceComponent } from '../../shared/components/experience/experience.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 
 @Component({
@@ -15,12 +15,11 @@ import { SidebarComponent } from '../../shared/components/sidebar/sidebar.compon
   standalone: true,
   imports: [
     SidebarComponent,
-    NgIf,
     ExperienceComponent,
     ProjectsComponent,
     TechnologiesComponent,
-    AsyncPipe,
-  ],
+    AsyncPipe
+],
 })
 export class BaseComponent implements OnInit {
   aboutContent$!: Observable<string>;

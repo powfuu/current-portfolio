@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { ViewportScroller, NgIf, NgClass, AsyncPipe } from '@angular/common';
+import { ViewportScroller, NgClass, AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TranslationService } from '../../services/translation/translation.service';
@@ -10,7 +10,7 @@ import { NgIcon } from '@ng-icons/core';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   standalone: true,
-  imports: [NgIf, NgIcon, NgClass, AsyncPipe],
+  imports: [NgIcon, NgClass, AsyncPipe],
 })
 export class SidebarComponent implements OnInit {
   activeSection: string = 'about';

@@ -8,34 +8,34 @@
   <header>
     <h1>Everit Jhon Molero</h1>
     <h3 class="important-light">Senior Frontend Engineer</h3>
-    <ng-container *ngIf="(description$ | async) as description">
+    @if ((description$ | async); as description) {
       <p>{{description}}</p>
-    </ng-container>
+    }
     <main>
       <ul>
         <li (click)="scrollToSection('about')" [class.active]="activeSection === 'about'">
           <div class="selector"></div>
-          <ng-container *ngIf="(about$ | async) as about">
+          @if ((about$ | async); as about) {
             <a href="#about">{{about}}</a>
-          </ng-container>
+          }
         </li>
         <li (click)="scrollToSection('experience')" [class.active]="activeSection === 'experience'">
           <div class="selector"></div>
-          <ng-container *ngIf="(experience$ | async) as experience">
+          @if ((experience$ | async); as experience) {
             <a href="#experience">{{experience}}</a>
-          </ng-container>
+          }
         </li>
         <li (click)="scrollToSection('projects')" [class.active]="activeSection === 'projects'">
           <div class="selector"></div>
-          <ng-container *ngIf="(projects$ | async) as projects">
+          @if ((projects$ | async); as projects) {
             <a href="#projects">{{projects}}</a>
-          </ng-container>
+          }
         </li>
         <li (click)="scrollToSection('technologies')" [class.active]="activeSection === 'technologies'">
           <div class="selector"></div>
-          <ng-container *ngIf="(technologies$ | async) as tech">
+          @if ((technologies$ | async); as tech) {
             <a href="#technologies">{{tech}}</a>
-          </ng-container>
+          }
         </li>
       </ul>
     </main>

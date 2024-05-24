@@ -1,5 +1,5 @@
 <div class="bgEffect" [style.--mouse-x.px]="mouseX" [style.--mouse-y.px]="mouseY"></div>
-<ng-container *ngIf="!loadingScreen; else loadingScreenTemplate">
+@if (!loadingScreen) {
   <div class="fixed-container">
     <img loading="lazy" class="flag" [src]="'assets/flags/'+langState+'.jpg'" />
     <select (change)="changeStateLanguage($event)" [(ngModel)]="langState" class="language-select">
@@ -11,17 +11,20 @@
       </option>
     </select>
     <button (click)="toggleTheme()" class="theme-toggle">
-      <span *ngIf="theme === 'light'">
-        <i class="fa-solid fa-sun"></i>
-      </span>
-      <span *ngIf="theme === 'dark'">
-        <i class="fa-solid fa-moon"></i>
-      </span>
+      @if (theme === 'light') {
+        <span>
+          <i class="fa-solid fa-sun"></i>
+        </span>
+      }
+      @if (theme === 'dark') {
+        <span>
+          <i class="fa-solid fa-moon"></i>
+        </span>
+      }
     </button>
   </div>
   <router-outlet></router-outlet>
-</ng-container>
-<ng-template #loadingScreenTemplate>
+} @else {
   <ng-container>
     <a class="logo">
       <span class="start-ring"></span>
@@ -30,4 +33,4 @@
       <span class="ring-text">E</span>
     </a>
   </ng-container>
-</ng-template>
+}

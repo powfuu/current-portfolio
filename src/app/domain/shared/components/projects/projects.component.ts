@@ -5,7 +5,7 @@ import { PortfolioService } from '../../services/portfolio/portfolio.service';
 import { ModalService } from '../../services/modal/modal.service';
 import { TranslationService } from '../../services/translation/translation.service';
 import { ProjectsModalComponent } from '../projects-modal/projects-modal.component';
-import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-projects',
@@ -13,12 +13,10 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     styleUrls: ['./projects.component.scss'],
     standalone: true,
     imports: [
-        NgIf,
-        NgFor,
-        NgClass,
-        ProjectsModalComponent,
-        AsyncPipe,
-    ],
+    NgClass,
+    ProjectsModalComponent,
+    AsyncPipe
+],
 })
 export class ProjectsComponent {
   isHovered: string | null = null;

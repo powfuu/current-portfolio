@@ -1,13 +1,15 @@
 <div class="technologies-container">
-    <ng-container *ngIf="(technologies$ | async) as tech">
-        <ng-container *ngIf="(technologiesText$ | async) as technologiesText">
-            <h2 class="head-title">{{ technologiesText | titlecase }}</h2>
-        </ng-container>
-        <div class="technologies-content">
-            <div class="technologies" *ngFor="let tec of tech; trackBy: trackByFn">
-                <img loading="lazy" [alt]="tec.tech" [src]="tec.src" />
-                <p class="title">{{tec.tech}}</p>
-            </div>
+  @if ((technologies$ | async); as tech) {
+    @if ((technologiesText$ | async); as technologiesText) {
+      <h2 class="head-title">{{ technologiesText | titlecase }}</h2>
+    }
+    <div class="technologies-content">
+      @for (tec of tech; track trackByFn($index, tec)) {
+        <div class="technologies">
+          <img loading="lazy" [alt]="tec.tech" [src]="tec.src" />
+          <p class="title">{{tec.tech}}</p>
         </div>
-    </ng-container>
+      }
+    </div>
+  }
 </div>

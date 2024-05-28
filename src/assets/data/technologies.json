@@ -12,7 +12,7 @@
   {
     "id": 2,
     "tech": "NgRx",
-    "src": "https://ngrx.io/assets/images/badge.svg"
+    "src": "https://seeklogo.com/images/N/ngrx-logo-D484A6B4B3-seeklogo.com.png"
   },
   {
     "id": 3,
@@ -50,6 +50,11 @@
     "src": "https://www.testautomatisierung.org/wp-content/uploads/Karma-Logo.png"
   },
   {
+    "id": 40,
+    "tech": "Cypress",
+    "src": "https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg"
+  },
+  {
     "id": 10,
     "tech": "API REST",
     "src": "https://miro.medium.com/v2/resize:fit:1200/1*J3G3akaMpUOLegw0p0qthA.png"
@@ -73,6 +78,11 @@
     "id": 14,
     "tech": "Stencil.js",
     "src": "https://pbs.twimg.com/profile_images/1516076078229512196/ofYPrQSl_400x400.jpg"
+  },
+  {
+    "id": 41,
+    "tech": "Arquitecture",
+    "src": "https://freesvg.org/img/1679490051folder-structure.png"
   },
   {
     "id": 15,
@@ -152,7 +162,7 @@
   {
     "id": 30,
     "tech": "iOS",
-    "src": "https://scontent.fvgo3-1.fna.fbcdn.net/v/t39.30808-6/301528147_484477930351751_5008045962051132105_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=o-bw02x31M0Q7kNvgEtSo98&_nc_ht=scontent.fvgo3-1.fna&oh=00_AYDMw28LHtWYMl7dBs9YDsuQqkytwB1YPkdvtvmq6IcPzA&oe=664F51BA"
+    "src": "https://i.pinimg.com/474x/14/d8/7a/14d87a3887139e044ed629ae32107c1e.jpg"
   },
   {
     "id": 31,

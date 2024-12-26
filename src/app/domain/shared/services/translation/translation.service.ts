@@ -125,7 +125,7 @@ export class TranslationService {
   }
 
   refreshAbout(): void {
-    const aboutEn = `I am a Frontend Engineer with about 5 years of experience and continuous learning. I specialize in developing <span class='important'>hybrid web & mobile applications</span> using technologies like <span class='important'>Angular</span> from older versions to the latest ones (5-17), <span class='important'>RxJs, JavaScript, TypeScript, React, Ionic, Capacitor, Cordova, NgRx (Redux), Git,</span> among others.
+    const aboutEn = `I am a Frontend Engineer with about 6 years of experience and continuous learning. I specialize in developing <span class='important'>hybrid web & mobile applications</span> using technologies like <span class='important'>Angular</span> from older versions to the latest ones, <span class='important'>RxJs, JavaScript, TypeScript, React, Ionic, Capacitor, Cordova, NgRx (Redux), Git,</span> among others.
 
 I have solid experience implementing Agile Methodologies, especially SCRUM, and exceptional skills in <span class='important'>project management</span>. My experience also includes using <span class='important'>testing (TDD)</span> and continuously implementing integration and delivery <span class='important'>CI/CD (Jenkins)</span>, which results in excellent outcomes with high quality.
 
@@ -135,8 +135,8 @@ In addition to my technical focus, my <span class='important'>English B1</span> 
 
 I am a completely <span class='important'>self-taught</span> and passionate person in the world of development, I love facing new challenges and solving problems creatively. My ability to quickly adapt to new technologies and environments has allowed me to confidently and effectively tackle diverse projects.
     `;
-    const aboutEs = `Frontend Engineer con alrededor de 5 años de experiencia y aprendizaje continuo,
-Me especializo en el desarrollo de <span class='important'>aplicaciones web & móviles híbridas</span> con tecnologías como <span class='important'>Angular</span> desde versiones más antiguas hasta las más modernas (5-17), <span class='important'>RxJs, JavaScript, TypeScript, React, Ionic, Capacitor, Cordova, NgRx (Redux), Git,</span> entre otras.
+    const aboutEs = `Frontend Engineer con alrededor de 6 años de experiencia y aprendizaje continuo,
+Me especializo en el desarrollo de <span class='important'>aplicaciones web & móviles híbridas</span> con tecnologías como <span class='important'>Angular</span> desde versiones más antiguas hasta las más modernas, <span class='important'>RxJs, JavaScript, TypeScript, React, Ionic, Capacitor, Cordova, NgRx (Redux), Git,</span> entre otras.
 
 Tengo una sólida experiencia en la implementación de Metodologías Ágiles, especialmente SCRUM y habilidades excepcionales en la <span class='important'>gestión de proyectos</span>. Mi experiencia también incluye el uso de <span class='important'>testing (TDD)</span> y la implementación continua de integración y entrega <span class='important'>CI/CD (Jenkins)</span>, lo que otorga un resultado excelente con una alta calidad.
 

@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
     const technologiesSection = document.getElementById('technologies');
 
     const scrollPosition = window.scrollY;
-    const offset = 2; // Ajuste adicional de 2px
+    const offset = 20;
 
     this.scrollToState = scrollPosition > 100;
 

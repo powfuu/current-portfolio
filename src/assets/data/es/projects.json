@@ -1,15 +1,32 @@
 [
   {
     "id": 0,
+    "title": "EV Spot Map",
+    "description": "Aplicación moderna y visualmente atractiva que muestra puntos de carga eléctrica en un mapa 3D. Ofrece información detallada sobre estaciones de carga, como potencia en kW, tipo de conectores y disponibilidad, proporcionando una experiencia innovadora y sencilla para usuarios de vehículos eléctricos.",
+    "stack": [
+      "Angular Standalone",
+      "Ionic",
+      "Capacitor",
+      "Jasmine/Karma",
+      "MapBox",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript"
+    ],
+    "img": "assets/projects/ev-spot-map.png",
+    "className": "mvl-img"
+  },
+  {
+    "id": 1,
     "title": "ngx-ever-components - Librería Angular",
     "description": "ngx-ever-components es una moderna biblioteca de componentes de interfaz de usuario (UI) para Angular, diseñada para mejorar la interfaz de usuario de las aplicaciones mientras simplifica el tiempo de desarrollo. Con una amplia colección de componentes elegantes, capacita a los desarrolladores de Angular para crear interfaces visualmente atractivas e intuitivas con facilidad. Ya sea que estés construyendo una aplicación web, un panel de control o cualquier otro proyecto basado en Angular, ngx-ever-components proporciona las herramientas que necesitas para elevar tanto la estética como la productividad.",
-    "stack": ["Angular", "Angular library", "RxJs", "HTML/SCSS", "TypeScript"],
+    "stack": ["Angular", "RxJs", "HTML/SCSS", "TypeScript"],
     "img": "assets/projects/ngx-ever-components.png",
     "className": "logo-img",
     "url": "https://www.npmjs.com/package/ngx-ever-components"
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "ngx-ever-components - Documentación",
     "description": "Documentación oficial de la librería ngx-ever-components, una librería de estilos para Angular. Aquí encontrarás información completa sobre el paquete npm, el repositorio, la guía de instalación, el uso, y la documentación detallada para cada componente de la librería.",
     "stack": [
@@ -24,7 +41,7 @@
     "url": "https://ngx-ever-components.vercel.app"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "AI Driver",
     "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción en distintos tipos de carnet (AM, A1, A2, A, B, B1, B+E, C1).",
     "stack": [
@@ -45,7 +62,7 @@
     "className": "mvl-img"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Fasfu Burgers",
     "description": "Fasfu Burgers es una aplicación pick-up delivery en tiempo real realizada para el restaurante Fasfu Burgers. Este prototipo te permite ordenar tu comida favorita en linea. esta aplicación fue creada para la empresa de comida de Luisito comunica.",
     "stack": [
@@ -65,7 +82,7 @@
     "className": "desk-img"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Luck",
     "description": "Luck es una plataforma que se basa en crear sorteos como creadores de contenido, el propósito de esta aplicación es mejorar la comunicación entre el público y entregar premios a la comunidad más cercana.",
     "stack": [
@@ -86,7 +103,7 @@
     "className": "desk-img"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "AI Decisions",
     "description": "AI Decisions es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario otorga ciertas decisiones y la IA hará ciertas evaluaciones para otorgar la decisión a tomar basado en tomar las mejores decisiones para la persona.",
     "stack": [
@@ -107,7 +124,7 @@
     "className": "mvl-img"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "AI StoryBooks",
     "description": "AI StoryBooks es una aplicación Web desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, está aplicación consiste en crear historias con IA en base a una descripción que enviemos, como por ejemplo: Al escribir 'una historia acerca de un gato jugando soccer en la luna', esta historia será generada automáticamente por la IA y nos la almacenará en una store local/Redux para que podamos leerla en cualquier momento.",
     "stack": [
@@ -127,7 +144,7 @@
     "className": "desk-small-img"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "AI Chat - English/Spanish Learning",
     "description": "AI Chat es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en generar diversos chats con distintos tipos de conversaciones/temas para mantener una conversación con una IA (GPT 3.5), la idea de la aplicación es aprender a mantener una conversación escrita en inglés, por ende al tener un error en nuestra ortografía, esta nos corregirá diciendo cual es la forma correcta de la oración enviada, también destacar que siempre nos tratará de buscar la mayor conversación posible.",
     "stack": [
@@ -148,7 +165,7 @@
     "className": "mvl-img"
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "inWork",
     "description": "InWork es una plataforma web de aplicación de una sola página (SPA) que facilita la búsqueda de nuevas oportunidades laborales. En esta plataforma, los usuarios pueden registrarse como 'buscadores de trabajo', especificando su conjunto de habilidades (stack) y así buscar oportunidades laborales que se ajusten a sus habilidades. También pueden registrarse como empresas, y publicar ofertas de empleo que coincidan con el conjunto de habilidades requerido, para que coincida con los buscadores de trabajo que tengan un conjunto de habilidades similar.",
     "stack": [
@@ -171,7 +188,7 @@
     "className": "desk-img"
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "AI Calories",
     "description": "AI Calories es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en llevar un control en las calorias que consumimos, está dividida en la calculadora de calorías y una IA que nos permite llevar un mejor control de nuestros alimentos dependiendo de nuestro peso, altura, etc.",
     "stack": [
@@ -192,7 +209,7 @@
     "className": "mvl-img"
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "Bash Routing",
     "description": "Bash Routing es una Web SPA creativa que consiste en un template muy guay en el cuál controlamos toda la app mediante una terminal creada en la web con diseños atractivos, en esta podemos ejecutar comandos como 'cd para navegar a una ruta' o 'ls para mostrar todas las rutas de la aplicación'.",
     "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
@@ -200,7 +217,7 @@
     "className": "desk-img"
   },
   {
-    "id": 11,
+    "id": 12,
     "title": "Quick Weather",
     "description": "Quick Weather es una APP Móvil Híbrida para Android/iOS, su propósito es ver la temperatura apróximada actual de la ubicación actual mostrando un resumen de los próximos 6 días.",
     "stack": [
@@ -217,7 +234,7 @@
     "className": "mvl-img"
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "EVERCODE",
     "description": "EVERCODE es un landing page que deja en claro la presentación de una empresa que ofrece soluciones tecnológicas.",
     "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
@@ -225,7 +242,7 @@
     "className": "desk-big-img"
   },
   {
-    "id": 13,
+    "id": 14,
     "title": "EVERCODE Services",
     "description": "EVERCODE Services es un landing page que deja en claro los servicios que ofrece EVERCODE, una empresa tecnológica.",
     "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
@@ -233,7 +250,7 @@
     "className": "desk-big-img"
   },
   {
-    "id": 14,
+    "id": 15,
     "title": "Dummy Store",
     "description": "Dummy Store es un prototipo de venta de productos de una empresa de tecnología (smartphones, laptops, etc).",
     "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
@@ -241,7 +258,7 @@
     "className": "desk-small-img"
   },
   {
-    "id": 15,
+    "id": 16,
     "title": "Besign Invest",
     "description": "Besign Invest es un creativo landing template.",
     "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
@@ -249,7 +266,7 @@
     "className": "desk-big-img"
   },
   {
-    "id": 16,
+    "id": 17,
     "title": "Vanderbilt",
     "description": "Vanderbilt Es una página web desarrollada para un negocio de resortes en Ecuador, Quito, esta página web da una clara representación a su empresa y sus productos disponibles.",
     "stack": ["HTML/CSS", "JavaScript", "jQuery"],

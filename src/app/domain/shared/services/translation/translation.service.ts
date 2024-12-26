@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UtilService } from '../util/util.service';
-import { BehaviorSubject, forkJoin, Observable, take } from 'rxjs';
+import { BehaviorSubject, first, forkJoin, Observable, take } from 'rxjs';
 import { Experience } from '../../models/experience.model';
 import { Projects } from '../../models/projects.model';
 import { PortfolioService } from '../portfolio/portfolio.service';
@@ -92,13 +92,15 @@ export class TranslationService {
       this.portfolioService.getExperience().pipe(take(1)),
       this.portfolioService.getProjects().pipe(take(1)),
       this.portfolioService.getTechnologies().pipe(take(1)),
-    ]).subscribe(([experience, projects, technologies]) => {
-      this.experienceData$.next(experience);
-      this.projectsData$.next(projects);
-      if (this.technologiesData$.getValue().length === 0) {
-        this.technologiesData$.next(technologies);
-      }
-    });
+    ])
+      .pipe(first())
+      .subscribe(([experience, projects, technologies]) => {
+        this.experienceData$.next(experience);
+        this.projectsData$.next(projects);
+        if (this.technologiesData$.getValue().length === 0) {
+          this.technologiesData$.next(technologies);
+        }
+      });
   }
 
   refreshSideBar(): void {

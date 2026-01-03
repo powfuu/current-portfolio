@@ -73,12 +73,14 @@ export class UtilService {
       'e2e & Cypress': 'simpleCypress',
       'Angular Material': 'simpleAngular',
       'ngx-ever-components': 'simpleAngular',
+      'Angular library': 'simpleAngular',
       'MapBox': 'simpleMapbox',
       'Responsive': 'ionPhonePortrait',
       'AOS (Animation on Scroll)': 'simpleScrollreveal',
       'ng-icons': 'simpleAngular',
       'localStorage': 'ionSave',
-      'SCSS': 'simpleSass'
+      'SCSS': 'simpleSass',
+      'Artificial Intelligence': 'simpleOpenai'
     };
 
     return iconMap[skill] || '';
@@ -143,12 +145,14 @@ export class UtilService {
       'e2e & Cypress': '#00bf88',
       'Angular Material': '#DD0031',
       'ngx-ever-components': '#DD0031',
+      'Angular library': '#DD0031',
       'MapBox': '#4264FB',
       'Responsive': '#FFFFFF',
       'AOS (Animation on Scroll)': '#FF6C37',
       'ng-icons': '#DD0031',
       'localStorage': '#F7DF1E',
-      'SCSS': '#CC6699'
+      'SCSS': '#CC6699',
+      'Artificial Intelligence': '#00A67E'
     };
     return colorMap[skill] || 'var(--green)';
   }

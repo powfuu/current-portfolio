@@ -70,12 +70,20 @@
   flex-wrap: wrap;
   gap: 5px;
   .skill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-tint);
+    padding: 6px 12px;
+    border-radius: 30px;
+
+    ng-icon {
+      font-size: var(--fz-md);
+    }
+
     p {
       color: var(--green);
-      background: var(--green-tint);
       font-size: var(--fz-x);
-      padding: 6px 9px;
-      border-radius: 30px;
     }
   }
 }

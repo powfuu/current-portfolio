@@ -1,0 +1,131 @@
+.language-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  font-family: var(--font-sans);
+  scale: 0.9;
+}
+
+.flag-display {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--important);
+  }
+
+  .current-flag-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.pill-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.05); // Subtle glass/pill effect
+  padding: 6px 14px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 60px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--important);
+
+    .current-code {
+      color: var(--important);
+    }
+
+    .chevron {
+      color: var(--important);
+    }
+  }
+
+  .current-code {
+    color: var(--white);
+    font-weight: 700;
+    font-size: var(--fz-sm);
+    text-transform: lowercase;
+    transition: color 0.3s ease;
+  }
+
+  .chevron {
+    color: var(--white);
+    font-size: 14px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  min-width: 110px;
+  background-color: var(--light-navy);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px var(--navy-shadow-dark);
+  z-index: 100;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin: 4px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    .item-text {
+      color: var(--important);
+    }
+  }
+
+  &.selected {
+    background-color: rgba(100, 255, 219, 0.08);
+    border-radius: 8px;
+    .item-text {
+      color: var(--important);
+    }
+  }
+
+  .item-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .item-text {
+    color: var(--slate);
+    font-size: var(--fz-sm);
+    font-weight: 500;
+    text-transform: lowercase;
+  }
+}

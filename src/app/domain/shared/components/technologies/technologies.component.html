@@ -6,7 +6,11 @@
     <div class="technologies-content">
       @for (tec of tech; track trackByFn($index, tec)) {
         <div class="technologies">
-          <img loading="lazy" [alt]="tec.tech" [src]="tec.src" />
+          @if (getSkillIcon(tec.tech)) {
+            <ng-icon [name]="getSkillIcon(tec.tech)" [color]="getSkillColor(tec.tech)" class="tech-icon"></ng-icon>
+          } @else {
+            <img loading="lazy" [alt]="tec.tech" [src]="tec.src" />
+          }
           <p class="title">{{tec.tech}}</p>
         </div>
       }

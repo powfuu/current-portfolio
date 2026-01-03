@@ -40,6 +40,17 @@
   animation: zoomInFadeIn 1.2s forwards;
 }
 
+.fixed-container {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 999;
+  animation: slideFromBottom 0.6s forwards;
+}
+
 .logo.finished {
   animation: zoomOut 0.5s forwards;
 }
@@ -107,48 +118,9 @@ a .end-ring {
   opacity: 1;
 }
 
-.language-select {
-  padding: 5px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  opacity: 0;
-  margin-right: 90px;
-  margin-top: 37px;
-  z-index: 1;
-  cursor: pointer;
-  outline: none;
-  border-radius: 8px;
-  background: var(--green-tint-opaque);
-  color: #e6f1ff;
-  border-color: transparent;
-  animation: slideFromBottom 0.6s forwards;
-  & > option {
-    background-color: var(--green-tint-opaque);
-    color: var(--white);
-  }
-}
 
-.flag {
-  height: 22px;
-  width: 23px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  margin-right: 149px;
-  margin-top: 41px;
-  border-radius: 100%;
-  opacity: 0;
-  z-index: 1;
-  animation: slideFromBottom 0.6s forwards;
-}
 
 .theme-toggle {
-  position: fixed;
-  right: 0;
-  top: 0;
-  margin-right: 34px;
-  margin-top: 29px;
   z-index: 1;
   border: none;
   cursor: pointer;
@@ -247,21 +219,13 @@ a .end-ring {
     margin-top: 13px;
   }
 
-  .language-select {
-    margin-right: 68px;
-    margin-top: 34px;
-    font-size: 14px;
-    background: var(--green-tint-opaque-semi);
-  }
-
-  .flag {
-    margin-right: 125.5px;
-    margin-top: 35px;
+  .fixed-container {
+    right: 20px;
+    top: 20px;
+    gap: 10px;
   }
 
   .theme-toggle {
-    margin-right: 15px;
-    margin-top: 24px;
     height: 44px;
     width: 44px;
     font-size: 25px;

@@ -1,0 +1,23 @@
+<div class="language-widget">
+  <div class="flag-display">
+    <img [src]="'assets/flags/' + currentLang + '.jpg'" [alt]="currentLang" class="current-flag-img">
+  </div>
+
+  <div class="dropdown-container">
+    <div class="pill-trigger" (click)="toggleDropdown($event)">
+      <span class="current-code">{{ currentLang }}</span>
+      <ng-icon name="ionChevronDown" class="chevron" [@rotateChevron]="isOpen ? 'rotated' : 'default'"></ng-icon>
+    </div>
+
+    <div class="dropdown-menu" [@dropdownState]="isOpen ? 'open' : 'closed'">
+      <div class="menu-item" (click)="selectLanguage('es')" [class.selected]="currentLang === 'es'">
+        <img src="assets/flags/es.jpg" alt="es" class="item-flag">
+        <span class="item-text">es</span>
+      </div>
+      <div class="menu-item" (click)="selectLanguage('en')" [class.selected]="currentLang === 'en'">
+        <img src="assets/flags/en.jpg" alt="en" class="item-flag">
+        <span class="item-text">en</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,7 @@
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@ng-icons/core": "^27.2.0",
     "@ng-icons/ionicons": "^27.2.0",
+    "@ng-icons/simple-icons": "^33.0.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "rxjs": "~7.8.0",

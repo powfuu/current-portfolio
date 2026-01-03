@@ -1,28 +1,30 @@
 @if ((isModalOpen$ | async); as modalOpen) {
-  <div class="modal-background" (click)="closeModal()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <div [ngClass]="{'header': project.url, 'header-with-url': !project.url}">
-        <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
-        @if (project.url) {
-          <a target="_blank" [href]="project.url">
-            <p class="visitar">Visitar proyecto</p>
-          </a>
-        }
-        <h1>{{project.title}}</h1>
-      </div>
-      <h1 [class]="project.url ? 'project-title-mvl' : 'project-title-mvl cannot_define'">
-      {{project.title}}</h1>
-      <p>{{project.description}}</p>
-      <div class="img-content">
-        <img loading="lazy" [class]="project.className" [src]="project.img" [alt]="project.title" />
-      </div>
-      <div class="stack-content">
-        @for (tec of project.stack; track trackByFn($index, tec)) {
-          <div class="tec">
-            <p>{{tec}}</p>
-          </div>
-        }
-      </div>
+  <div class="modal-background" (click)="closeModal()" @fadeInOut></div>
+  <div class="modal-content" (click)="$event.stopPropagation()" @slideInOut>
+    <div [ngClass]="{'header': project.url, 'header-with-url': !project.url}">
+      <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+      @if (project.url) {
+        <a target="_blank" [href]="project.url">
+          <p class="visitar">Visitar proyecto</p>
+        </a>
+      }
+      <h1>{{project.title}}</h1>
+    </div>
+    <h1 [class]="project.url ? 'project-title-mvl' : 'project-title-mvl cannot_define'">
+    {{project.title}}</h1>
+    <p>{{project.description}}</p>
+    <div class="img-content">
+      <img loading="lazy" [class]="project.className" [src]="project.img" [alt]="project.title" />
+    </div>
+    <div class="stack-content">
+      @for (tec of project.stack; track trackByFn($index, tec)) {
+        <div class="tec">
+          @if (getSkillIcon(tec)) {
+            <ng-icon [name]="getSkillIcon(tec)" [color]="getSkillColor(tec)"></ng-icon>
+          }
+          <p>{{tec}}</p>
+        </div>
+      }
     </div>
   </div>
 }

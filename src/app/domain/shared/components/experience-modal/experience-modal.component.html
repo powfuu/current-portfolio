@@ -1,6 +1,6 @@
 @if ((isModalOpen$ | async); as modalOpen) {
-  <div class="modal-background" (click)="closeModal()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
+  <div class="modal-background" (click)="closeModal()" @fadeInOut>
+    <div class="modal-content" (click)="$event.stopPropagation()" @slideUp>
       <div class="header">
         <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
         <h1>{{experience.title}}</h1>
@@ -10,6 +10,9 @@
       <div class="skills-content">
         @for (skill of experience.skills; track trackByFn($index, skill)) {
           <div class="skill">
+            @if (getSkillIcon(skill)) {
+              <ng-icon [name]="getSkillIcon(skill)" [color]="getSkillColor(skill)"></ng-icon>
+            }
             <p>{{skill}}</p>
           </div>
         }

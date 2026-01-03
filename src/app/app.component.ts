@@ -4,6 +4,7 @@ import { injectSpeedInsights } from '@vercel/speed-insights';
 import { TranslationService } from './domain/shared/services/translation/translation.service';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { LanguageSelectorComponent } from './domain/shared/components/language-selector/language-selector.component';
 
 @Component({
     selector: 'app-root',
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
     standalone: true,
     imports: [
     FormsModule,
-    RouterOutlet
+    RouterOutlet,
+    LanguageSelectorComponent
 ],
 })
 export class AppComponent implements OnInit {

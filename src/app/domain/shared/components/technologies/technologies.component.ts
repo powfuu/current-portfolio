@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { TranslationService } from '../../services/translation/translation.service';
 import { Technologies } from '../../models/technologies.model';
 import { AsyncPipe, TitleCasePipe } from '@angular/common';
+import { NgIcon } from '@ng-icons/core';
+import { UtilService } from '../../services/util/util.service';
 
 @Component({
     selector: 'app-technologies',
@@ -11,14 +13,18 @@ import { AsyncPipe, TitleCasePipe } from '@angular/common';
     standalone: true,
     imports: [
     AsyncPipe,
-    TitleCasePipe
+    TitleCasePipe,
+    NgIcon
 ],
 })
 export class TechnologiesComponent implements OnInit {
   technologiesText$!: Observable<string>;
   technologies$!: Observable<Technologies[]>;
 
-  constructor(private translationService: TranslationService) {}
+  constructor(
+    private translationService: TranslationService,
+    private utilService: UtilService
+  ) {}
 
   ngOnInit(): void {
     this.getTranslations();
@@ -31,6 +37,14 @@ export class TechnologiesComponent implements OnInit {
 
   getTranslations(): void {
     this.technologiesText$ = this.translationService.getTech();
+  }
+
+  getSkillIcon(skill: string): string {
+    return this.utilService.getIconForSkill(skill);
+  }
+
+  getSkillColor(skill: string): string {
+    return this.utilService.getIconColorForSkill(skill);
   }
 
   trackByFn(index: number, item: any) {

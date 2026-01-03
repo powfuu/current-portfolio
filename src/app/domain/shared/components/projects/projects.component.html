@@ -17,6 +17,9 @@
             <div class="stack-content">
               @for (tec of p.stack; track trackByFn($index, tec)) {
                 <div class="stack">
+                  @if (getSkillIcon(tec)) {
+                    <ng-icon [name]="getSkillIcon(tec)" [color]="getSkillColor(tec)"></ng-icon>
+                  }
                   <p>{{tec}}</p>
                 </div>
               }

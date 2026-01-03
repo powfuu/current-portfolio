@@ -14,6 +14,9 @@
             <div class="skills-content">
               @for (skill of exp.skills; track trackByFn($index, skill)) {
                 <div class="skill">
+                  @if (getSkillIcon(skill)) {
+                    <ng-icon [name]="getSkillIcon(skill)" [color]="getSkillColor(skill)"></ng-icon>
+                  }
                   <p>{{skill}}</p>
                 </div>
               }

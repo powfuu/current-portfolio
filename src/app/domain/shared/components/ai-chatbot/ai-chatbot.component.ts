@@ -155,13 +155,12 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
             j++;
           }
         }
-        // Close any open tags
         const openTags = built.match(/<b>/g)?.length || 0;
         const closeTags = built.match(/<\/b>/g)?.length || 0;
         if (openTags > closeTags) built += '</b>';
 
         msg.displayText = built;
-        this.shouldScroll = true;
+        this.scrollToBottom();
       } else {
         msg.displayText = text;
         msg.isTyping = false;
@@ -169,7 +168,7 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
         this.loadSuggestions();
         this.shouldScroll = true;
         clearInterval(interval);
-        setTimeout(() => { this.shouldScroll = true; }, 150);
+        setTimeout(() => { this.scrollToBottom(); }, 150);
       }
     }, 8);
   }

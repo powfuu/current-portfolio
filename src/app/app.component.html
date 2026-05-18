@@ -1,8 +1,9 @@
-<div class="bgEffect" [style.--mouse-x.px]="mouseX" [style.--mouse-y.px]="mouseY"></div>
+<div class="bgEffect"></div>
+<div class="dot-grid"></div>
 @if (!loadingScreen) {
   <div class="fixed-container">
     <app-language-selector></app-language-selector>
-    <button (click)="toggleTheme()" class="theme-toggle">
+    <button (click)="toggleTheme($event)" class="theme-toggle">
       @if (theme === 'light') {
         <span>
           <i class="fa-solid fa-sun"></i>

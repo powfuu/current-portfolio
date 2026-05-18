@@ -1,4 +1,4 @@
-import { Component, HostListener, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, AfterViewInit } from '@angular/core';
 import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import { TranslationService } from './domain/shared/services/translation/translation.service';
@@ -17,12 +17,12 @@ import { LanguageSelectorComponent } from './domain/shared/components/language-s
     LanguageSelectorComponent
 ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   langState: string = 'es';
   theme: string = 'dark';
   loadingScreen: boolean = true;
-  mouseX: number = 0;
-  mouseY: number = 0;
+
+  private bgEl!: HTMLElement;
 
   constructor(
     private ngZone: NgZone,
@@ -38,14 +38,24 @@ export class AppComponent implements OnInit {
     this.refreshTranslations();
   }
 
+  ngAfterViewInit(): void {
+    this.bgEl = document.querySelector('.bgEffect') as HTMLElement;
+    this.ngZone.runOutsideAngular(() => {
+      document.addEventListener('mousemove', (e: MouseEvent) => {
+        if (this.bgEl) {
+          this.bgEl.style.top = `${e.clientY - 350}px`;
+          this.bgEl.style.left = `${e.clientX - 350}px`;
+        }
+      });
+    });
+  }
+
   refreshTranslations(): void {
     this.translationService.refreshTranslations();
   }
 
   initVercelAnalyticsAndSpeedInsights(): void {
-    //Init Analytics
     inject();
-    //Init Speed Insights
     injectSpeedInsights();
   }
 
@@ -67,41 +77,55 @@ export class AppComponent implements OnInit {
   }
 
   manageTimers(): void {
-    //add finished class
     setTimeout(() => {
       document.querySelector('.logo')?.classList.add('finished');
     }, 1570);
-    //stop loading screen after 1800ms
     setTimeout(() => {
       this.loadingScreen = false;
     }, 1800);
   }
 
-  toggleTheme(): void {
-    this.theme = this.theme === 'light' ? 'dark' : 'light';
-    this.applyTheme(this.theme);
-    localStorage.setItem('theme', this.theme);
+  toggleTheme(event: MouseEvent): void {
+    const newTheme = this.theme === 'light' ? 'dark' : 'light';
+
+    if (!(document as any).startViewTransition) {
+      this.theme = newTheme;
+      this.applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+      return;
+    }
+
+    const x = event.clientX;
+    const y = event.clientY;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = (document as any).startViewTransition(() => {
+      this.theme = newTheme;
+      this.applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 600,
+          easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          pseudoElement: '::view-transition-new(root)',
+        }
+      );
+    });
   }
 
   private applyTheme(theme: string): void {
     document.body.className = theme;
-  }
-
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    this.mouseX = event.clientX;
-    this.mouseY = event.clientY;
-  }
-
-  ngAfterViewInit(): void {
-    this.ngZone.runOutsideAngular(() => this.updatePosition());
-  }
-
-  updatePosition(): void {
-    requestAnimationFrame(() => {
-      this.ngZone.run(() => {
-        this.updatePosition();
-      });
-    });
   }
 }

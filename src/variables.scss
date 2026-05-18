@@ -1,6 +1,6 @@
 :root {
-  --pink: #f57dff;
   --blue: #57cbff;
+  --cyan: #06b6d4;
   --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
     system-ui, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -32,6 +32,11 @@
   --ham-after-active: bottom 0.1s ease-out,
     transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 
+  --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  --glow-green: 0 0 20px rgba(100, 255, 219, 0.3), 0 0 40px rgba(100, 255, 219, 0.1);
+  --gradient-accent: linear-gradient(135deg, var(--cyan), var(--green), var(--blue));
+  --gradient-border: conic-gradient(from var(--angle, 0deg), var(--cyan), var(--green), var(--blue), var(--cyan));
+
   .dark {
     --navy: #0f1729;
     --navy-shadow-dark: #09142eeb;
@@ -46,21 +51,39 @@
     --green-tint: rgba(100, 255, 219, 0.14);
     --green-tint-opaque: rgba(29, 53, 94, 0.5);
     --green-tint-opaque-semi: rgba(29, 53, 94, 0.75);
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(100, 255, 219, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.03);
   }
 
   .light {
-    --navy: #b1bdd8;
-    --navy-shadow-dark: #becede;
-    --light-navy: #d7dcdd;
-    --dark-slate: #cfd5e1;
-    --slate: #646875;
-    --light-slate: #646875;
-    --white: #121212;
-    --important: #e5fff8;
-    --important-light: #1e1e1e;
-    --green: #e5fff8;
-    --green-tint: rgba(17, 95, 77, 0.101);
-    --green-tint-opaque: rgba(118, 145, 192, 0.5);
-    --green-tint-opaque-semi: rgba(118, 145, 192, 0.75);
+    --navy: #f0f4f8;
+    --navy-shadow-dark: #e2e8f0;
+    --light-navy: #e8edf4;
+    --dark-slate: #cbd5e1;
+    --slate: #475569;
+    --light-slate: #334155;
+    --white: #0f172a;
+    --important: #0d9488;
+    --important-light: #0f172a;
+    --green: #0d9488;
+    --green-tint: rgba(13, 148, 136, 0.08);
+    --green-tint-opaque: rgba(13, 148, 136, 0.1);
+    --green-tint-opaque-semi: rgba(13, 148, 136, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-gradient {
+  to {
+    --angle: 360deg;
   }
 }

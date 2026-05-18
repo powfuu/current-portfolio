@@ -26,7 +26,7 @@
 
 .about-content {
   opacity: 0;
-  animation: fadeIn 2s forwards;
+  animation: fadeIn 1.5s 0.3s forwards;
   padding-top: 85px;
   pre {
     line-height: 17px;
@@ -45,21 +45,10 @@
 
 .skeleton-item {
   height: 20px;
-  background-color: var(--navy);
+  background: linear-gradient(90deg, var(--light-navy) 25%, var(--navy-shadow-dark) 50%, var(--light-navy) 75%);
+  background-size: 200% 100%;
   border-radius: 4px;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    background-color: var(--light-navy);
-  }
-  50% {
-    background-color: var(--navy-shadow-dark);
-  }
-  100% {
-    background-color: var(--slate);
-  }
+  animation: shimmer 1.5s infinite;
 }
 
 @media screen and (max-width: 999px) {

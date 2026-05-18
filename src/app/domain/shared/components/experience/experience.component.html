@@ -1,10 +1,14 @@
 <div class="experience-container">
   @if ((experience$ | async); as experience) {
     <div class="experience-content">
-      @for (exp of experience; track exp) {
-        <div (click)="openExperienceModal(exp)" class="experience"
+      <div class="timeline-line"></div>
+      @for (exp of experience; track exp; let i = $index) {
+        <div (click)="openExperienceModal(exp)" class="experience glass-hover gradient-border"
+          appRevealOnScroll [revealDelay]="i * 100"
+          appTiltOnHover [tiltIntensity]="5" [tiltScale]="1.01"
           [ngClass]="{'notselected': isHovered !== exp.title}" (mouseenter)="isHovered = exp.title"
           (mouseleave)="isHovered = null">
+          <div class="timeline-dot"></div>
           <div class="date-content">
             <p>{{exp.date}}</p>
           </div>

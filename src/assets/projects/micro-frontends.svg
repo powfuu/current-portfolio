@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="url(#bg2)" rx="8"/>
+  <!-- Architecture diagram -->
+  <!-- Shell -->
+  <rect x="60" y="30" width="360" height="240" fill="none" stroke="#64ffda" stroke-width="2" rx="12" stroke-dasharray="8 4"/>
+  <text x="80" y="55" font-family="monospace" font-size="11" fill="#64ffda">Shell Application</text>
+  <!-- MFE boxes -->
+  <rect x="80" y="70" width="150" height="80" fill="#1e293b" rx="8" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="110" y="115" font-family="monospace" font-size="11" fill="#06b6d4">MFE: Auth</text>
+  <rect x="250" y="70" width="150" height="80" fill="#1e293b" rx="8" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="270" y="115" font-family="monospace" font-size="11" fill="#06b6d4">MFE: Dashboard</text>
+  <rect x="80" y="170" width="150" height="80" fill="#1e293b" rx="8" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="105" y="215" font-family="monospace" font-size="11" fill="#06b6d4">MFE: Settings</text>
+  <rect x="250" y="170" width="150" height="80" fill="#1e293b" rx="8" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="275" y="215" font-family="monospace" font-size="11" fill="#06b6d4">MFE: Analytics</text>
+  <!-- Connections -->
+  <line x1="230" y1="110" x2="250" y2="110" stroke="#475569" stroke-width="1.5"/>
+  <line x1="155" y1="150" x2="155" y2="170" stroke="#475569" stroke-width="1.5"/>
+  <line x1="325" y1="150" x2="325" y2="170" stroke="#475569" stroke-width="1.5"/>
+  <line x1="230" y1="210" x2="250" y2="210" stroke="#475569" stroke-width="1.5"/>
+  <!-- Shared lib -->
+  <rect x="160" y="275" width="160" height="20" fill="#064e3b" rx="4"/>
+  <text x="180" y="289" font-family="monospace" font-size="10" fill="#64ffda">@shared/core-lib</text>
+</svg>

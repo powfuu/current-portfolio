@@ -8,6 +8,8 @@ import { ExperienceModalComponent } from '../experience-modal/experience-modal.c
 import { NgClass, AsyncPipe } from '@angular/common';
 import { UtilService } from '../../services/util/util.service';
 import { NgIcon } from '@ng-icons/core';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
+import { TiltOnHoverDirective } from '../../directives/tilt-on-hover.directive';
 
 @Component({
     selector: 'app-experience',
@@ -18,7 +20,9 @@ import { NgIcon } from '@ng-icons/core';
     NgClass,
     ExperienceModalComponent,
     AsyncPipe,
-    NgIcon
+    NgIcon,
+    RevealOnScrollDirective,
+    TiltOnHoverDirective
 ],
 })
 export class ExperienceComponent implements OnInit {

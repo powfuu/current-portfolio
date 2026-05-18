@@ -129,6 +129,8 @@ export class TranslationService {
 
 I have solid experience implementing Agile Methodologies, especially SCRUM, and exceptional skills in <span class='important'>project management</span>. My experience also includes using <span class='important'>testing (TDD)</span> and continuously implementing integration and delivery <span class='important'>CI/CD (Jenkins)</span>, which results in excellent outcomes with high quality.
 
+I actively integrate <span class='important'>AI-powered development tools</span> into my workflow, including <span class='important'>Claude Code CLI, GitHub Copilot, and LLM APIs (OpenAI, Anthropic Claude)</span> for code generation, architecture planning, and automated testing. I have experience building AI-driven applications and leveraging models like <span class='important'>GPT-4 and Claude 4</span> transformers for intelligent features.
+
 I also have expertise in using management tools like <span class='important'>Jira and Confluence</span>, which are essential for coordinating teams and maintaining effective communication in multifunctional projects.
 
 In addition to my technical focus, my <span class='important'>English B1</span> level allows me to maintain a stable conversation in an international environment, which has been invaluable in collaborations and globalized projects.
@@ -139,6 +141,8 @@ I am a completely <span class='important'>self-taught</span> and passionate pers
 Me especializo en el desarrollo de <span class='important'>aplicaciones web & móviles híbridas</span> con tecnologías como <span class='important'>Angular</span> desde versiones más antiguas hasta las más modernas, <span class='important'>RxJs, JavaScript, TypeScript, React, Ionic, Capacitor, Cordova, NgRx (Redux), Git,</span> entre otras.
 
 Tengo una sólida experiencia en la implementación de Metodologías Ágiles, especialmente SCRUM y habilidades excepcionales en la <span class='important'>gestión de proyectos</span>. Mi experiencia también incluye el uso de <span class='important'>testing (TDD)</span> y la implementación continua de integración y entrega <span class='important'>CI/CD (Jenkins)</span>, lo que otorga un resultado excelente con una alta calidad.
+
+Integro activamente <span class='important'>herramientas de desarrollo con IA</span> en mi flujo de trabajo, incluyendo <span class='important'>Claude Code CLI, GitHub Copilot, y APIs de LLMs (OpenAI, Anthropic Claude)</span> para generación de código, planificación de arquitectura y testing automatizado. Tengo experiencia construyendo aplicaciones impulsadas por IA y utilizando modelos como <span class='important'>GPT-4 y Claude 4</span> transformers para funcionalidades inteligentes.
 
 Contengo también destreza en el uso de herramientas de gestión como <span class='important'>Jira y Confluence</span>, lo que es fundamental para coordinar equipos y mantener una comunicación efectiva en proyectos multifuncionales.
 

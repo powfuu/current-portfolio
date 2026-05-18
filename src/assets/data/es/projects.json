@@ -1,5 +1,141 @@
 [
   {
+    "id": 100,
+    "title": "ever-cli — Frontend Scaffolding CLI",
+    "description": "Herramienta CLI de línea de comandos para automatizar la creación de componentes, servicios, módulos y arquitecturas frontend. Genera código con patrones establecidos, ejecuta análisis de bundle, y aplica linting personalizado. Publicado en npm con soporte para Angular, React y configuraciones custom via plugins.",
+    "stack": [
+      "Node.js",
+      "TypeScript",
+      "Bash/Shell",
+      "npm",
+      "Vitest",
+      "Esbuild",
+      "Angular",
+      "CI/CD"
+    ],
+    "img": "assets/projects/frontend-cli.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 101,
+    "title": "Real-Time Analytics Dashboard",
+    "description": "Dashboard de analíticas en tiempo real con gráficos interactivos, WebSockets para datos en vivo, y una arquitectura de componentes optimizada con lazy loading. Incluye modo oscuro, filtros avanzados, exportación de datos y una experiencia de usuario ultra-responsiva con animaciones fluidas a 60fps.",
+    "stack": [
+      "Angular 17",
+      "RxJs",
+      "WebSockets",
+      "D3.js",
+      "NgRx Signals",
+      "HTML/SCSS",
+      "TypeScript",
+      "REST API",
+      "Docker"
+    ],
+    "img": "assets/projects/realtime-dashboard.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 103,
+    "title": "Micro-Frontends Architecture",
+    "description": "Arquitectura de micro-frontends con Module Federation, permitiendo a múltiples equipos trabajar independientemente en diferentes dominios de la aplicación. Shell application orquesta 4 micro-frontends con shared dependencies, lazy loading remoto y deploy independiente por equipo.",
+    "stack": [
+      "Angular 17",
+      "Module Federation",
+      "Webpack 5",
+      "NgRx",
+      "RxJs",
+      "TypeScript",
+      "Nx Monorepo",
+      "Docker",
+      "CI/CD"
+    ],
+    "img": "assets/projects/micro-frontends.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 102,
+    "title": "@ever/reactive-store — State Management Library",
+    "description": "Librería de gestión de estado reactiva para Angular y frameworks JS modernos. API minimalista con selects tipados, computed properties, devtools integration, y persistencia automática. Solo 3.2kb gzipped. Publicada en npm con tree-shaking, 100% test coverage y documentación completa.",
+    "stack": [
+      "TypeScript",
+      "RxJs",
+      "npm",
+      "Vitest",
+      "Esbuild",
+      "Angular",
+      "Turborepo"
+    ],
+    "img": "assets/projects/state-lib.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 104,
+    "title": "Node.js REST API — Auth & Permissions",
+    "description": "Backend API completo con autenticación JWT, roles y permisos granulares, rate limiting, validación de schemas, y logging estructurado. Arquitectura hexagonal con PostgreSQL + Prisma ORM, caché con Redis, tests E2E y documentación OpenAPI auto-generada. Dockerizado con CI/CD.",
+    "stack": [
+      "Node.js/Express",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Docker",
+      "Vitest",
+      "CI/CD"
+    ],
+    "img": "assets/projects/node-api.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 105,
+    "title": "Design System & Component Library",
+    "description": "Sistema de diseño completo con tokens de color, tipografía, espaciado y componentes reutilizables. Documentado con Storybook, publicado como paquete npm con tree-shaking, temas light/dark, accesibilidad WCAG AA, y generación automática de documentación con Chromatic.",
+    "stack": [
+      "Angular",
+      "Storybook",
+      "SCSS",
+      "TypeScript",
+      "npm",
+      "Chromatic",
+      "Jest",
+      "Vitest"
+    ],
+    "img": "assets/projects/design-system.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 106,
+    "title": "Web Performance Monitor",
+    "description": "Herramienta de monitoreo de rendimiento web que analiza Core Web Vitals (LCP, FID, CLS), bundle size, y métricas de carga. Dashboard con histórico de métricas, alertas automáticas cuando los scores bajan, y sugerencias de optimización con impacto estimado.",
+    "stack": [
+      "Angular Standalone",
+      "TypeScript",
+      "D3.js",
+      "RxJs",
+      "PWA",
+      "Vitest",
+      "Esbuild"
+    ],
+    "img": "assets/projects/perf-monitor.svg",
+    "className": "desk-img"
+  },
+  {
+    "id": 107,
+    "title": "Bundle Analyzer CLI",
+    "description": "Herramienta CLI para analizar bundles de aplicaciones frontend. Genera reportes visuales de tamaño por chunk, detecta dependencias duplicadas, identifica code-splitting opportunities, y sugiere optimizaciones automáticas. Compatible con Webpack, Vite y Esbuild.",
+    "stack": [
+      "Node.js",
+      "TypeScript",
+      "Bash/Shell",
+      "Webpack 5",
+      "Vite",
+      "Esbuild",
+      "npm",
+      "Vitest"
+    ],
+    "img": "assets/projects/build-analyzer.svg",
+    "className": "desk-img"
+  },
+  {
     "id": 0,
     "title": "EV Spot Map",
     "description": "Aplicación moderna y visualmente atractiva que muestra puntos de carga eléctrica en un mapa 3D. Ofrece información detallada sobre estaciones de carga, como potencia en kW, tipo de conectores y disponibilidad, proporcionando una experiencia innovadora y sencilla para usuarios de vehículos eléctricos.",
@@ -20,7 +156,7 @@
   {
     "id": 1,
     "title": "ngx-ever-components - Librería Angular",
-    "description": "ngx-ever-components es una moderna biblioteca de componentes de interfaz de usuario (UI) para Angular, diseñada para mejorar la interfaz de usuario de las aplicaciones mientras simplifica el tiempo de desarrollo. Con una amplia colección de componentes elegantes, capacita a los desarrolladores de Angular para crear interfaces visualmente atractivas e intuitivas con facilidad. Ya sea que estés construyendo una aplicación web, un panel de control o cualquier otro proyecto basado en Angular, ngx-ever-components proporciona las herramientas que necesitas para elevar tanto la estética como la productividad.",
+    "description": "ngx-ever-components es una moderna biblioteca de componentes de interfaz de usuario (UI) para Angular, diseñada para mejorar la interfaz de usuario de las aplicaciones mientras simplifica el tiempo de desarrollo.",
     "stack": ["Angular", "RxJs", "HTML/SCSS", "TypeScript"],
     "img": "assets/projects/ngx-ever-components.png",
     "className": "logo-img",
@@ -29,14 +165,8 @@
   {
     "id": 2,
     "title": "ngx-ever-components - Documentación",
-    "description": "Documentación oficial de la librería ngx-ever-components, una librería de estilos para Angular. Aquí encontrarás información completa sobre el paquete npm, el repositorio, la guía de instalación, el uso, y la documentación detallada para cada componente de la librería.",
-    "stack": [
-      "Angular",
-      "ngx-ever-components",
-      "RxJs",
-      "HTML/SCSS",
-      "TypeScript"
-    ],
+    "description": "Documentación oficial de la librería ngx-ever-components, una librería de estilos para Angular. Aquí encontrarás información completa sobre el paquete npm, el repositorio, la guía de instalación, el uso, y la documentación detallada para cada componente.",
+    "stack": ["Angular", "ngx-ever-components", "RxJs", "HTML/SCSS", "TypeScript"],
     "img": "assets/projects/ngx-ever-components-docs.png",
     "className": "desk-small-img",
     "url": "https://ngx-ever-components.vercel.app"
@@ -44,191 +174,79 @@
   {
     "id": 3,
     "title": "La guía del front-end",
-    "description": "Una plataforma web diseñada para aprender de una forma eficaz sobre el desarrollo front-end, desde los fundamentos básicos hasta conceptos avanzados y profesionales. Ofrece recursos completos sobre JavaScript, TypeScript, Angular, React, arquitectura front-end, y herramientas como VSCode, Neovim, Jasmine, Karma y Git. Es el recurso definitivo para dominar todas las habilidades necesarias en el mundo del desarrollo frontend.",
-    "stack": [
-      "Angular",
-      "TypeScript",
-      "RxJs",
-      "NgRx",
-      "HTML/SCSS",
-      "Jasmine/Karma",
-      "Responsive"
-    ],
+    "description": "Una plataforma web diseñada para aprender de una forma eficaz sobre el desarrollo front-end, desde los fundamentos básicos hasta conceptos avanzados y profesionales.",
+    "stack": ["Angular", "TypeScript", "RxJs", "NgRx", "HTML/SCSS", "Jasmine/Karma", "Responsive"],
     "img": "assets/projects/guia-frontend.png",
     "className": "mvl-desk-img-anchor"
   },
   {
     "id": 4,
     "title": "AI Driver",
-    "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción en distintos tipos de carnet (AM, A1, A2, A, B, B1, B+E, C1).",
-    "stack": [
-      "Angular Standalone",
-      "RxJs",
-      "NgRx",
-      "HTML/SCSS",
-      "TypeScript",
-      "OpenAI API",
-      "API REST",
-      "Ionic",
-      "Ionic trapeze",
-      "Jasmine/Karma",
-      "Android/iOS",
-      "Inteligencia artificial"
-    ],
+    "description": "AI Driver es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario pueda aprender y realizar pruebas teóricas para el evaluativo de conducción.",
+    "stack": ["Angular Standalone", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "API REST", "Ionic", "Jasmine/Karma", "Android/iOS", "Inteligencia artificial"],
     "img": "assets/projects/aidriver.png",
     "className": "mvl-img"
   },
   {
     "id": 5,
     "title": "Fasfu Burgers",
-    "description": "Fasfu Burgers es una aplicación pick-up delivery en tiempo real realizada para el restaurante Fasfu Burgers. Este prototipo te permite ordenar tu comida favorita en linea. esta aplicación fue creada para la empresa de comida de Luisito comunica.",
-    "stack": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive",
-      "React",
-      "React Hooks",
-      "React Context",
-      "Jest",
-      "SCSS",
-      "Styled-icons",
-      "Design Tools (Figma, GNU)"
-    ],
+    "description": "Fasfu Burgers es una aplicación pick-up delivery en tiempo real realizada para el restaurante Fasfu Burgers.",
+    "stack": ["HTML", "CSS", "JavaScript", "Responsive", "React", "React Hooks", "React Context", "Jest", "SCSS"],
     "img": "assets/projects/fasfu.png",
     "className": "desk-img"
   },
   {
     "id": 6,
     "title": "Luck",
-    "description": "Luck es una plataforma que se basa en crear sorteos como creadores de contenido, el propósito de esta aplicación es mejorar la comunicación entre el público y entregar premios a la comunidad más cercana.",
-    "stack": [
-      "Angular",
-      "TypeScript",
-      "NgRx",
-      "RxJs",
-      "MySQL",
-      "Node.js",
-      "Express.js",
-      "ng-icons",
-      "HTML/SCSS",
-      "Jasmine/Karma",
-      "API REST",
-      "Responsive"
-    ],
+    "description": "Luck es una plataforma que se basa en crear sorteos como creadores de contenido, mejorando la comunicación entre el público y entregando premios a la comunidad.",
+    "stack": ["Angular", "TypeScript", "NgRx", "RxJs", "MySQL", "Node.js", "Express.js", "HTML/SCSS", "Jasmine/Karma", "API REST"],
     "img": "assets/projects/luck.png",
     "className": "desk-img"
   },
   {
     "id": 7,
     "title": "AI Decisions",
-    "description": "AI Decisions es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en que el usuario otorga ciertas decisiones y la IA hará ciertas evaluaciones para otorgar la decisión a tomar basado en tomar las mejores decisiones para la persona.",
-    "stack": [
-      "Angular",
-      "RxJs",
-      "NgRx",
-      "HTML/SCSS",
-      "TypeScript",
-      "OpenAI API",
-      "API REST",
-      "Ionic",
-      "Ionic trapeze",
-      "Jasmine/Karma",
-      "Android/iOS",
-      "Inteligencia artificial"
-    ],
+    "description": "AI Decisions es una APP Móvil Híbrida para Android/iOS desarrollada con la API de OpenAI, el usuario otorga decisiones y la IA evalúa para otorgar la mejor decisión.",
+    "stack": ["Angular", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "API REST", "Ionic", "Android/iOS", "Inteligencia artificial"],
     "img": "assets/projects/aidecisions.png",
     "className": "mvl-img"
   },
   {
     "id": 8,
     "title": "AI StoryBooks",
-    "description": "AI StoryBooks es una aplicación Web desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, está aplicación consiste en crear historias con IA en base a una descripción que enviemos, como por ejemplo: Al escribir 'una historia acerca de un gato jugando soccer en la luna', esta historia será generada automáticamente por la IA y nos la almacenará en una store local/Redux para que podamos leerla en cualquier momento.",
-    "stack": [
-      "Angular",
-      "Angular Material",
-      "NgRx",
-      "localStorage",
-      "HTML/SCSS",
-      "TypeScript",
-      "ng-icons",
-      "OpenAI API",
-      "API REST",
-      "Inteligencia artificial",
-      "Jasmine/Karma"
-    ],
+    "description": "AI StoryBooks es una aplicación Web desarrollada con la API de OpenAI para crear historias con IA en base a una descripción que enviemos.",
+    "stack": ["Angular", "Angular Material", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "API REST", "Inteligencia artificial"],
     "img": "assets/projects/ai-storybooks.png",
     "className": "desk-small-img"
   },
   {
     "id": 9,
     "title": "AI Chat - English/Spanish Learning",
-    "description": "AI Chat es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en generar diversos chats con distintos tipos de conversaciones/temas para mantener una conversación con una IA (GPT 3.5), la idea de la aplicación es aprender a mantener una conversación escrita en inglés, por ende al tener un error en nuestra ortografía, esta nos corregirá diciendo cual es la forma correcta de la oración enviada, también destacar que siempre nos tratará de buscar la mayor conversación posible.",
-    "stack": [
-      "Angular",
-      "RxJs",
-      "NgRx",
-      "HTML/SCSS",
-      "TypeScript",
-      "OpenAI API",
-      "API REST",
-      "Ionic",
-      "Ionic trapeze",
-      "Jasmine/Karma",
-      "Android/iOS",
-      "Inteligencia artificial"
-    ],
+    "description": "AI Chat es una APP Móvil Híbrida para Android/iOS desarrollada con la API de OpenAI para aprender inglés manteniendo conversaciones con IA.",
+    "stack": ["Angular", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "API REST", "Ionic", "Android/iOS", "Inteligencia artificial"],
     "img": "assets/projects/aichat.png",
     "className": "mvl-img"
   },
   {
     "id": 10,
     "title": "inWork",
-    "description": "InWork es una plataforma web de aplicación de una sola página (SPA) que facilita la búsqueda de nuevas oportunidades laborales. En esta plataforma, los usuarios pueden registrarse como 'buscadores de trabajo', especificando su conjunto de habilidades (stack) y así buscar oportunidades laborales que se ajusten a sus habilidades. También pueden registrarse como empresas, y publicar ofertas de empleo que coincidan con el conjunto de habilidades requerido, para que coincida con los buscadores de trabajo que tengan un conjunto de habilidades similar.",
-    "stack": [
-      "JavaScript",
-      "React",
-      "React Context",
-      "React Hooks",
-      "HTML/CSS",
-      "AOS",
-      "MySQL",
-      "Node.js",
-      "Express.js",
-      "JWT Auth",
-      "API REST",
-      "Bootstrap",
-      "Responsive",
-      "Jest"
-    ],
+    "description": "InWork es una plataforma web SPA que facilita la búsqueda de nuevas oportunidades laborales.",
+    "stack": ["JavaScript", "React", "React Context", "React Hooks", "HTML/CSS", "MySQL", "Node.js", "Express.js", "JWT Auth", "API REST"],
     "img": "assets/projects/inwork.png",
     "className": "desk-img"
   },
   {
     "id": 11,
     "title": "AI Calories",
-    "description": "AI Calories es una APP Móvil Híbrida para Android/iOS desarrollada en conjunto con la API de OpenAI para realizar aplicaciones con inteligencia artifical, la app consiste en llevar un control en las calorias que consumimos, está dividida en la calculadora de calorías y una IA que nos permite llevar un mejor control de nuestros alimentos dependiendo de nuestro peso, altura, etc.",
-    "stack": [
-      "Angular",
-      "RxJs",
-      "NgRx",
-      "HTML/SCSS",
-      "TypeScript",
-      "OpenAI API",
-      "API REST",
-      "Ionic",
-      "Ionic trapeze",
-      "Jasmine/Karma",
-      "Android/iOS",
-      "Inteligencia artificial"
-    ],
+    "description": "AI Calories es una APP Móvil Híbrida para Android/iOS desarrollada con la API de OpenAI para llevar un control de calorías consumidas.",
+    "stack": ["Angular", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "API REST", "Ionic", "Android/iOS", "Inteligencia artificial"],
     "img": "assets/projects/aicalories.png",
     "className": "mvl-img"
   },
   {
     "id": 12,
     "title": "Bash Routing",
-    "description": "Bash Routing es una Web SPA creativa que consiste en un template muy guay en el cuál controlamos toda la app mediante una terminal creada en la web con diseños atractivos, en esta podemos ejecutar comandos como 'cd para navegar a una ruta' o 'ls para mostrar todas las rutas de la aplicación'.",
+    "description": "Bash Routing es una Web SPA creativa que consiste en controlar la app mediante una terminal web con comandos.",
     "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
     "img": "assets/projects/bash_routing.png",
     "className": "desk-img"
@@ -236,24 +254,15 @@
   {
     "id": 13,
     "title": "Quick Weather",
-    "description": "Quick Weather es una APP Móvil Híbrida para Android/iOS, su propósito es ver la temperatura apróximada actual de la ubicación actual mostrando un resumen de los próximos 6 días.",
-    "stack": [
-      "Angular Standalone",
-      "RxJs",
-      "HTML/SCSS",
-      "TypeScript",
-      "API REST",
-      "Ionic",
-      "Ionic trapeze",
-      "Android/iOS"
-    ],
+    "description": "Quick Weather es una APP Móvil Híbrida para Android/iOS para ver la temperatura actual y pronóstico de 6 días.",
+    "stack": ["Angular Standalone", "RxJs", "HTML/SCSS", "TypeScript", "API REST", "Ionic", "Android/iOS"],
     "img": "assets/projects/quickweather.png",
     "className": "mvl-img"
   },
   {
     "id": 14,
     "title": "EVERCODE",
-    "description": "EVERCODE es un landing page que deja en claro la presentación de una empresa que ofrece soluciones tecnológicas.",
+    "description": "EVERCODE es un landing page que presenta una empresa de soluciones tecnológicas.",
     "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
     "img": "assets/projects/evercode.png",
     "className": "desk-big-img"
@@ -261,7 +270,7 @@
   {
     "id": 15,
     "title": "EVERCODE Services",
-    "description": "EVERCODE Services es un landing page que deja en claro los servicios que ofrece EVERCODE, una empresa tecnológica.",
+    "description": "EVERCODE Services es un landing page de los servicios de EVERCODE.",
     "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
     "img": "assets/projects/evercode_services.png",
     "className": "desk-big-img"
@@ -269,7 +278,7 @@
   {
     "id": 16,
     "title": "Dummy Store",
-    "description": "Dummy Store es un prototipo de venta de productos de una empresa de tecnología (smartphones, laptops, etc).",
+    "description": "Dummy Store es un prototipo de venta de productos tecnológicos.",
     "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
     "img": "assets/projects/dummystore.png",
     "className": "desk-small-img"
@@ -285,7 +294,7 @@
   {
     "id": 18,
     "title": "Vanderbilt",
-    "description": "Vanderbilt Es una página web desarrollada para un negocio de resortes en Ecuador, Quito, esta página web da una clara representación a su empresa y sus productos disponibles.",
+    "description": "Vanderbilt es una página web para un negocio de resortes en Ecuador, Quito.",
     "stack": ["HTML/CSS", "JavaScript", "jQuery"],
     "img": "assets/projects/vanderbilt.png",
     "className": "desk-small-img"

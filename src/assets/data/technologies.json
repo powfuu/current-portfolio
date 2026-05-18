@@ -208,5 +208,30 @@
     "id": 39,
     "tech": "JSON",
     "src": "https://joinup.ec.europa.eu/sites/default/files/styles/wysiwyg_half_width/public/inline-images/json-logo.png?itok=B-9chNHT"
+  },
+  {
+    "id": 50,
+    "tech": "Claude AI",
+    "src": ""
+  },
+  {
+    "id": 51,
+    "tech": "Claude Code CLI",
+    "src": ""
+  },
+  {
+    "id": 52,
+    "tech": "GitHub Copilot",
+    "src": ""
+  },
+  {
+    "id": 55,
+    "tech": "Docker",
+    "src": ""
+  },
+  {
+    "id": 56,
+    "tech": "Vercel",
+    "src": ""
   }
 ]

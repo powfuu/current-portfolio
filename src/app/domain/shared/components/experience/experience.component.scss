@@ -1,22 +1,76 @@
 .experience-container {
-  opacity: 0;
-  animation: slideFromBottom 0.4s forwards;
   padding-top: 35px;
 }
+
 .experience-content {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 90%;
+  position: relative;
 }
+
+.timeline-line {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--green), var(--cyan), transparent);
+  opacity: 0.3;
+  border-radius: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--green), transparent);
+    animation: timelinePulse 3s ease-in-out infinite;
+    border-radius: 2px;
+  }
+}
+
+@keyframes timelinePulse {
+  0% {
+    top: -60px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% + 60px);
+    opacity: 0;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -24px;
+  top: 24px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 10px rgba(100, 255, 219, 0.5);
+  z-index: 2;
+}
+
 .experience {
   display: flex;
   gap: 10px;
   flex-direction: row;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   padding: 20px 25px;
-  transition: 0.3s all ease;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media screen and (min-width: 600px) {
@@ -24,18 +78,28 @@
     .content {
       .title {
         color: var(--green);
+        text-shadow: 0 0 12px rgba(100, 255, 219, 0.3);
       }
     }
-    background: var(--green-tint-opaque);
+    .date-content p {
+      color: var(--white);
+    }
+    .timeline-dot {
+      transform: scale(1.5);
+      box-shadow: 0 0 20px rgba(100, 255, 219, 0.7), 0 0 40px rgba(100, 255, 219, 0.3);
+    }
   }
 
   .experience-content:hover .experience {
-    opacity: 0.35;
+    opacity: 0.3;
+    filter: blur(1px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .experience-content:hover .experience:hover {
     opacity: 1;
-    scale: 1.05;
+    filter: blur(0px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
@@ -49,6 +113,7 @@
     font-weight: 500;
   }
 }
+
 .content {
   display: flex;
   flex-direction: column;
@@ -56,6 +121,7 @@
   .title {
     color: var(--white);
     font-size: var(--fz-xs);
+    transition: 0.3s all;
   }
   .description {
     color: var(--light-slate);
@@ -63,6 +129,7 @@
     white-space: pre-line;
   }
 }
+
 .skills-content {
   display: flex;
   margin-top: 8px;
@@ -76,6 +143,12 @@
     background: var(--green-tint);
     padding: 6px 12px;
     border-radius: 30px;
+    transition: 0.3s all cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      box-shadow: 0 0 12px rgba(100, 255, 219, 0.3);
+      transform: translateY(-1px);
+    }
 
     ng-icon {
       font-size: var(--fz-md);
@@ -92,10 +165,42 @@
   .experience-content {
     margin-top: -30px;
   }
+  .timeline-line {
+    left: -12px;
+    width: 2px;
+  }
+  .timeline-dot {
+    left: -16px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .timeline-line {
+    display: none;
+  }
+  .timeline-dot {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .experience {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .experience:active {
+    background: var(--green-tint-opaque);
+    transform: scale(0.97);
+    .content .title {
+      color: var(--green);
+    }
+  }
+  .skills-content .skill:active {
+    box-shadow: 0 0 12px rgba(100, 255, 219, 0.4);
+    transform: scale(0.95);
   }
 }

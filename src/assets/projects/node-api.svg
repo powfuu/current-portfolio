@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#0f172a" rx="8"/>
+  <!-- API structure -->
+  <text x="140" y="30" font-family="monospace" font-size="12" font-weight="bold" fill="#64ffda">REST API Architecture</text>
+  <!-- Routes -->
+  <rect x="30" y="50" width="150" height="25" fill="#064e3b" rx="4"/>
+  <text x="40" y="67" font-family="monospace" font-size="9" fill="#64ffda">GET  /api/v1/users</text>
+  <rect x="30" y="80" width="150" height="25" fill="#064e3b" rx="4"/>
+  <text x="40" y="97" font-family="monospace" font-size="9" fill="#64ffda">POST /api/v1/auth</text>
+  <rect x="30" y="110" width="150" height="25" fill="#064e3b" rx="4"/>
+  <text x="40" y="127" font-family="monospace" font-size="9" fill="#64ffda">PUT  /api/v1/users/:id</text>
+  <rect x="30" y="140" width="150" height="25" fill="#064e3b" rx="4"/>
+  <text x="40" y="157" font-family="monospace" font-size="9" fill="#64ffda">DEL  /api/v1/users/:id</text>
+  <!-- Middleware stack -->
+  <rect x="220" y="50" width="150" height="115" fill="#1e293b" rx="6" stroke="#475569" stroke-width="1"/>
+  <text x="240" y="70" font-family="monospace" font-size="9" fill="#06b6d4">Middleware Stack</text>
+  <rect x="235" y="80" width="120" height="16" fill="#0f172a" rx="3"/>
+  <text x="245" y="92" font-family="monospace" font-size="8" fill="#94a3b8">→ Auth (JWT)</text>
+  <rect x="235" y="100" width="120" height="16" fill="#0f172a" rx="3"/>
+  <text x="245" y="112" font-family="monospace" font-size="8" fill="#94a3b8">→ Rate Limiter</text>
+  <rect x="235" y="120" width="120" height="16" fill="#0f172a" rx="3"/>
+  <text x="245" y="132" font-family="monospace" font-size="8" fill="#94a3b8">→ Validation</text>
+  <rect x="235" y="140" width="120" height="16" fill="#0f172a" rx="3"/>
+  <text x="245" y="152" font-family="monospace" font-size="8" fill="#94a3b8">→ Error Handler</text>
+  <!-- DB -->
+  <rect x="30" y="185" width="340" height="50" fill="#1e293b" rx="6" stroke="#475569" stroke-width="1"/>
+  <text x="130" y="205" font-family="monospace" font-size="10" fill="#06b6d4">PostgreSQL + Prisma ORM</text>
+  <text x="100" y="225" font-family="monospace" font-size="9" fill="#94a3b8">Users | Sessions | Logs | Permissions</text>
+  <!-- Connections -->
+  <line x1="180" y1="90" x2="220" y2="90" stroke="#475569" stroke-width="1.5" stroke-dasharray="3"/>
+  <line x1="180" y1="120" x2="220" y2="120" stroke="#475569" stroke-width="1.5" stroke-dasharray="3"/>
+</svg>

@@ -21,6 +21,8 @@ export class SidebarComponent implements OnInit {
   projects$!: Observable<string>;
   technologies$!: Observable<string>;
 
+  navItems: { id: string; label$: Observable<string> }[] = [];
+
   constructor(
     private viewportScroller: ViewportScroller,
     private elRef: ElementRef,
@@ -34,6 +36,13 @@ export class SidebarComponent implements OnInit {
     this.experience$ = this.translationService.getExperience();
     this.projects$ = this.translationService.getProjects();
     this.technologies$ = this.translationService.getTech();
+
+    this.navItems = [
+      { id: 'about', label$: this.about$ },
+      { id: 'experience', label$: this.experience$ },
+      { id: 'projects', label$: this.projects$ },
+      { id: 'technologies', label$: this.technologies$ },
+    ];
   }
 
   scrollToSection(sectionId: string) {

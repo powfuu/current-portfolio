@@ -1,11 +1,11 @@
 <div class="technologies-container">
   @if ((technologies$ | async); as tech) {
     @if ((technologiesText$ | async); as technologiesText) {
-      <h2 class="head-title">{{ technologiesText | titlecase }}</h2>
+      <h2 class="head-title" appRevealOnScroll revealDirection="left">{{ technologiesText | titlecase }}</h2>
     }
     <div class="technologies-content">
-      @for (tec of tech; track trackByFn($index, tec)) {
-        <div class="technologies">
+      @for (tec of tech; track tec.tech; let i = $index) {
+        <div class="technologies" appRevealOnScroll revealDirection="scale" [revealDelay]="i * 60">
           @if (getSkillIcon(tec.tech)) {
             <ng-icon [name]="getSkillIcon(tec.tech)" [color]="getSkillColor(tec.tech)" class="tech-icon"></ng-icon>
           } @else {

@@ -5,6 +5,7 @@ import { Technologies } from '../../models/technologies.model';
 import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import { NgIcon } from '@ng-icons/core';
 import { UtilService } from '../../services/util/util.service';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
     selector: 'app-technologies',
@@ -14,7 +15,8 @@ import { UtilService } from '../../services/util/util.service';
     imports: [
     AsyncPipe,
     TitleCasePipe,
-    NgIcon
+    NgIcon,
+    RevealOnScrollDirective
 ],
 })
 export class TechnologiesComponent implements OnInit {

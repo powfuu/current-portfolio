@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 * {
   font-family: "Inter", sans-serif;
   margin: 0px;
@@ -38,9 +37,97 @@ div {
   }
 }
 
-//animations
+// ===== REVEAL ANIMATIONS =====
 
-/* ZoomIn Animation */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-scale {
+  transform: scale(0.9);
+}
+
+.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) scale(1) !important;
+}
+
+// ===== GLOW UTILITIES =====
+
+.glow-text {
+  text-shadow: var(--glow-green);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--green), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ===== GLASSMORPHISM =====
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 0 var(--glass-highlight),
+                0 8px 40px rgba(0, 0, 0, 0.15),
+                var(--glow-green);
+  }
+}
+
+// ===== ANIMATED GRADIENT BORDER =====
+
+.gradient-border {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-border);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotate-gradient 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+// ===== ANIMATIONS =====
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -50,7 +137,6 @@ div {
   }
 }
 
-/* SlideFromLeft Animation */
 @keyframes slideFromLeft {
   from {
     opacity: 0;
@@ -62,7 +148,6 @@ div {
   }
 }
 
-/* SlideFromRight Animation */
 @keyframes slideFromRight {
   from {
     opacity: 0;
@@ -74,7 +159,6 @@ div {
   }
 }
 
-/* SlideFromBottom Animation */
 @keyframes slideFromBottom {
   from {
     opacity: 0;
@@ -86,7 +170,6 @@ div {
   }
 }
 
-/* SlideFromTop Animation */
 @keyframes slideFromTop {
   from {
     opacity: 0;
@@ -98,30 +181,96 @@ div {
   }
 }
 
-//TODO: overflow
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
 
-/* Ocultar el fondo del track de la barra de desplazamiento */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(100, 255, 219, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(100, 255, 219, 0.4), 0 0 40px rgba(100, 255, 219, 0.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: rgba(100, 255, 219, 0.2);
+  }
+  50% {
+    border-color: rgba(100, 255, 219, 0.6);
+  }
+}
+
+// ===== REDUCED MOTION =====
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .revealed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// ===== VIEW TRANSITIONS (Theme Switch) =====
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+// ===== SCROLLBAR =====
+
 ::-webkit-scrollbar {
-  width: 5px; /* Ancho de la barra de desplazamiento vertical */
+  width: 5px;
 }
 
-/* Estilo del track de la barra de desplazamiento (la pista) */
 ::-webkit-scrollbar-track {
-  background: transparent; /* Fondo transparente */
+  background: transparent;
 }
 
-/* Estilo del thumb de la barra de desplazamiento (la barra) */
 ::-webkit-scrollbar-thumb {
-  background-color: grey; /* Color de la barra */
-  border-radius: 10px; /* Opcional: hace que la barra tenga bordes redondeados */
+  background-color: var(--dark-slate);
+  border-radius: 10px;
 }
 
-/* Opcional: cambiar el color de la barra al pasar el mouse sobre ella */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: darkgrey; /* Color de la barra al pasar el mouse */
+  background-color: var(--green);
 }
 
-/* Asegurarse de que el área de esquina sea transparente también */
 ::-webkit-scrollbar-corner {
-  background: transparent; /* Fondo transparente */
+  background: transparent;
 }

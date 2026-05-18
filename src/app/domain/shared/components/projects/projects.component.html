@@ -1,11 +1,13 @@
 <div class="projects-container">
   @if ((projects$ | async); as projects) {
     @if ((projectsText$ | async); as projectsText) {
-      <h2 class="head-title">{{projectsText}}</h2>
+      <h2 class="head-title" appRevealOnScroll revealDirection="left">{{projectsText}}</h2>
     }
     <div class="projects-content">
-      @for (p of projects; track trackByFn($index, p)) {
-        <div (click)="openProjectsModal(p)" class="projects"
+      @for (p of projects; track p.title; let i = $index) {
+        <div (click)="openProjectsModal(p)" class="projects glass-hover gradient-border"
+          appRevealOnScroll [revealDelay]="i * 120"
+          appTiltOnHover [tiltIntensity]="4" [tiltScale]="1.01"
           [ngClass]="{'notselected': isHovered !== p.title}" (mouseenter)="isHovered = p.title"
           (mouseleave)="isHovered = null">
           <div class="img-content">

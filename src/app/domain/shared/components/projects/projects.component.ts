@@ -8,6 +8,8 @@ import { ProjectsModalComponent } from '../projects-modal/projects-modal.compone
 import { NgClass, AsyncPipe } from '@angular/common';
 import { UtilService } from '../../services/util/util.service';
 import { NgIcon } from '@ng-icons/core';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
+import { TiltOnHoverDirective } from '../../directives/tilt-on-hover.directive';
 
 @Component({
     selector: 'app-projects',
@@ -18,7 +20,9 @@ import { NgIcon } from '@ng-icons/core';
     NgClass,
     ProjectsModalComponent,
     AsyncPipe,
-    NgIcon
+    NgIcon,
+    RevealOnScrollDirective,
+    TiltOnHoverDirective
 ],
 })
 export class ProjectsComponent {
@@ -50,7 +54,7 @@ export class ProjectsComponent {
     this.projectSelected = project;
     this.modalService.openProjectsModal();
   }
-  
+
   getSkillIcon(skill: string): string {
     return this.utilService.getIconForSkill(skill);
   }

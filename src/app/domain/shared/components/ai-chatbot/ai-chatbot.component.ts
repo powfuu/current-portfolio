@@ -136,47 +136,50 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
 
     const plainText = text.replace(/<[^>]*>/g, '');
     let i = 0;
-    let htmlIndex = 0;
 
     const interval = setInterval(() => {
-      if (i < plainText.length) {
-        i++;
-        let built = '';
-        let plainCount = 0;
-        let j = 0;
-        while (plainCount < i && j < text.length) {
-          if (text[j] === '<') {
-            const closeIdx = text.indexOf('>', j);
-            built += text.substring(j, closeIdx + 1);
-            j = closeIdx + 1;
-          } else {
-            built += text[j];
-            plainCount++;
-            j++;
+      this.ngZone.run(() => {
+        if (i < plainText.length) {
+          i++;
+          let built = '';
+          let plainCount = 0;
+          let j = 0;
+          while (plainCount < i && j < text.length) {
+            if (text[j] === '<') {
+              const closeIdx = text.indexOf('>', j);
+              built += text.substring(j, closeIdx + 1);
+              j = closeIdx + 1;
+            } else {
+              built += text[j];
+              plainCount++;
+              j++;
+            }
           }
-        }
-        const openTags = built.match(/<b>/g)?.length || 0;
-        const closeTags = built.match(/<\/b>/g)?.length || 0;
-        if (openTags > closeTags) built += '</b>';
+          const openTags = built.match(/<b>/g)?.length || 0;
+          const closeTags = built.match(/<\/b>/g)?.length || 0;
+          if (openTags > closeTags) built += '</b>';
 
-        msg.displayText = built;
-        this.scrollToBottom();
-      } else {
-        msg.displayText = text;
-        msg.isTyping = false;
-        this.isTyping = false;
-        this.loadSuggestions();
-        this.shouldScroll = true;
-        clearInterval(interval);
-        setTimeout(() => { this.scrollToBottom(); }, 150);
-      }
+          msg.displayText = built;
+          this.scrollToBottom();
+        } else {
+          msg.displayText = text;
+          msg.isTyping = false;
+          this.isTyping = false;
+          this.loadSuggestions();
+          this.shouldScroll = true;
+          clearInterval(interval);
+          setTimeout(() => { this.scrollToBottom(); }, 150);
+        }
+      });
     }, 8);
   }
 
   private scrollToBottom(): void {
     if (this.messagesContainer) {
-      const el = this.messagesContainer.nativeElement;
-      el.scrollTop = el.scrollHeight;
+      requestAnimationFrame(() => {
+        const el = this.messagesContainer.nativeElement;
+        el.scrollTop = el.scrollHeight;
+      });
     }
   }
 

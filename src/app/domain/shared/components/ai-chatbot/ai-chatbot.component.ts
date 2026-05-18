@@ -129,7 +129,21 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
     this.shouldScroll = true;
   }
 
+  private isMobile(): boolean {
+    return window.innerWidth < 600;
+  }
+
   private addBotMessageAnimated(text: string, originalQuery: string): void {
+    if (this.isMobile()) {
+      const msg: ChatMessage = { text, isUser: false, displayText: text, isTyping: false, originalQuery };
+      this.messages.push(msg);
+      this.isTyping = false;
+      this.loadSuggestions();
+      this.shouldScroll = true;
+      setTimeout(() => { this.scrollToBottom(); }, 50);
+      return;
+    }
+
     const msg: ChatMessage = { text, isUser: false, displayText: '', isTyping: true, originalQuery };
     this.messages.push(msg);
     this.shouldScroll = true;

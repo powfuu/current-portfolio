@@ -110,12 +110,12 @@
 
 .messages {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -258,8 +258,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 6px 20px 16px;
-  margin-top: 10px;
+  padding: 0 0 12px;
+  flex-shrink: 0;
   animation: suggestionsIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -309,11 +309,16 @@
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
   padding: 14px 20px;
   border-top: 1px solid var(--glass-border);
   background: rgba(0, 0, 0, 0.1);
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
   input {
     flex: 1;
@@ -417,6 +422,7 @@
     flex-wrap: nowrap;
     padding-top: 8px;
     padding-bottom: 12px;
+    flex-shrink: 0;
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
@@ -520,7 +526,7 @@
   .suggestions {
     gap: 8px;
     padding: 6px 14px 12px;
-    margin-top: 6px;
+    flex-shrink: 0;
   }
 
   .messages {
@@ -538,6 +544,10 @@
   .input-area {
     padding: 12px 14px;
     gap: 8px;
+
+    .input-row {
+      gap: 8px;
+    }
 
     input {
       font-size: 12px;
@@ -602,7 +612,7 @@
   .suggestions {
     gap: 6px;
     padding: 6px 10px 10px;
-    margin-top: 4px;
+    flex-shrink: 0;
   }
 
   .messages {
@@ -624,6 +634,10 @@
   .input-area {
     padding: 10px;
     gap: 6px;
+
+    .input-row {
+      gap: 6px;
+    }
 
     input {
       font-size: 11px;

@@ -3,8 +3,8 @@
     <app-sidebar #sidebar></app-sidebar>
   </div>
   <div class="content">
-    <app-ai-chatbot></app-ai-chatbot>
-    <div id="about" class="about-content">
+    <app-ai-chatbot id="about"></app-ai-chatbot>
+    <div class="about-content">
       @if ((aboutContent$ | async); as about) {
         <pre [innerHTML]="about"></pre>
       }

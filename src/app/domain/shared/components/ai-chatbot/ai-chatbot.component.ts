@@ -177,8 +177,10 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
   private scrollToBottom(): void {
     if (this.messagesContainer) {
       requestAnimationFrame(() => {
-        const el = this.messagesContainer.nativeElement;
-        el.scrollTop = el.scrollHeight;
+        requestAnimationFrame(() => {
+          const el = this.messagesContainer.nativeElement;
+          el.scrollTop = el.scrollHeight;
+        });
       });
     }
   }

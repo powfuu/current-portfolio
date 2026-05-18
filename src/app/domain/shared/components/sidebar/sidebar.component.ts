@@ -46,13 +46,13 @@ export class SidebarComponent implements OnInit {
   }
 
   scrollToSection(sectionId: string) {
-    const targetElement = this.elRef.nativeElement.querySelector(
-      '#' + sectionId
-    );
+    if (sectionId === 'about') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const targetElement = document.getElementById(sectionId);
     if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-      });
+      targetElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
 

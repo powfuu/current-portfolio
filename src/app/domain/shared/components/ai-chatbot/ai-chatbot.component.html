@@ -1,0 +1,72 @@
+<div class="chatbot-wrapper">
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <div class="header-left">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+      </div>
+      <div class="header-title">
+        <span class="status-dot"></span>
+        <span>everit.ai</span>
+      </div>
+    </div>
+
+    <div class="chatbot-body">
+      <div class="messages" #messagesContainer>
+        @for (msg of messages; track msg) {
+          <div class="message" [class.user]="msg.isUser" [class.bot]="!msg.isUser">
+            @if (!msg.isUser) {
+              <span class="bot-avatar">E</span>
+            }
+            <div class="message-bubble">
+              @if (msg.isUser) {
+                <span>{{ msg.text }}</span>
+              } @else {
+                <span [innerHTML]="msg.displayText"></span>
+                @if (msg.isTyping) {
+                  <span class="cursor-blink">|</span>
+                }
+              }
+            </div>
+          </div>
+        }
+        @if (isTyping && messages[messages.length - 1].isUser) {
+          <div class="message bot">
+            <span class="bot-avatar">E</span>
+            <div class="message-bubble typing-indicator">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        }
+      </div>
+
+      @if (!isTyping) {
+        <div class="suggestions">
+          @for (q of suggestedQuestions; track q) {
+            <button class="suggestion-chip" (click)="askSuggested(q)">{{ q }}</button>
+          }
+        </div>
+      }
+
+      <div class="input-area">
+        <input
+          #inputField
+          type="text"
+          [(ngModel)]="userInput"
+          [placeholder]="getPlaceholder()"
+          (keydown)="onKeydown($event)"
+          [disabled]="isTyping"
+          autocomplete="off"
+        />
+        <button class="send-btn" (click)="sendMessage()" [disabled]="!userInput.trim() || isTyping">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

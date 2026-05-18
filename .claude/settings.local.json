@@ -5,7 +5,10 @@
       "Bash(rtk npx *)",
       "Bash(rtk curl *)",
       "Bash(rtk grep *)",
-      "Bash(rtk ls *)"
+      "Bash(rtk ls *)",
+      "Bash(rtk find *)",
+      "Bash(rtk tsc *)",
+      "Bash(node *)"
     ]
   }
 }

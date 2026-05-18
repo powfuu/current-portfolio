@@ -7,6 +7,7 @@ import { ProjectsComponent } from '../../shared/components/projects/projects.com
 import { ExperienceComponent } from '../../shared/components/experience/experience.component';
 import { AsyncPipe } from '@angular/common';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { AiChatbotComponent } from '../../shared/components/ai-chatbot/ai-chatbot.component';
 
 @Component({
   selector: 'app-base',
@@ -18,6 +19,7 @@ import { SidebarComponent } from '../../shared/components/sidebar/sidebar.compon
     ExperienceComponent,
     ProjectsComponent,
     TechnologiesComponent,
+    AiChatbotComponent,
     AsyncPipe
 ],
 })

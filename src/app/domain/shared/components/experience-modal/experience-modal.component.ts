@@ -28,12 +28,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       ]),
       trigger('slideUp', [
         transition(':enter', [
-          style({ top: '100%', opacity: 0, transform: 'translate(-50%, -50%)' }),
-          animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({ top: '50%', opacity: 1, transform: 'translate(-50%, -50%)' }))
+          style({ opacity: 0, transform: 'translateY(40px) scale(0.97)' }),
+          animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({ opacity: 1, transform: 'translateY(0) scale(1)' }))
         ]),
         transition(':leave', [
-          style({ transform: 'translate(-50%, -50%)' }),
-          animate('300ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({ top: '100%', opacity: 0, transform: 'translate(-50%, -50%)' }))
+          animate('300ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({ opacity: 0, transform: 'translateY(40px) scale(0.97)' }))
         ])
       ])
     ]

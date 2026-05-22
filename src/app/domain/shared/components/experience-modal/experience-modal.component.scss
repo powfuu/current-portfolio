@@ -8,15 +8,18 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .modal-content {
   width: 40%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: scroll;
+  position: relative;
+  overflow: auto;
+  max-height: 85vh;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -105,13 +108,22 @@
 
 @media screen and (max-width: 1250px) {
   .modal-content {
-    width: 80%;
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    max-height: 88vh;
+    padding: 20px 24px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .modal-content {
-    width: 70%;
-    max-height: 85%;
+    width: 96%;
+    max-height: 90vh;
+    padding: 16px 18px;
   }
 }

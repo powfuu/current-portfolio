@@ -21,6 +21,13 @@ export class ChatbotService {
       },
     },
     {
+      keywords: ['spa', 'single page', 'single page application', 'aplicacion de una sola pagina', 'aplicacion web', 'web application'],
+      response: {
+        es: 'Sí, las <b>SPAs (Single Page Applications)</b> son mi especialidad. Tengo más de 6 años construyendo aplicaciones web de una sola página:<br><br><b>Angular SPAs</b> — Arquitectura modular, lazy loading de rutas, guards de navegación, resolvers<br><b>React SPAs</b> — Hooks, Context, React Router, estado global<br><b>Rendimiento</b> — Code splitting, prefetching, bundle optimization para carga inicial rápida<br><b>SEO & SSR</b> — Angular Universal / Next.js para SPAs con renderizado en servidor cuando es necesario<br><b>State management</b> — NgRx, Redux, signals para gestión de estado compleja<br><b>Routing avanzado</b> — Lazy routes, guards, resolvers, query params, navegación programática<br><br>He construido SPAs empresariales complejas para Mutua Madrileña, plataformas educativas en NORU, y múltiples proyectos personales. Es el paradigma de desarrollo web en el que más me muevo.',
+        en: 'Yes, <b>SPAs (Single Page Applications)</b> are my specialty. I have over 6 years building single page web applications:<br><br><b>Angular SPAs</b> — Modular architecture, route lazy loading, navigation guards, resolvers<br><b>React SPAs</b> — Hooks, Context, React Router, global state<br><b>Performance</b> — Code splitting, prefetching, bundle optimization for fast initial load<br><b>SEO & SSR</b> — Angular Universal / Next.js for SPAs with server-side rendering when needed<br><b>State management</b> — NgRx, Redux, signals for complex state management<br><b>Advanced routing</b> — Lazy routes, guards, resolvers, query params, programmatic navigation<br><br>I\'ve built complex enterprise SPAs for Mutua Madrileña, educational platforms at NORU, and multiple personal projects. It\'s the web development paradigm I work in the most.',
+      },
+    },
+    {
       keywords: ['react', 'next', 'hooks'],
       response: {
         es: 'Sí, tengo experiencia profesional con <b>React</b>. He trabajado con <b>React Hooks</b>, <b>Context API</b>, <b>Styled Components</b>, y <b>Jest</b> para testing. Lo utilicé en proyectos profesionales en <b>NORU</b> para construir plataformas educativas y portales internos. También desarrollo proyectos personales con React para mantenerme actualizado. Aunque <b>Angular es mi especialidad</b>, React es una parte sólida de mi stack y puedo adaptarme rápidamente a cualquier proyecto basado en él.',

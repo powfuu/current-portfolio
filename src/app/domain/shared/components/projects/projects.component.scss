@@ -147,6 +147,62 @@
   margin: 25px 0px;
 }
 
+@media screen and (max-width: 1300px) {
+  .img-content {
+    min-width: 120px;
+    .desk-img-photo {
+      width: 120px;
+      height: 78px;
+    }
+    .desk-img {
+      width: 120px;
+      height: 78px;
+    }
+    .desk-big-img {
+      width: 120px;
+      height: 64px;
+    }
+    .mvl-desk-img {
+      height: 95px;
+      max-width: 100px;
+    }
+    .mvl-desk-img-anchor {
+      height: 95px;
+      max-width: 140px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .img-content {
+    min-width: 100px;
+    .desk-img-photo {
+      width: 100px;
+      height: 65px;
+    }
+    .desk-img {
+      width: 100px;
+      height: 65px;
+    }
+    .desk-big-img {
+      width: 100px;
+      height: 55px;
+    }
+    .mvl-desk-img {
+      height: 80px;
+      max-width: 85px;
+    }
+    .mvl-desk-img-anchor {
+      height: 80px;
+      max-width: 115px;
+    }
+    .logo-img {
+      height: 70px;
+      max-width: 70px;
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .projects {
     flex-direction: column;

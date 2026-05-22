@@ -93,6 +93,8 @@ import {
   simpleSupabase,
   simpleSqlite,
   simpleDatefns,
+  simpleGooglechrome,
+  simplePostcss,
 } from '@ng-icons/simple-icons';
 
 bootstrapApplication(AppComponent, {
@@ -186,6 +188,8 @@ bootstrapApplication(AppComponent, {
         simpleSupabase,
         simpleSqlite,
         simpleDatefns,
+        simpleGooglechrome,
+        simplePostcss,
       })
     ),
   ],

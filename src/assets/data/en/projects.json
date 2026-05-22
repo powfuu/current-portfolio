@@ -18,6 +18,23 @@
     "className": "desk-img-photo"
   },
   {
+    "id": 112,
+    "title": "Jira Claude Coworker — AI Productivity Extension for Jira",
+    "description": "Floating Chrome extension built for developers that transforms any Jira ticket into a structured, ready-to-use prompt for Claude AI. With a single click on any Jira page, it automatically extracts the full ticket context — description, comments, attachments, and acceptance criteria — and generates an optimized prompt based on the issue type. Auto-detection triggers on ticket open with no manual intervention. Full extraction pipeline parses ADF (Atlassian Document Format) to Markdown, paginates comments, and classifies attachments. Generates specialized prompts per type: Bugs (root cause analysis + fix), Stories (implementation + AC), Tasks (plan + execution), Epics (technical breakdown). Images are embedded as base64 in the clipboard HTML so text + images paste together in Claude.ai in a single action. Session persistence via chrome.storage.session restores popup state on reopen. Transparent auth using credentials: 'include' against the Jira REST API — no OAuth, no tokens.",
+    "stack": [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "Tailwind CSS 3",
+      "Lucide React",
+      "Chrome Extension MV3",
+      "Jira REST API v2",
+      "PostCSS"
+    ],
+    "img": "assets/projects/jira-claude-coworker.png",
+    "className": "desk-img-photo"
+  },
+  {
     "id": 109,
     "title": "Serviobra — Corporate Landing Page",
     "description": "Corporate landing page commissioned by a private client in the construction and industry sector. Main goal: digitalize the company's presence and generate commercial leads through a high-impact visual experience. Modern architecture with Next.js 15 App Router and React 19, structured in strategic sections: animated hero with background image, value proposition, services catalog, competitive differentiators, client testimonials, and contact form. Entry and scroll animations managed with Framer Motion 12, achieving smooth transitions that reinforce the premium brand perception. Style system built entirely with Tailwind CSS v4, ensuring fully responsive design for mobile, tablet, and desktop. Global state managed with Zustand 5. Delivered to production via continuous deployment on Vercel.",

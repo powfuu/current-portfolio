@@ -140,7 +140,14 @@ export class UtilService {
       'Chart.js 4': 'simpleChartdotjs',
       'Angular 20': 'simpleAngular',
       'Ionic 8': 'simpleIonic',
-      'Capacitor 7': 'simpleCapacitor'
+      'Capacitor 7': 'simpleCapacitor',
+      'React 18': 'simpleReact',
+      'Vite 6': 'simpleVite',
+      'Tailwind CSS 3': 'simpleTailwindcss',
+      'Lucide React': 'simpleReact',
+      'Chrome Extension MV3': 'simpleGooglechrome',
+      'Jira REST API v2': 'simpleJira',
+      'PostCSS': 'simplePostcss'
     };
 
     return iconMap[skill] || '';
@@ -272,7 +279,14 @@ export class UtilService {
       'Chart.js 4': '#FF6384',
       'Angular 20': '#DD0031',
       'Ionic 8': '#3880FF',
-      'Capacitor 7': '#119EFF'
+      'Capacitor 7': '#119EFF',
+      'React 18': '#61DAFB',
+      'Vite 6': '#646CFF',
+      'Tailwind CSS 3': '#06B6D4',
+      'Lucide React': '#61DAFB',
+      'Chrome Extension MV3': '#4285F4',
+      'Jira REST API v2': '#0052CC',
+      'PostCSS': '#DD3A0A'
     };
     return colorMap[skill] || 'var(--green)';
   }

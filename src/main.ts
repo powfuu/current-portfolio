@@ -86,6 +86,13 @@ import {
   simpleTurborepo,
   simpleCodemirror,
   simpleFontawesome,
+  simpleNextdotjs,
+  simpleTailwindcss,
+  simpleFramer,
+  simpleApple,
+  simpleSupabase,
+  simpleSqlite,
+  simpleDatefns,
 } from '@ng-icons/simple-icons';
 
 bootstrapApplication(AppComponent, {
@@ -172,6 +179,13 @@ bootstrapApplication(AppComponent, {
         simpleTurborepo,
         simpleCodemirror,
         simpleFontawesome,
+        simpleNextdotjs,
+        simpleTailwindcss,
+        simpleFramer,
+        simpleApple,
+        simpleSupabase,
+        simpleSqlite,
+        simpleDatefns,
       })
     ),
   ],

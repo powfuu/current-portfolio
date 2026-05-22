@@ -18,6 +18,41 @@
     "className": "desk-img-photo"
   },
   {
+    "id": 109,
+    "title": "Serviobra — Corporate Landing Page",
+    "description": "Corporate landing page commissioned by a private client in the construction and industry sector. Main goal: digitalize the company's presence and generate commercial leads through a high-impact visual experience. Modern architecture with Next.js 15 App Router and React 19, structured in strategic sections: animated hero with background image, value proposition, services catalog, competitive differentiators, client testimonials, and contact form. Entry and scroll animations managed with Framer Motion 12, achieving smooth transitions that reinforce the premium brand perception. Style system built entirely with Tailwind CSS v4, ensuring fully responsive design for mobile, tablet, and desktop. Global state managed with Zustand 5. Delivered to production via continuous deployment on Vercel.",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "React 19",
+      "Tailwind CSS v4",
+      "Framer Motion",
+      "Zustand",
+      "Vercel"
+    ],
+    "img": "assets/projects/serviobra.png",
+    "className": "desk-img-photo",
+    "url": "https://servi-obra.com/"
+  },
+  {
+    "id": 111,
+    "title": "Lift Builder — Strength Training App",
+    "description": "Cross-platform mobile fitness application focused on strength training. Allows users to create and follow personalized training programs, log sessions, monitor progress, and track body weight. Includes a coaching module that enables trainers to manage and track their clients directly from the app. Developed the full architecture: PostgreSQL schema design with RLS, offline-first system with local SQLite, Supabase integration with query memoization, multi-role coaching module, and build pipeline for iOS and Android.",
+    "stack": [
+      "Angular 20",
+      "Ionic 8",
+      "Capacitor 7",
+      "TypeScript",
+      "Supabase",
+      "SQLite",
+      "Chart.js 4",
+      "date-fns 4",
+      "Karma/Jasmine"
+    ],
+    "img": "assets/projects/lfit-builder.png",
+    "className": "desk-img-photo"
+  },
+  {
     "id": 100,
     "title": "ever-cli — Frontend Scaffolding CLI",
     "description": "Command-line tool to automate component, service, module, and frontend architecture creation. Generates code following established patterns, runs bundle analysis, and applies custom linting. Published on npm with Angular, React support and custom plugins via config.",
@@ -35,22 +70,39 @@
     "className": "desk-img"
   },
   {
-    "id": 101,
-    "title": "Real-Time Analytics Dashboard",
-    "description": "Real-time analytics dashboard featuring interactive charts, WebSocket-powered live data feeds, and an optimized component architecture with lazy loading. Includes dark mode, advanced filters, data export, and an ultra-responsive UX with smooth 60fps animations.",
+    "id": 110,
+    "title": "Weight Progress Tracker — iOS App",
+    "description": "Native iOS application for personal weight tracking, goal management, and progress visualization. Built with Swift 5 and SwiftUI following MVVM architecture. Features include weight logging, custom goals with milestone tracking, interactive progress charts with Swift Charts, push notification reminders, multi-language support, gamification with achievements, and dynamic theme system. Data persisted locally with Core Data; reactive state managed via Combine.",
     "stack": [
-      "Angular 17",
-      "RxJs",
-      "WebSockets",
-      "D3.js",
-      "NgRx Signals",
-      "HTML/SCSS",
-      "TypeScript",
-      "REST API",
-      "Docker"
+      "Swift 5",
+      "SwiftUI",
+      "Core Data",
+      "Swift Charts",
+      "Combine",
+      "UserNotifications",
+      "StoreKit",
+      "iOS 16+"
     ],
-    "img": "assets/projects/realtime-dashboard.svg",
-    "className": "desk-img"
+    "img": "assets/projects/weight-tracker.png",
+    "className": "desk-img-photo"
+  },
+  {
+    "id": 0,
+    "title": "EV Spot Map",
+    "description": "A modern and visually stunning application that displays electric vehicle charging points on a 3D map. It provides detailed information about charging stations, including kW power, connector types, and availability.",
+    "stack": [
+      "Angular Standalone",
+      "Ionic",
+      "Capacitor",
+      "REST API",
+      "Jasmine/Karma",
+      "MapBox",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript"
+    ],
+    "img": "assets/projects/ev-spot-map.png",
+    "className": "mvl-desk-img"
   },
   {
     "id": 103,
@@ -87,20 +139,22 @@
     "className": "desk-img"
   },
   {
-    "id": 104,
-    "title": "Node.js REST API — Auth & Permissions",
-    "description": "Complete backend API with JWT authentication, granular roles and permissions, rate limiting, schema validation, and structured logging. Hexagonal architecture with PostgreSQL + Prisma ORM, Redis caching, E2E tests and auto-generated OpenAPI documentation. Dockerized with CI/CD.",
+    "id": 6,
+    "title": "Luck",
+    "description": "Luck is a platform for creating raffles as content creators, improving public communication and delivering prizes.",
     "stack": [
-      "Node.js/Express",
+      "Angular",
       "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "Redis",
-      "Docker",
-      "Vitest",
-      "CI/CD"
+      "NgRx",
+      "RxJs",
+      "MySQL",
+      "Node.js",
+      "Express.js",
+      "HTML/SCSS",
+      "Jasmine/Karma",
+      "REST API"
     ],
-    "img": "assets/projects/node-api.svg",
+    "img": "assets/projects/luck.png",
     "className": "desk-img"
   },
   {
@@ -121,19 +175,22 @@
     "className": "desk-img"
   },
   {
-    "id": 106,
-    "title": "Web Performance Monitor",
-    "description": "Web performance monitoring tool that analyzes Core Web Vitals (LCP, FID, CLS), bundle size, and loading metrics. Dashboard with metric history, automatic alerts when scores drop, and optimization suggestions with estimated impact.",
+    "id": 10,
+    "title": "inWork",
+    "description": "InWork is a web platform SPA for job searching, where users register as seekers or companies posting offers.",
     "stack": [
-      "Angular Standalone",
-      "TypeScript",
-      "D3.js",
-      "RxJs",
-      "PWA",
-      "Vitest",
-      "Esbuild"
+      "JavaScript",
+      "React",
+      "React Context",
+      "React Hooks",
+      "HTML/CSS",
+      "MySQL",
+      "Node.js",
+      "Express.js",
+      "JWT Auth",
+      "REST API"
     ],
-    "img": "assets/projects/perf-monitor.svg",
+    "img": "assets/projects/inwork.png",
     "className": "desk-img"
   },
   {
@@ -154,18 +211,34 @@
     "className": "desk-img"
   },
   {
-    "id": 0,
-    "title": "EV Spot Map",
-    "description": "A modern and visually stunning application that displays electric vehicle charging points on a 3D map. It provides detailed information about charging stations, including kW power, connector types, and availability.",
-    "stack": ["Angular Standalone", "Ionic", "Capacitor", "REST API", "Jasmine/Karma", "MapBox", "RxJs", "HTML/SCSS", "TypeScript"],
-    "img": "assets/projects/ev-spot-map.png",
-    "className": "mvl-desk-img"
+    "id": 101,
+    "title": "Real-Time Analytics Dashboard",
+    "description": "Real-time analytics dashboard featuring interactive charts, WebSocket-powered live data feeds, and an optimized component architecture with lazy loading. Includes dark mode, advanced filters, data export, and an ultra-responsive UX with smooth 60fps animations.",
+    "stack": [
+      "Angular 17",
+      "RxJs",
+      "WebSockets",
+      "D3.js",
+      "NgRx Signals",
+      "HTML/SCSS",
+      "TypeScript",
+      "REST API",
+      "Docker"
+    ],
+    "img": "assets/projects/realtime-dashboard.svg",
+    "className": "desk-img"
   },
   {
     "id": 1,
     "title": "ngx-ever-components - Angular Library",
     "description": "ngx-ever-components is a modern library of UI components for Angular, designed to enhance application interfaces while simplifying development time.",
-    "stack": ["Angular", "Angular library", "RxJs", "HTML/SCSS", "TypeScript"],
+    "stack": [
+      "Angular",
+      "Angular library",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript"
+    ],
     "img": "assets/projects/ngx-ever-components.png",
     "className": "logo-img",
     "url": "https://www.npmjs.com/package/ngx-ever-components"
@@ -174,7 +247,13 @@
     "id": 2,
     "title": "ngx-ever-components - Documentation",
     "description": "Official documentation for the ngx-ever-components library, with installation guide, usage, and detailed documentation for each component.",
-    "stack": ["Angular", "ngx-ever-components", "RxJs", "HTML/SCSS", "TypeScript"],
+    "stack": [
+      "Angular",
+      "ngx-ever-components",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript"
+    ],
     "img": "assets/projects/ngx-ever-components-docs.png",
     "className": "desk-small-img",
     "url": "https://ngx-ever-components.vercel.app"
@@ -183,7 +262,15 @@
     "id": 3,
     "title": "The front-end guide",
     "description": "A web platform designed to teach everything about front-end development, from basic fundamentals to advanced and senior-level concepts.",
-    "stack": ["Angular", "TypeScript", "RxJs", "NgRx", "HTML/SCSS", "Jasmine/Karma", "Responsive"],
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "Jasmine/Karma",
+      "Responsive"
+    ],
     "img": "assets/projects/guia-frontend.png",
     "className": "mvl-desk-img-anchor"
   },
@@ -191,7 +278,19 @@
     "id": 4,
     "title": "AI Driver",
     "description": "AI Driver is a Hybrid Mobile App for Android/iOS developed with OpenAI's API for driving license theoretical tests.",
-    "stack": ["Angular Standalone", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "REST API", "Ionic", "Jasmine/Karma", "Android/iOS", "Artificial Intelligence"],
+    "stack": [
+      "Angular Standalone",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "REST API",
+      "Ionic",
+      "Jasmine/Karma",
+      "Android/iOS",
+      "Artificial Intelligence"
+    ],
     "img": "assets/projects/aidriver.png",
     "className": "mvl-img"
   },
@@ -199,23 +298,53 @@
     "id": 5,
     "title": "Fasfu Burgers",
     "description": "Fasfu Burgers is a real-time pick-up delivery application created for Fasfu Burgers restaurant.",
-    "stack": ["HTML", "CSS", "JavaScript", "Responsive", "React", "React Hooks", "React Context", "Jest", "SCSS"],
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive",
+      "React",
+      "React Hooks",
+      "React Context",
+      "Jest",
+      "SCSS"
+    ],
     "img": "assets/projects/fasfu.png",
     "className": "desk-img"
   },
   {
-    "id": 6,
-    "title": "Luck",
-    "description": "Luck is a platform for creating raffles as content creators, improving public communication and delivering prizes.",
-    "stack": ["Angular", "TypeScript", "NgRx", "RxJs", "MySQL", "Node.js", "Express.js", "HTML/SCSS", "Jasmine/Karma", "REST API"],
-    "img": "assets/projects/luck.png",
+    "id": 104,
+    "title": "Node.js REST API — Auth & Permissions",
+    "description": "Complete backend API with JWT authentication, granular roles and permissions, rate limiting, schema validation, and structured logging. Hexagonal architecture with PostgreSQL + Prisma ORM, Redis caching, E2E tests and auto-generated OpenAPI documentation. Dockerized with CI/CD.",
+    "stack": [
+      "Node.js/Express",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Docker",
+      "Vitest",
+      "CI/CD"
+    ],
+    "img": "assets/projects/node-api.svg",
     "className": "desk-img"
   },
   {
     "id": 7,
     "title": "AI Decisions",
     "description": "AI Decisions is a Hybrid Mobile App for Android/iOS with OpenAI's API that evaluates user decisions and provides optimal choices.",
-    "stack": ["Angular", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "REST API", "Ionic", "Android/iOS", "Artificial Intelligence"],
+    "stack": [
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "REST API",
+      "Ionic",
+      "Android/iOS",
+      "Artificial Intelligence"
+    ],
     "img": "assets/projects/aidecisions.png",
     "className": "mvl-img"
   },
@@ -223,7 +352,16 @@
     "id": 8,
     "title": "AI StoryBooks",
     "description": "AI StoryBooks is a Web Application with OpenAI API that creates AI-generated stories from user descriptions.",
-    "stack": ["Angular", "Angular Material", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "REST API", "Artificial Intelligence"],
+    "stack": [
+      "Angular",
+      "Angular Material",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "REST API",
+      "Artificial Intelligence"
+    ],
     "img": "assets/projects/ai-storybooks.png",
     "className": "desk-small-img"
   },
@@ -231,23 +369,53 @@
     "id": 9,
     "title": "AI Chat - English/Spanish Learning",
     "description": "AI Chat is a Hybrid Mobile App for Android/iOS with OpenAI's API for learning English through AI conversations with real-time correction.",
-    "stack": ["Angular", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "REST API", "Ionic", "Android/iOS", "Artificial Intelligence"],
+    "stack": [
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "REST API",
+      "Ionic",
+      "Android/iOS",
+      "Artificial Intelligence"
+    ],
     "img": "assets/projects/aichat.png",
     "className": "mvl-img"
   },
   {
-    "id": 10,
-    "title": "inWork",
-    "description": "InWork is a web platform SPA for job searching, where users register as seekers or companies posting offers.",
-    "stack": ["JavaScript", "React", "React Context", "React Hooks", "HTML/CSS", "MySQL", "Node.js", "Express.js", "JWT Auth", "REST API"],
-    "img": "assets/projects/inwork.png",
+    "id": 106,
+    "title": "Web Performance Monitor",
+    "description": "Web performance monitoring tool that analyzes Core Web Vitals (LCP, FID, CLS), bundle size, and loading metrics. Dashboard with metric history, automatic alerts when scores drop, and optimization suggestions with estimated impact.",
+    "stack": [
+      "Angular Standalone",
+      "TypeScript",
+      "D3.js",
+      "RxJs",
+      "PWA",
+      "Vitest",
+      "Esbuild"
+    ],
+    "img": "assets/projects/perf-monitor.svg",
     "className": "desk-img"
   },
   {
     "id": 11,
     "title": "AI Calories",
     "description": "AI Calories is a Hybrid Mobile App for Android/iOS with OpenAI API for managing calorie intake with AI assistance.",
-    "stack": ["Angular", "RxJs", "NgRx", "HTML/SCSS", "TypeScript", "OpenAI API", "REST API", "Ionic", "Android/iOS", "Artificial Intelligence"],
+    "stack": [
+      "Angular",
+      "RxJs",
+      "NgRx",
+      "HTML/SCSS",
+      "TypeScript",
+      "OpenAI API",
+      "REST API",
+      "Ionic",
+      "Android/iOS",
+      "Artificial Intelligence"
+    ],
     "img": "assets/projects/aicalories.png",
     "className": "mvl-img"
   },
@@ -255,7 +423,13 @@
     "id": 12,
     "title": "Bash Routing",
     "description": "Bash Routing is a creative Web SPA controlled entirely through a web-based terminal with commands.",
-    "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "HTML/SCSS",
+      "Responsive",
+      "Bootstrap"
+    ],
     "img": "assets/projects/bash_routing.png",
     "className": "desk-img"
   },
@@ -263,7 +437,15 @@
     "id": 13,
     "title": "Quick Weather",
     "description": "Quick Weather is a Hybrid Mobile App for Android/iOS showing current temperature and 6-day forecast.",
-    "stack": ["Angular Standalone", "RxJs", "HTML/SCSS", "TypeScript", "REST API", "Ionic", "Android/iOS"],
+    "stack": [
+      "Angular Standalone",
+      "RxJs",
+      "HTML/SCSS",
+      "TypeScript",
+      "REST API",
+      "Ionic",
+      "Android/iOS"
+    ],
     "img": "assets/projects/quickweather.png",
     "className": "mvl-img"
   },
@@ -271,7 +453,11 @@
     "id": 14,
     "title": "EVERCODE",
     "description": "EVERCODE is a landing page presenting a technology solutions company.",
-    "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
+    "stack": [
+      "HTML/CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "img": "assets/projects/evercode.png",
     "className": "desk-big-img"
   },
@@ -279,7 +465,11 @@
     "id": 15,
     "title": "EVERCODE Services",
     "description": "EVERCODE Services is a landing page for EVERCODE's technology services.",
-    "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
+    "stack": [
+      "HTML/CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "img": "assets/projects/evercode_services.png",
     "className": "desk-big-img"
   },
@@ -287,7 +477,13 @@
     "id": 16,
     "title": "Dummy Store",
     "description": "Dummy Store is a product sales prototype for a technology company.",
-    "stack": ["Angular", "TypeScript", "HTML/SCSS", "Responsive", "Bootstrap"],
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "HTML/SCSS",
+      "Responsive",
+      "Bootstrap"
+    ],
     "img": "assets/projects/dummystore.png",
     "className": "desk-small-img"
   },
@@ -295,7 +491,11 @@
     "id": 17,
     "title": "Besign Invest",
     "description": "Besign Invest is a creative landing template.",
-    "stack": ["HTML/CSS", "JavaScript", "Bootstrap"],
+    "stack": [
+      "HTML/CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "img": "assets/projects/besigninvest.png",
     "className": "desk-big-img"
   },
@@ -303,7 +503,11 @@
     "id": 18,
     "title": "Vanderbilt",
     "description": "Vanderbilt is a website for a springs business in Quito, Ecuador.",
-    "stack": ["HTML/CSS", "JavaScript", "jQuery"],
+    "stack": [
+      "HTML/CSS",
+      "JavaScript",
+      "jQuery"
+    ],
     "img": "assets/projects/vanderbilt.png",
     "className": "desk-small-img"
   }

@@ -32,10 +32,10 @@ export class RevealOnScrollDirective implements OnInit, OnDestroy {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px 0px 0px' }
+      { threshold: 0, rootMargin: '0px 0px 0px 0px' }
     );
 
-    this.observer.observe(element);
+    setTimeout(() => this.observer.observe(element), 100);
   }
 
   ngOnDestroy(): void {

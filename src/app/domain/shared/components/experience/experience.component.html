@@ -4,7 +4,7 @@
       <div class="timeline-line"></div>
       @for (exp of experience; track exp; let i = $index) {
         <div (click)="openExperienceModal(exp)" class="experience glass-hover gradient-border"
-          appRevealOnScroll [revealDelay]="i * 100"
+          appRevealOnScroll revealDirection="up" [revealDelay]="i * 80"
           appTiltOnHover [tiltIntensity]="5" [tiltScale]="1.01"
           [ngClass]="{'notselected': isHovered !== exp.title}" (mouseenter)="isHovered = exp.title"
           (mouseleave)="isHovered = null">

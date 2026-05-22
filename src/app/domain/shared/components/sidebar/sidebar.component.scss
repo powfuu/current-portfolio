@@ -488,10 +488,34 @@ a .end-ring {
     height: max-content;
     margin-left: 40px;
     align-items: flex-start;
-    margin-bottom: -80px;
+    margin-bottom: 0px;
   }
   main {
-    display: none;
+    display: block;
+    margin: 20px 0 0 0;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px 0;
+      min-width: unset;
+    }
+
+    ul li {
+      height: auto;
+      margin-bottom: 0;
+      padding: 6px 14px 6px 0;
+    }
+
+    .selector {
+      display: none;
+    }
+
+    ul li a {
+      font-size: var(--fz-xxs);
+      color: var(--slate);
+    }
   }
   header {
     .profile-img-wrapper {
@@ -510,6 +534,7 @@ a .end-ring {
   }
   footer {
     margin-top: 25px;
+    margin-bottom: 40px;
     align-self: flex-start;
     margin-left: 0px;
     z-index: 999;

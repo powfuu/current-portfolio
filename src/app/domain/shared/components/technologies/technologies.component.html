@@ -5,7 +5,7 @@
     }
     <div class="technologies-content">
       @for (tec of tech; track tec.tech; let i = $index) {
-        <div class="technologies" appRevealOnScroll revealDirection="scale" [revealDelay]="i * 60">
+        <div class="technologies" appRevealOnScroll revealDirection="scale" [revealDelay]="i * 20">
           @if (getSkillIcon(tec.tech)) {
             <ng-icon [name]="getSkillIcon(tec.tech)" [color]="getSkillColor(tec.tech)" class="tech-icon"></ng-icon>
           } @else {

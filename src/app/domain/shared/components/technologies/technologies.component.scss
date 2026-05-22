@@ -65,6 +65,7 @@ img {
   max-width: 110px;
   border-radius: var(--border-radius);
   transition: 0.4s all cubic-bezier(0.16, 1, 0.3, 1);
+  object-fit: contain;
 }
 
 .tech-icon {
@@ -123,6 +124,7 @@ img {
   img {
     height: 50px;
     max-width: 90px;
+    object-fit: contain;
   }
   .tech-icon {
     font-size: 40px;
@@ -143,6 +145,7 @@ img {
   img {
     height: 45px;
     max-width: 75px;
+    object-fit: contain;
   }
   .tech-icon {
     font-size: 38px;

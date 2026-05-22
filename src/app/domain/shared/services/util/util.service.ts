@@ -109,7 +109,14 @@ export class UtilService {
       'npm': 'simpleNpm',
       'Bash/Shell': 'simpleGnubash',
       'Chromatic': 'simpleChromatic',
-      'Turborepo': 'simpleTurborepo'
+      'Turborepo': 'simpleTurborepo',
+      'Angular 19': 'simpleAngular',
+      'TypeScript 5.7': 'simpleTypescript',
+      'CodeMirror 6': 'simpleCodemirror',
+      'JSZip': 'simpleJavascript',
+      'Reactive Forms': 'simpleAngular',
+      'Font Awesome 6': 'simpleFontawesome',
+      'Karma/Jasmine': 'simpleJasmine'
     };
 
     return iconMap[skill] || '';
@@ -210,7 +217,14 @@ export class UtilService {
       'npm': '#CB3837',
       'Bash/Shell': '#4EAA25',
       'Chromatic': '#FC521F',
-      'Turborepo': '#EF4444'
+      'Turborepo': '#EF4444',
+      'Angular 19': '#DD0031',
+      'TypeScript 5.7': '#3178C6',
+      'CodeMirror 6': '#D30707',
+      'JSZip': '#F7DF1E',
+      'Reactive Forms': '#DD0031',
+      'Font Awesome 6': '#528DD3',
+      'Karma/Jasmine': '#8A4182'
     };
     return colorMap[skill] || 'var(--green)';
   }

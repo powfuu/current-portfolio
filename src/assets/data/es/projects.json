@@ -1,5 +1,23 @@
 [
   {
+    "id": 108,
+    "title": "Angular Initializr — Herramienta de Scaffolding Web para Angular",
+    "description": "SPA que replica y extiende la experiencia de Spring Initializr para el ecosistema Angular. Genera proyectos Angular (v14–v21) completamente configurados con package.json, angular.json, tsconfig y estructura de carpetas lista para producción. Soporta 10 features opcionales: standalone components, routing, SSR, NgRx Store + Effects, Angular Material, HTTP interceptors, ESLint + Prettier, Font Awesome, environments y Cypress e2e. Resuelve automáticamente compatibilidades de versiones entre Angular, TypeScript, zone.js, Jasmine/Karma y dependencias de terceros. Editor de código embebido (CodeMirror 6) con syntax highlighting para TS, HTML Angular, SCSS, JSON y Markdown con temas light/dark. Empaqueta y descarga como .zip directamente en el navegador usando JSZip — 100% client-side, sin backend.",
+    "stack": [
+      "Angular 19",
+      "TypeScript 5.7",
+      "Angular Material",
+      "CodeMirror 6",
+      "JSZip",
+      "Reactive Forms",
+      "SCSS",
+      "Font Awesome 6",
+      "Karma/Jasmine"
+    ],
+    "img": "assets/projects/angular-initializr.jpeg",
+    "className": "desk-img-photo"
+  },
+  {
     "id": 100,
     "title": "ever-cli — Frontend Scaffolding CLI",
     "description": "Herramienta CLI de línea de comandos para automatizar la creación de componentes, servicios, módulos y arquitecturas frontend. Genera código con patrones establecidos, ejecuta análisis de bundle, y aplica linting personalizado. Publicado en npm con soporte para Angular, React y configuraciones custom via plugins.",

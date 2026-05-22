@@ -84,6 +84,8 @@ import {
   simpleGnubash,
   simpleChromatic,
   simpleTurborepo,
+  simpleCodemirror,
+  simpleFontawesome,
 } from '@ng-icons/simple-icons';
 
 bootstrapApplication(AppComponent, {
@@ -168,6 +170,8 @@ bootstrapApplication(AppComponent, {
         simpleGnubash,
         simpleChromatic,
         simpleTurborepo,
+        simpleCodemirror,
+        simpleFontawesome,
       })
     ),
   ],

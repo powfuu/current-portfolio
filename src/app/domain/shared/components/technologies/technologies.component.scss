@@ -131,15 +131,17 @@ img {
   }
   .technologies {
     animation: float 5s ease-in-out infinite;
-    width: 100px;
+    width: 110px;
     padding: 20px 0;
-    height: 60px;
+    height: auto;
+    min-height: 80px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .technologies {
-    height: 40px;
+    height: auto;
+    min-height: 70px;
     width: 100px;
   }
   img {

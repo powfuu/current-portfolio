@@ -13,7 +13,6 @@
   flex-direction: column;
   min-width: 40%;
   padding-left: 30px;
-  overflow: hidden;
 }
 
 .content {
@@ -37,19 +36,7 @@
 }
 
 
-@media screen and (max-width: 999px) {
-  .content {
-    width: 60%;
-  }
-  .about-content {
-    width: 95%;
-  }
-  .sidebar {
-    padding-left: 0px;
-    padding-right: 40px;
-  }
-}
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1000px) {
   .base-container {
     flex-direction: column;
   }

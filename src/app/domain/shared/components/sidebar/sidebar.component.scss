@@ -5,7 +5,6 @@
   flex-direction: column;
   height: calc(100vh - 80px);
   overflow-y: auto;
-  overflow-x: clip;
   scrollbar-width: none;
   margin-right: 60px;
   margin-left: 60px;
@@ -485,7 +484,7 @@ a .end-ring {
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1000px) {
   .logo {
     position: relative;
     margin-top: -77px;
@@ -500,6 +499,7 @@ a .end-ring {
     margin-left: 40px;
     align-items: flex-start;
     margin-bottom: 0px;
+    overflow: visible;
   }
   main {
     display: block;

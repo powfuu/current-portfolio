@@ -29,7 +29,7 @@ import { TranslationService } from '../../services/translation/translation.servi
            (mousedown)="onTrackMouseDown($event)"
            (touchstart)="onTrackTouchStart($event)">
         <div class="fill" [class.no-transition]="isDragging" [style.height.%]="progress"></div>
-        <div class="thumb" [class.no-transition]="isDragging" [style.top.%]="progress"
+        <div class="thumb" [class.no-transition]="isDragging" [class.is-dragging]="isDragging" [style.top.%]="progress"
              (mousedown)="onThumbMouseDown($event)"
              (touchstart)="onThumbTouchStart($event)">
           <div class="thumb-dot"></div>
@@ -80,26 +80,29 @@ import { TranslationService } from '../../services/translation/translation.servi
       border-radius: 10px;
       background: linear-gradient(180deg, var(--green), var(--cyan));
       box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.5);
-      transition: height 0.12s linear;
       min-height: 4px;
+      will-change: height;
     }
 
     .thumb {
       position: absolute;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: top 0.12s linear;
       cursor: grab;
       touch-action: none;
       padding: 8px;
+      will-change: top;
     }
 
     .thumb:active {
       cursor: grabbing;
     }
 
-    .thumb.no-transition,
     .fill.no-transition {
+      transition: none !important;
+    }
+
+    .thumb.no-transition {
       transition: none !important;
     }
 
@@ -111,6 +114,16 @@ import { TranslationService } from '../../services/translation/translation.servi
       box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.9),
                   0 0 16px rgba(var(--primary-rgb), 0.4);
       animation: thumb-pulse 2s ease-in-out infinite;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.25s ease;
+    }
+
+    .thumb.is-dragging .thumb-dot {
+      transform: scale(1.9);
+      box-shadow: 0 0 14px rgba(var(--primary-rgb), 1),
+                  0 0 28px rgba(var(--primary-rgb), 0.6),
+                  0 0 40px rgba(var(--primary-rgb), 0.3);
+      animation: none;
     }
 
     @keyframes thumb-pulse {
@@ -131,6 +144,13 @@ import { TranslationService } from '../../services/translation/translation.servi
       background: var(--important);
       box-shadow: 0 0 8px rgba(13, 148, 136, 0.9), 0 0 16px rgba(13, 148, 136, 0.4);
       animation: thumb-pulse-light 2s ease-in-out infinite;
+    }
+
+    :host-context(.light) .thumb.is-dragging .thumb-dot {
+      box-shadow: 0 0 14px rgba(13, 148, 136, 1),
+                  0 0 28px rgba(13, 148, 136, 0.6),
+                  0 0 40px rgba(13, 148, 136, 0.3);
+      animation: none;
     }
 
     @keyframes thumb-pulse-light {
@@ -228,6 +248,7 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
   private activeSection = '';
   private labelMap: Record<string, string> = {};
   private subs = new Subscription();
+  private skipScrollEvents = 0;
 
   constructor(private ngZone: NgZone) {}
 
@@ -249,6 +270,7 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
     this.ngZone.runOutsideAngular(() => {
       this.onScroll = () => {
         if (this.isDragging) return;
+        if (this.skipScrollEvents > 0) { this.skipScrollEvents--; return; }
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const p = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
@@ -326,11 +348,14 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
       return { id, top: absTop };
     });
 
+    let lastTouchPct = 0;
+
     this.onTouchMove = (e: TouchEvent) => {
       e.preventDefault();
       const touch = e.touches[0];
       const rect = this.trackRef.nativeElement.getBoundingClientRect();
       const pct = Math.min(1, Math.max(0, (touch.clientY - rect.top) / rect.height));
+      lastTouchPct = pct;
       this.scrollToPercent(pct);
 
       const targetScrollY = pct * docHeight;
@@ -349,9 +374,16 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
     };
 
     this.onTouchEnd = () => {
-      this.isDragging = false;
       document.removeEventListener('touchmove', this.onTouchMove);
       document.removeEventListener('touchend', this.onTouchEnd);
+      const finalProgress = lastTouchPct * 100;
+      this.skipScrollEvents = 3;
+      this.ngZone.run(() => {
+        this.progress = finalProgress;
+        this.progressInt = Math.round(finalProgress);
+        this.isDragging = false;
+        this.cdr.markForCheck();
+      });
     };
 
     document.addEventListener('touchmove', this.onTouchMove, { passive: false });
@@ -372,9 +404,12 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
       return { id, top: absTop };
     });
 
+    let lastDragPct = 0;
+
     this.onMouseMove = (e: MouseEvent) => {
       const rect = this.trackRef.nativeElement.getBoundingClientRect();
       const pct = Math.min(1, Math.max(0, (e.clientY - rect.top) / rect.height));
+      lastDragPct = pct;
       this.scrollToPercent(pct);
 
       const targetScrollY = pct * docHeight;
@@ -393,9 +428,16 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
     };
 
     this.onMouseUp = () => {
-      this.isDragging = false;
       document.removeEventListener('mousemove', this.onMouseMove);
       document.removeEventListener('mouseup', this.onMouseUp);
+      const finalProgress = lastDragPct * 100;
+      this.skipScrollEvents = 3;
+      this.ngZone.run(() => {
+        this.progress = finalProgress;
+        this.progressInt = Math.round(finalProgress);
+        this.isDragging = false;
+        this.cdr.markForCheck();
+      });
     };
 
     document.addEventListener('mousemove', this.onMouseMove);

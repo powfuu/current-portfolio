@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { TranslationService } from '../../shared/services/translation/translation.service';
 import { Observable } from 'rxjs';
 import { TechnologiesComponent } from '../../shared/components/technologies/technologies.component';
@@ -8,8 +7,6 @@ import { ExperienceComponent } from '../../shared/components/experience/experien
 import { AsyncPipe } from '@angular/common';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 import { AiChatbotComponent } from '../../shared/components/ai-chatbot/ai-chatbot.component';
-import { ScrollIndicatorComponent } from '../../shared/components/scroll-indicator/scroll-indicator.component';
-
 @Component({
   selector: 'app-base',
   templateUrl: './base.component.html',
@@ -21,17 +18,13 @@ import { ScrollIndicatorComponent } from '../../shared/components/scroll-indicat
     ProjectsComponent,
     TechnologiesComponent,
     AiChatbotComponent,
-    ScrollIndicatorComponent,
     AsyncPipe
 ],
 })
 export class BaseComponent implements OnInit {
   aboutContent$!: Observable<string>;
 
-  constructor(
-    private utilService: UtilService,
-    private translationService: TranslationService
-  ) {}
+  constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
     this.aboutContent$ = this.translationService.getAbout();

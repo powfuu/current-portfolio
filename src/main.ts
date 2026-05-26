@@ -16,6 +16,7 @@ import {
   ionPhonePortrait,
   ionConstruct,
   ionSave,
+  ionGlobeOutline,
 } from '@ng-icons/ionicons';
 import {
   simpleAngular,
@@ -153,6 +154,7 @@ bootstrapApplication(AppComponent, {
         simpleGoogle,
         ionPhonePortrait,
         ionConstruct,
+        ionGlobeOutline,
         simpleScrollreveal,
         simpleAtlassian,
         simpleClaude,

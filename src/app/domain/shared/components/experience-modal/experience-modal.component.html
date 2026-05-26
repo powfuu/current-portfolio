@@ -2,11 +2,34 @@
   <div class="modal-background" (click)="closeModal()" @fadeInOut>
     <div class="modal-content" (click)="$event.stopPropagation()" @slideUp>
       <div class="header">
-        <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
-        <h1>{{experience.title}}</h1>
+        <div class="header-top">
+          <div class="header-title-row">
+            <div class="window-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <h1>{{experience.title}}</h1>
+          </div>
+          <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+        </div>
       </div>
       <h3>{{experience.date}}</h3>
       <p>{{experience.description}}</p>
+      @if (experience.links?.length) {
+        <div class="links-content">
+          @for (link of experience.links; track link.url) {
+            <a class="link-btn" [href]="link.url" target="_blank" rel="noopener noreferrer">
+              @if (link.iconUrl) {
+                <img [src]="link.iconUrl" [alt]="link.label" class="link-icon" />
+              } @else {
+                <ng-icon name="ionGlobeOutline"></ng-icon>
+              }
+              {{ link.label }}
+            </a>
+          }
+        </div>
+      }
       <div class="skills-content">
         @for (skill of experience.skills; track trackByFn($index, skill)) {
           <div class="skill">

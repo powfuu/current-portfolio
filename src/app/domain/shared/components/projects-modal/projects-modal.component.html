@@ -2,13 +2,22 @@
   <div class="modal-background" (click)="closeModal()" @fadeInOut></div>
   <div class="modal-content" (click)="$event.stopPropagation()" @slideInOut>
     <div [ngClass]="{'header': project.url, 'header-with-url': !project.url}">
-      <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+      <div class="header-top">
+        <div class="header-title-row">
+          <div class="window-dots">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <h1>{{project.title}}</h1>
+        </div>
+        <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+      </div>
       @if (project.url) {
         <a target="_blank" [href]="project.url">
           <p class="visitar">Visitar proyecto</p>
         </a>
       }
-      <h1>{{project.title}}</h1>
     </div>
     <h1 [class]="project.url ? 'project-title-mvl' : 'project-title-mvl cannot_define'">
     {{project.title}}</h1>

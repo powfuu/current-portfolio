@@ -31,7 +31,11 @@
       "SOLID",
       "iOS/Swift"
     ],
-    "date": "DICIEMBRE 2022, PRESENT"
+    "date": "DICIEMBRE 2022, PRESENT",
+    "links": [
+      { "label": "Acerca de la empresa", "url": "https://profile.es/en/", "iconUrl": "https://profile.es/wp-content/media/cropped-favicon-32x32.png" },
+      { "label": "Acerca del cliente", "url": "https://www.mutua.es/", "iconUrl": "https://www.mutua.es/digital/recursos/img/favicon.ico" }
+    ]
   },
   {
     "title": "Frontend Developer ― NORU, Quito",

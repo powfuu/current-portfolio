@@ -8,6 +8,7 @@ import { ExperienceComponent } from '../../shared/components/experience/experien
 import { AsyncPipe } from '@angular/common';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 import { AiChatbotComponent } from '../../shared/components/ai-chatbot/ai-chatbot.component';
+import { ScrollIndicatorComponent } from '../../shared/components/scroll-indicator/scroll-indicator.component';
 
 @Component({
   selector: 'app-base',
@@ -20,12 +21,12 @@ import { AiChatbotComponent } from '../../shared/components/ai-chatbot/ai-chatbo
     ProjectsComponent,
     TechnologiesComponent,
     AiChatbotComponent,
+    ScrollIndicatorComponent,
     AsyncPipe
 ],
 })
 export class BaseComponent implements OnInit {
   aboutContent$!: Observable<string>;
-  skeleton: number[] = [0, 1, 2];
 
   constructor(
     private utilService: UtilService,

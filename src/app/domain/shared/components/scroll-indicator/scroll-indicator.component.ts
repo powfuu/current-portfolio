@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   OnDestroy,
   AfterViewInit,
   NgZone,
@@ -8,19 +7,27 @@ import {
   PLATFORM_ID,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  OnInit,
+  ElementRef,
+  ViewChild,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgClass } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { TranslationService } from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-scroll-indicator',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="scroll-indicator" [class.visible]="progress > 1" aria-hidden="true">
-      <div class="track">
-        <div class="fill" [style.height.%]="progress"></div>
-        <div class="thumb" [style.top.%]="progress">
+    <div class="scroll-indicator" [class.visible]="progress > 1 || isDragging" aria-hidden="true">
+      <div class="section-toast" [class.show]="isDragging" [style.top.%]="progress">
+        <span class="toast-label">{{ toastLabel }}</span>
+      </div>
+      <div class="track" #track (mousedown)="onTrackMouseDown($event)">
+        <div class="fill" [class.no-transition]="isDragging" [style.height.%]="progress"></div>
+        <div class="thumb" [class.no-transition]="isDragging" [style.top.%]="progress" (mousedown)="onThumbMouseDown($event)">
           <div class="thumb-dot"></div>
         </div>
       </div>
@@ -47,6 +54,7 @@ import { isPlatformBrowser } from '@angular/common';
 
     .scroll-indicator.visible {
       opacity: 1;
+      pointer-events: all;
     }
 
     .track {
@@ -56,6 +64,7 @@ import { isPlatformBrowser } from '@angular/common';
       border-radius: 10px;
       background: rgba(var(--primary-rgb), 0.08);
       overflow: visible;
+      cursor: pointer;
     }
 
     .fill {
@@ -75,6 +84,16 @@ import { isPlatformBrowser } from '@angular/common';
       left: 50%;
       transform: translate(-50%, -50%);
       transition: top 0.12s linear;
+      cursor: grab;
+    }
+
+    .thumb:active {
+      cursor: grabbing;
+    }
+
+    .thumb.no-transition,
+    .fill.no-transition {
+      transition: none !important;
     }
 
     .thumb-dot {
@@ -92,25 +111,6 @@ import { isPlatformBrowser } from '@angular/common';
       50% { box-shadow: 0 0 12px rgba(var(--primary-rgb), 1), 0 0 24px rgba(var(--primary-rgb), 0.6); transform: scale(1.2); }
     }
 
-    .percent-label {
-      position: absolute;
-      left: 14px;
-      transform: translateY(-50%);
-      transition: top 0.12s linear;
-      font-size: 9px;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-      opacity: 0.8;
-      text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.5);
-    }
-
-    .pct {
-      font-size: 7px;
-      opacity: 0.7;
-    }
-
     :host-context(.light) .track {
       background: rgba(13, 148, 136, 0.1);
     }
@@ -123,9 +123,6 @@ import { isPlatformBrowser } from '@angular/common';
     :host-context(.light) .thumb-dot {
       background: var(--important);
       box-shadow: 0 0 8px rgba(13, 148, 136, 0.9), 0 0 16px rgba(13, 148, 136, 0.4);
-    }
-
-    :host-context(.light) .thumb-dot {
       animation: thumb-pulse-light 2s ease-in-out infinite;
     }
 
@@ -134,9 +131,46 @@ import { isPlatformBrowser } from '@angular/common';
       50% { box-shadow: 0 0 12px rgba(13, 148, 136, 1), 0 0 24px rgba(13, 148, 136, 0.6); transform: scale(1.2); }
     }
 
-    :host-context(.light) .percent-label {
+    /* ---- Section Toast ---- */
+    .section-toast {
+      position: absolute;
+      right: calc(100% + 12px);
+      transform: translateY(-50%) translateX(8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .section-toast.show {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .toast-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(10, 25, 47, 0.8);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-right: 2px solid var(--green);
+      padding: 5px 10px;
+      border-radius: 4px 0 0 4px;
+      backdrop-filter: blur(8px);
+      text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    :host-context(.light) .toast-label {
       color: var(--important);
-      text-shadow: 0 0 8px rgba(13, 148, 136, 0.5);
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(13, 148, 136, 0.25);
+      border-right-color: var(--important);
+      text-shadow: none;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 500px) {
@@ -146,35 +180,65 @@ import { isPlatformBrowser } from '@angular/common';
       .track {
         height: 80px;
       }
-      .percent-label {
-        display: none;
-      }
     }
   `],
 })
 export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('track') trackRef!: ElementRef<HTMLElement>;
+
   progress = 0;
   progressInt = 0;
+  toastLabel = '';
+  isDragging = false;
 
   private platformId = inject(PLATFORM_ID);
   private cdr = inject(ChangeDetectorRef);
+  private translationService = inject(TranslationService);
   private onScroll!: () => void;
+  private onMouseMove!: (e: MouseEvent) => void;
+  private onMouseUp!: () => void;
+  private activeSection = '';
+  private labelMap: Record<string, string> = {};
+  private subs = new Subscription();
 
   constructor(private ngZone: NgZone) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const streams: Record<string, any> = {
+      about: this.translationService.getAboutSideBar(),
+      experience: this.translationService.getExperience(),
+      projects: this.translationService.getProjects(),
+      technologies: this.translationService.getTech(),
+    };
+    for (const [id, obs] of Object.entries(streams)) {
+      this.subs.add(obs.subscribe((label: string) => { this.labelMap[id] = label; }));
+    }
+  }
 
   ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
     this.ngZone.runOutsideAngular(() => {
       this.onScroll = () => {
+        if (this.isDragging) return;
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const p = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+        const ids = ['about', 'experience', 'projects', 'technologies'];
+        const tops = ids.map(id => document.getElementById(id)?.offsetTop ?? 0);
+        let active = 'about';
+        for (let i = ids.length - 1; i >= 0; i--) {
+          if (scrollTop >= tops[i] - 80) { active = ids[i]; break; }
+        }
+
         this.ngZone.run(() => {
           this.progress = Math.min(100, Math.max(0, p));
           this.progressInt = Math.round(this.progress);
+          if (active !== this.activeSection) {
+            this.activeSection = active;
+            this.toastLabel = this.labelMap[active] ?? active;
+          }
           this.cdr.markForCheck();
         });
       };
@@ -183,9 +247,67 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
     });
   }
 
+  onThumbMouseDown(e: MouseEvent): void {
+    e.preventDefault();
+    e.stopPropagation();
+    this.startDrag(e.clientY);
+  }
+
+  onTrackMouseDown(e: MouseEvent): void {
+    e.preventDefault();
+    const rect = this.trackRef.nativeElement.getBoundingClientRect();
+    const pct = Math.min(1, Math.max(0, (e.clientY - rect.top) / rect.height));
+    this.scrollToPercent(pct);
+    this.startDrag(e.clientY);
+  }
+
+  private startDrag(_startY: number): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.isDragging = true;
+
+    this.onMouseMove = (e: MouseEvent) => {
+      const rect = this.trackRef.nativeElement.getBoundingClientRect();
+      const pct = Math.min(1, Math.max(0, (e.clientY - rect.top) / rect.height));
+      this.scrollToPercent(pct);
+
+      const ids = ['about', 'experience', 'projects', 'technologies'];
+      const scrollTop = pct * (document.documentElement.scrollHeight - window.innerHeight);
+      const tops = ids.map(id => document.getElementById(id)?.offsetTop ?? 0);
+      let active = 'about';
+      for (let i = ids.length - 1; i >= 0; i--) {
+        if (scrollTop >= tops[i] - 80) { active = ids[i]; break; }
+      }
+
+      this.ngZone.run(() => {
+        this.progress = pct * 100;
+        this.progressInt = Math.round(this.progress);
+        this.activeSection = active;
+        this.toastLabel = this.labelMap[active] ?? active;
+        this.cdr.markForCheck();
+      });
+    };
+
+    this.onMouseUp = () => {
+      this.isDragging = false;
+      document.removeEventListener('mousemove', this.onMouseMove);
+      document.removeEventListener('mouseup', this.onMouseUp);
+    };
+
+    document.addEventListener('mousemove', this.onMouseMove);
+    document.addEventListener('mouseup', this.onMouseUp);
+  }
+
+  private scrollToPercent(pct: number): void {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: pct * docHeight });
+  }
+
   ngOnDestroy(): void {
-    if (isPlatformBrowser(this.platformId) && this.onScroll) {
-      window.removeEventListener('scroll', this.onScroll);
+    this.subs.unsubscribe();
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
+      if (this.onMouseMove) document.removeEventListener('mousemove', this.onMouseMove);
+      if (this.onMouseUp) document.removeEventListener('mouseup', this.onMouseUp);
     }
   }
 }

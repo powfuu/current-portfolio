@@ -177,7 +177,7 @@
 
   .user & {
     background: var(--green-tint-opaque);
-    border: 1px solid rgba(100, 255, 219, 0.2);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-radius: 14px 14px 4px 14px;
   }
 
@@ -278,7 +278,7 @@
 
 .suggestion-chip {
   background: var(--green-tint);
-  border: 1px solid rgba(100, 255, 219, 0.15);
+  border: 1px solid rgba(var(--primary-rgb), 0.15);
   color: var(--green);
   font-size: var(--fz-s);
   font-family: var(--font-mono);
@@ -340,7 +340,7 @@
 
     &:focus {
       border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(100, 255, 219, 0.1);
+      box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
     }
 
     &:disabled {

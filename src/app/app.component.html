@@ -1,5 +1,10 @@
+<app-particles-background #particles></app-particles-background>
+<app-custom-cursor></app-custom-cursor>
+<app-scroll-indicator></app-scroll-indicator>
+<div class="grain-overlay"></div>
 <div class="bgEffect"></div>
 <div class="dot-grid"></div>
+<div class="scroll-progress-bar" [style.width.%]="scrollProgress"></div>
 @if (!loadingScreen) {
   <div class="fixed-container">
     <app-language-selector></app-language-selector>

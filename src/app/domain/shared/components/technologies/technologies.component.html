@@ -1,17 +1,41 @@
 <div class="technologies-container">
-  @if ((technologies$ | async); as tech) {
-    @if ((technologiesText$ | async); as technologiesText) {
-      <h2 class="head-title" appRevealOnScroll revealDirection="left">{{ technologiesText | titlecase }}</h2>
-    }
-    <div class="technologies-content">
-      @for (tec of tech; track tec.tech; let i = $index) {
-        <div class="technologies" appRevealOnScroll revealDirection="scale" [revealDelay]="i * 20">
-          @if (getSkillIcon(tec.tech)) {
-            <ng-icon [name]="getSkillIcon(tec.tech)" [color]="getSkillColor(tec.tech)" class="tech-icon"></ng-icon>
-          } @else {
-            <img loading="lazy" [alt]="tec.tech" [src]="tec.src" />
-          }
-          <p class="title">{{tec.tech}}</p>
+  @if ((technologiesText$ | async); as technologiesText) {
+    <h2 class="head-title" appRevealOnScroll revealDirection="left">{{ technologiesText | titlecase }}</h2>
+  }
+
+  @if ((rows$ | async); as rows) {
+    <div class="marquee-wrapper" appRevealOnScroll revealDirection="up">
+      @for (row of rows; track $index) {
+        <div class="marquee-row">
+          <div class="marquee-track"
+            [class.reverse]="row.reverse"
+            [style.animation-duration.s]="row.duration">
+            <!-- duplicate strip for seamless loop -->
+            @for (item of row.items; track item.id) {
+              <div class="tech-card">
+                @if (getSkillIcon(item.tech)) {
+                  <ng-icon [name]="getSkillIcon(item.tech)" [color]="getSkillColor(item.tech)" class="tech-icon"></ng-icon>
+                } @else if (item.src) {
+                  <img [src]="item.src" [alt]="item.tech" loading="lazy" />
+                } @else {
+                  <span class="tech-fallback-icon">{{ item.tech.charAt(0) }}</span>
+                }
+                <span class="tech-name">{{ item.tech }}</span>
+              </div>
+            }
+            @for (item of row.items; track item.id + '_clone') {
+              <div class="tech-card" aria-hidden="true">
+                @if (getSkillIcon(item.tech)) {
+                  <ng-icon [name]="getSkillIcon(item.tech)" [color]="getSkillColor(item.tech)" class="tech-icon"></ng-icon>
+                } @else if (item.src) {
+                  <img [src]="item.src" [alt]="item.tech" loading="lazy" />
+                } @else {
+                  <span class="tech-fallback-icon">{{ item.tech.charAt(0) }}</span>
+                }
+                <span class="tech-name">{{ item.tech }}</span>
+              </div>
+            }
+          </div>
         </div>
       }
     </div>

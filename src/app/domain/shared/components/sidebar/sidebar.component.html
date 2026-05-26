@@ -9,7 +9,7 @@
     <div class="profile-img-wrapper">
       <img src="assets/profile.jpeg" class="profile-img" alt="Everit Jhon">
     </div>
-    <h1>Everit Jhon Molero</h1>
+    <h1 appGlitchText="Everit Jhon Molero" [glitchOnHover]="false"></h1>
     <h3 class="important-light">Senior Frontend Engineer</h3>
     @if ((description$ | async); as description) {
       <p class="typed-text">{{description}}</p>

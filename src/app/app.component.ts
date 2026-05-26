@@ -1,10 +1,13 @@
-import { Component, NgZone, OnInit, AfterViewInit } from '@angular/core';
+import { Component, NgZone, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import { TranslationService } from './domain/shared/services/translation/translation.service';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { LanguageSelectorComponent } from './domain/shared/components/language-selector/language-selector.component';
+import { ParticlesBackgroundComponent } from './domain/shared/components/particles-background/particles-background.component';
+import { CustomCursorComponent } from './domain/shared/components/custom-cursor/custom-cursor.component';
+import { ScrollIndicatorComponent } from './domain/shared/components/scroll-indicator/scroll-indicator.component';
 
 @Component({
     selector: 'app-root',
@@ -14,13 +17,19 @@ import { LanguageSelectorComponent } from './domain/shared/components/language-s
     imports: [
     FormsModule,
     RouterOutlet,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    ParticlesBackgroundComponent,
+    CustomCursorComponent,
+    ScrollIndicatorComponent,
 ],
 })
 export class AppComponent implements OnInit, AfterViewInit {
   langState: string = 'es';
   theme: string = 'dark';
   loadingScreen: boolean = true;
+  scrollProgress: number = 0;
+
+  @ViewChild('particles') particlesComponent!: ParticlesBackgroundComponent;
 
   private bgEl!: HTMLElement;
 
@@ -46,7 +55,23 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.bgEl.style.top = `${e.clientY - 350}px`;
           this.bgEl.style.left = `${e.clientX - 350}px`;
         }
+        if (this.particlesComponent) {
+          this.particlesComponent.onMouseMove(e.clientX, e.clientY);
+        }
       });
+      document.addEventListener('mouseleave', () => {
+        if (this.particlesComponent) this.particlesComponent.onMouseLeave();
+      });
+    });
+
+    // scroll progress bar
+    this.ngZone.runOutsideAngular(() => {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        this.ngZone.run(() => { this.scrollProgress = progress; });
+      }, { passive: true });
     });
   }
 

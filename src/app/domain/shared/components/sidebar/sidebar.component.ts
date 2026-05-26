@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TranslationService } from '../../services/translation/translation.service';
 import { NgIcon } from '@ng-icons/core';
+import { GlitchTextDirective } from '../../directives/glitch-text.directive';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   standalone: true,
-  imports: [NgIcon, NgClass, AsyncPipe],
+  imports: [NgIcon, NgClass, AsyncPipe, GlitchTextDirective],
 })
 export class SidebarComponent implements OnInit {
   activeSection: string = 'about';

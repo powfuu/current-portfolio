@@ -25,9 +25,13 @@ import { TranslationService } from '../../services/translation/translation.servi
       <div class="section-toast" [class.show]="isDragging" [style.top.%]="progress">
         <span class="toast-label">{{ toastLabel }}</span>
       </div>
-      <div class="track" #track (mousedown)="onTrackMouseDown($event)">
+      <div class="track" #track
+           (mousedown)="onTrackMouseDown($event)"
+           (touchstart)="onTrackTouchStart($event)">
         <div class="fill" [class.no-transition]="isDragging" [style.height.%]="progress"></div>
-        <div class="thumb" [class.no-transition]="isDragging" [style.top.%]="progress" (mousedown)="onThumbMouseDown($event)">
+        <div class="thumb" [class.no-transition]="isDragging" [style.top.%]="progress"
+             (mousedown)="onThumbMouseDown($event)"
+             (touchstart)="onThumbTouchStart($event)">
           <div class="thumb-dot"></div>
         </div>
       </div>
@@ -65,6 +69,7 @@ import { TranslationService } from '../../services/translation/translation.servi
       background: rgba(var(--primary-rgb), 0.08);
       overflow: visible;
       cursor: pointer;
+      touch-action: none;
     }
 
     .fill {
@@ -85,6 +90,8 @@ import { TranslationService } from '../../services/translation/translation.servi
       transform: translate(-50%, -50%);
       transition: top 0.12s linear;
       cursor: grab;
+      touch-action: none;
+      padding: 8px;
     }
 
     .thumb:active {
@@ -173,12 +180,31 @@ import { TranslationService } from '../../services/translation/translation.servi
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
       .scroll-indicator {
-        right: 8px;
+        right: 14px;
       }
       .track {
-        height: 80px;
+        height: 100px;
+        width: 4px;
+      }
+      .thumb-dot {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .scroll-indicator {
+        right: 10px;
+      }
+      .track {
+        height: 90px;
+        width: 4px;
+      }
+      .thumb-dot {
+        width: 14px;
+        height: 14px;
       }
     }
   `],
@@ -197,6 +223,8 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
   private onScroll!: () => void;
   private onMouseMove!: (e: MouseEvent) => void;
   private onMouseUp!: () => void;
+  private onTouchMove!: (e: TouchEvent) => void;
+  private onTouchEnd!: () => void;
   private activeSection = '';
   private labelMap: Record<string, string> = {};
   private subs = new Subscription();
@@ -269,6 +297,67 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
     this.startDrag(e.clientY);
   }
 
+  onThumbTouchStart(e: TouchEvent): void {
+    e.preventDefault();
+    e.stopPropagation();
+    this.startTouchDrag();
+  }
+
+  onTrackTouchStart(e: TouchEvent): void {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const rect = this.trackRef.nativeElement.getBoundingClientRect();
+    const pct = Math.min(1, Math.max(0, (touch.clientY - rect.top) / rect.height));
+    this.scrollToPercent(pct);
+    this.startTouchDrag();
+  }
+
+  private startTouchDrag(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.isDragging = true;
+
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const offset = 80;
+    const ids = ['experience', 'projects', 'technologies'] as const;
+    const sectionOffsets = ids.map((id, i) => {
+      const el = document.getElementById(id);
+      let absTop = el ? el.getBoundingClientRect().top + window.scrollY : Infinity;
+      if (i === ids.length - 1) absTop = Math.min(absTop, docHeight + offset - 1);
+      return { id, top: absTop };
+    });
+
+    this.onTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = this.trackRef.nativeElement.getBoundingClientRect();
+      const pct = Math.min(1, Math.max(0, (touch.clientY - rect.top) / rect.height));
+      this.scrollToPercent(pct);
+
+      const targetScrollY = pct * docHeight;
+      let active = 'about';
+      for (const { id, top } of sectionOffsets) {
+        if (top - offset <= targetScrollY) active = id;
+      }
+
+      this.ngZone.run(() => {
+        this.progress = pct * 100;
+        this.progressInt = Math.round(this.progress);
+        this.activeSection = active;
+        this.toastLabel = this.labelMap[active] ?? active;
+        this.cdr.markForCheck();
+      });
+    };
+
+    this.onTouchEnd = () => {
+      this.isDragging = false;
+      document.removeEventListener('touchmove', this.onTouchMove);
+      document.removeEventListener('touchend', this.onTouchEnd);
+    };
+
+    document.addEventListener('touchmove', this.onTouchMove, { passive: false });
+    document.addEventListener('touchend', this.onTouchEnd);
+  }
+
   private startDrag(_startY: number): void {
     if (!isPlatformBrowser(this.platformId)) return;
     this.isDragging = true;
@@ -324,6 +413,8 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
       if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
       if (this.onMouseMove) document.removeEventListener('mousemove', this.onMouseMove);
       if (this.onMouseUp) document.removeEventListener('mouseup', this.onMouseUp);
+      if (this.onTouchMove) document.removeEventListener('touchmove', this.onTouchMove);
+      if (this.onTouchEnd) document.removeEventListener('touchend', this.onTouchEnd);
     }
   }
 }

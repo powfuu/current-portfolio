@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { ViewportScroller, NgClass, AsyncPipe } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { NgClass, AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TranslationService } from '../../services/translation/translation.service';
@@ -25,8 +25,6 @@ export class SidebarComponent implements OnInit {
   navItems: { id: string; label$: Observable<string> }[] = [];
 
   constructor(
-    private viewportScroller: ViewportScroller,
-    private elRef: ElementRef,
     private router: Router,
     private translationService: TranslationService
   ) {}
@@ -64,49 +62,34 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: UIEvent) {
-    const aboutSection = document.getElementById('about');
-    const experienceSection = document.getElementById('experience');
-    const projectsSection = document.getElementById('projects');
-    const technologiesSection = document.getElementById('technologies');
+  @HostListener('window:scroll')
+  onScroll() {
+    this.scrollToState = window.scrollY > 100;
 
-    const scrollPosition = window.scrollY;
-    const offset = 20;
+    const atBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
 
-    this.scrollToState = scrollPosition > 100;
-
-    if (
-      aboutSection &&
-      experienceSection &&
-      projectsSection &&
-      technologiesSection
-    ) {
-      if (
-        scrollPosition >= aboutSection.offsetTop - offset &&
-        scrollPosition < experienceSection.offsetTop - offset
-      ) {
-        this.activeSection = 'about';
-        this.router.navigate([], { fragment: 'about' });
-      } else if (
-        scrollPosition >= experienceSection.offsetTop - offset &&
-        scrollPosition < projectsSection.offsetTop - offset
-      ) {
-        this.activeSection = 'experience';
-        this.router.navigate([], { fragment: 'experience' });
-      } else if (
-        scrollPosition >= projectsSection.offsetTop - offset &&
-        scrollPosition < technologiesSection.offsetTop - offset
-      ) {
-        this.activeSection = 'projects';
-        this.router.navigate([], { fragment: 'projects' });
-      } else if (scrollPosition >= technologiesSection.offsetTop - offset) {
+    if (atBottom) {
+      if (this.activeSection !== 'technologies') {
         this.activeSection = 'technologies';
         this.router.navigate([], { fragment: 'technologies' });
-      } else {
-        this.activeSection = 'about';
-        this.router.navigate([], { fragment: 'about' });
       }
+      return;
+    }
+
+    const offset = 80;
+    const above = (id: string) => {
+      const el = document.getElementById(id);
+      return el ? el.getBoundingClientRect().top <= offset : false;
+    };
+
+    let active = 'about';
+    if (above('technologies')) active = 'technologies';
+    else if (above('projects')) active = 'projects';
+    else if (above('experience')) active = 'experience';
+
+    if (active !== this.activeSection) {
+      this.activeSection = active;
+      this.router.navigate([], { fragment: active });
     }
   }
 }

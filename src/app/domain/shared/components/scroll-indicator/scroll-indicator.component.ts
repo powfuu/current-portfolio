@@ -225,11 +225,19 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const p = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
-        const ids = ['about', 'experience', 'projects', 'technologies'];
-        const tops = ids.map(id => document.getElementById(id)?.offsetTop ?? 0);
+        const atBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
+
         let active = 'about';
-        for (let i = ids.length - 1; i >= 0; i--) {
-          if (scrollTop >= tops[i] - 80) { active = ids[i]; break; }
+        if (atBottom) {
+          active = 'technologies';
+        } else {
+          const above = (id: string) => {
+            const el = document.getElementById(id);
+            return el ? el.getBoundingClientRect().top <= 80 : false;
+          };
+          if (above('technologies')) active = 'technologies';
+          else if (above('projects')) active = 'projects';
+          else if (above('experience')) active = 'experience';
         }
 
         this.ngZone.run(() => {
@@ -265,17 +273,25 @@ export class ScrollIndicatorComponent implements OnInit, AfterViewInit, OnDestro
     if (!isPlatformBrowser(this.platformId)) return;
     this.isDragging = true;
 
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const offset = 80;
+    const ids = ['experience', 'projects', 'technologies'] as const;
+    const sectionOffsets = ids.map((id, i) => {
+      const el = document.getElementById(id);
+      let absTop = el ? el.getBoundingClientRect().top + window.scrollY : Infinity;
+      if (i === ids.length - 1) absTop = Math.min(absTop, docHeight + offset - 1);
+      return { id, top: absTop };
+    });
+
     this.onMouseMove = (e: MouseEvent) => {
       const rect = this.trackRef.nativeElement.getBoundingClientRect();
       const pct = Math.min(1, Math.max(0, (e.clientY - rect.top) / rect.height));
       this.scrollToPercent(pct);
 
-      const ids = ['about', 'experience', 'projects', 'technologies'];
-      const scrollTop = pct * (document.documentElement.scrollHeight - window.innerHeight);
-      const tops = ids.map(id => document.getElementById(id)?.offsetTop ?? 0);
+      const targetScrollY = pct * docHeight;
       let active = 'about';
-      for (let i = ids.length - 1; i >= 0; i--) {
-        if (scrollTop >= tops[i] - 80) { active = ids[i]; break; }
+      for (const { id, top } of sectionOffsets) {
+        if (top - offset <= targetScrollY) active = id;
       }
 
       this.ngZone.run(() => {

@@ -39,7 +39,7 @@ header {
       inset: -3px;
       border-radius: 100%;
       background: conic-gradient(from var(--angle, 0deg), var(--green), var(--cyan), var(--blue), var(--green));
-      animation: rotate-gradient 3s linear infinite;
+      animation: rotate-gradient 3s linear infinite, profileBorderBreath 5s ease-in-out infinite;
       z-index: -1;
     }
 
@@ -49,9 +49,9 @@ header {
       inset: -3px;
       border-radius: 100%;
       background: conic-gradient(from var(--angle, 0deg), var(--green), var(--cyan), var(--blue), var(--green));
-      animation: rotate-gradient 3s linear infinite;
+      animation: rotate-gradient 3s linear infinite, profileGlowBreath 5s ease-in-out infinite;
       filter: blur(12px);
-      opacity: 0.5;
+      opacity: 0.45;
       z-index: -2;
     }
   }
@@ -198,7 +198,6 @@ footer {
 
   #cv {
     scale: 1.1;
-    margin-top: -6px;
   }
 }
 
@@ -400,6 +399,28 @@ a .end-ring {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes profileBorderBreath {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.012);
+  }
+}
+
+@keyframes profileGlowBreath {
+  0%, 100% {
+    opacity: 0.45;
+    filter: blur(12px);
+  }
+  50% {
+    opacity: 0.72;
+    filter: blur(18px);
   }
 }
 

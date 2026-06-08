@@ -44,8 +44,8 @@ export class ChatbotService {
     {
       keywords: ['experiencia laboral', 'experience', 'empleo', 'job', 'empresa', 'company', 'laboral', 'trayectoria profesional'],
       response: {
-        es: 'Mi trayectoria profesional incluye:<br><br><b>Frontend Developer & Frontend Lead</b> — Profile Software Services / Mutua Madrileña, Madrid (Diciembre 2022 – Presente)<br>Lidero la arquitectura frontend de <b>7 proyectos empresariales</b>, instruyo a compañeros, implemento las mejores tecnologías, realizo migraciones (Angular, Capacitor, Cordova, Ionic, jQuery), y mantengo la estabilidad y calidad del código con CI/CD y testing.<br><br><b>Frontend Developer</b> — NORU, Quito (Agosto 2019 – Septiembre 2022)<br>Desarrollé aplicaciones web y móviles híbridas con <b>React</b> y <b>Angular</b>. Lideré la arquitectura frontend de plataformas educativas y portales internos con web components.<br><br><b>Instructor de Desarrollo Jr</b> — Genius Plus, Quito (Febrero 2019 – Julio 2019)<br>Enseñé fundamentos de desarrollo web (HTML, CSS, JS, React, Node.js) a principiantes.',
-        en: 'My professional trajectory includes:<br><br><b>Frontend Developer & Frontend Lead</b> — Profile Software Services / Mutua Madrileña, Madrid (December 2022 – Present)<br>I lead the frontend architecture of <b>7 enterprise projects</b>, mentor colleagues, implement best technologies, perform migrations (Angular, Capacitor, Cordova, Ionic, jQuery), and maintain code stability and quality with CI/CD and testing.<br><br><b>Frontend Developer</b> — NORU, Quito (August 2019 – September 2022)<br>I developed hybrid web and mobile applications with <b>React</b> and <b>Angular</b>. Led frontend architecture of educational platforms and internal portals with web components.<br><br><b>Jr Development Instructor</b> — Genius Plus, Quito (February 2019 – July 2019)<br>Taught web development fundamentals (HTML, CSS, JS, React, Node.js) to beginners.',
+        es: 'Mi trayectoria profesional incluye:<br><br><b>Frontend Developer & Frontend Lead</b> — Profile Software Services / Mutua Madrileña (Diciembre 2022 – Presente)<br>Lidero la arquitectura frontend de <b>7 proyectos empresariales</b>, instruyo a compañeros, implemento las mejores tecnologías, realizo migraciones (Angular, Capacitor, Cordova, Ionic, jQuery), y mantengo la estabilidad y calidad del código con CI/CD y testing.<br><br><b>Frontend Developer</b> — NORU (Agosto 2019 – Septiembre 2022)<br>Desarrollé aplicaciones web y móviles híbridas con <b>React</b> y <b>Angular</b>. Lideré la arquitectura frontend de plataformas educativas y portales internos con web components.<br><br><b>Instructor de Desarrollo Jr</b> — Genius Plus (Febrero 2019 – Julio 2019)<br>Enseñé fundamentos de desarrollo web (HTML, CSS, JS, React, Node.js) a principiantes.',
+        en: 'My professional trajectory includes:<br><br><b>Frontend Developer & Frontend Lead</b> — Profile Software Services / Mutua Madrileña (December 2022 – Present)<br>I lead the frontend architecture of <b>7 enterprise projects</b>, mentor colleagues, implement best technologies, perform migrations (Angular, Capacitor, Cordova, Ionic, jQuery), and maintain code stability and quality with CI/CD and testing.<br><br><b>Frontend Developer</b> — NORU (August 2019 – September 2022)<br>I developed hybrid web and mobile applications with <b>React</b> and <b>Angular</b>. Led frontend architecture of educational platforms and internal portals with web components.<br><br><b>Jr Development Instructor</b> — Genius Plus (February 2019 – July 2019)<br>Taught web development fundamentals (HTML, CSS, JS, React, Node.js) to beginners.',
       },
     },
     {
@@ -219,8 +219,8 @@ export class ChatbotService {
     {
       keywords: ['disponib', 'availab', 'remoto', 'remote', 'presencial', 'onsite', 'híbrido', 'ubicación', 'location', 'madrid', 'españa', 'spain'],
       response: {
-        es: 'Everit actualmente reside en <b>Madrid, España</b> y trabaja como Frontend Lead. Para consultas sobre <b>disponibilidad</b>, modalidad de trabajo (remoto, híbrido, presencial) o cualquier propuesta laboral específica, te recomiendo contactarlo directamente:<br><br><b>LinkedIn</b> — linkedin.com/in/everit-jhon<br><b>Email</b> — everitjhon@gmail.com<br><br>Podrá darte información actualizada sobre su situación y apertura a nuevas oportunidades.',
-        en: 'Everit currently resides in <b>Madrid, Spain</b> and works as Frontend Lead. For inquiries about <b>availability</b>, work modality (remote, hybrid, onsite) or any specific job proposal, I recommend contacting him directly:<br><br><b>LinkedIn</b> — linkedin.com/in/everit-jhon<br><b>Email</b> — everitjhon@gmail.com<br><br>He\'ll be able to provide updated information about his situation and openness to new opportunities.',
+        es: 'Para consultas sobre <b>disponibilidad</b>, modalidad de trabajo (remoto, híbrido, presencial) o cualquier propuesta laboral específica, te recomiendo contactar a Everit directamente:<br><br><b>LinkedIn</b> — linkedin.com/in/everit-jhon<br><b>Email</b> — everitjhon@gmail.com<br><br>Podrá darte información actualizada sobre su apertura a nuevas oportunidades.',
+        en: 'For inquiries about <b>availability</b>, work modality (remote, hybrid, onsite) or any specific job proposal, I recommend contacting Everit directly:<br><br><b>LinkedIn</b> — linkedin.com/in/everit-jhon<br><b>Email</b> — everitjhon@gmail.com<br><br>He\'ll be able to give you updated information about his openness to new opportunities.',
       },
     },
   ];
@@ -283,10 +283,10 @@ export class ChatbotService {
       },
     },
     {
-      keywords: ['nacionalidad', 'nationality', 'pais', 'country', 'origen', 'origin', 'de donde', 'where from', 'ecuatoriano', 'ecuadorian', 'ecuador', 'latino', 'latinoamerica'],
+      keywords: ['nacionalidad', 'nationality', 'pais', 'country', 'origen', 'origin', 'de donde', 'where from', 'espanol', 'spanish', 'españa', 'spain'],
       response: {
-        es: 'Everit es de <b>Ecuador</b> 🇪🇨, donde comenzó su carrera profesional trabajando en empresas de Quito. En 2022 se mudó a <b>Madrid, España</b> 🇪🇸, donde actualmente trabaja como Frontend Lead. Esta experiencia internacional le ha dado una perspectiva global, adaptabilidad cultural y la capacidad de trabajar eficazmente en equipos diversos y multiculturales.',
-        en: 'Everit is from <b>Ecuador</b> 🇪🇨, where he started his professional career working at companies in Quito. In 2022 he moved to <b>Madrid, Spain</b> 🇪🇸, where he currently works as Frontend Lead. This international experience has given him a global perspective, cultural adaptability and the ability to work effectively in diverse and multicultural teams.',
+        es: 'Everit prefiere mantener su información personal privada. Si tienes curiosidad sobre su perfil, puedo contarte sobre su experiencia profesional, sus habilidades técnicas o sus proyectos. ¿Qué te gustaría saber?',
+        en: 'Everit prefers to keep his personal information private. If you\'re curious about his profile, I can tell you about his professional experience, technical skills or projects. What would you like to know?',
       },
     },
     {
@@ -313,8 +313,8 @@ export class ChatbotService {
     {
       keywords: ['logro', 'achievement', 'orgullo', 'proud', 'éxito', 'success', 'mejor resultado', 'best result', 'accomplishment'],
       response: {
-        es: 'Algunos de los <b>logros más destacados</b> de Everit:<br><br><b>Frontend Lead a los ~3 años</b> — Ascenso rápido de developer junior a líder técnico<br><b>7 proyectos empresariales</b> — Gestiona simultáneamente 7 proyectos en producción para Mutua Madrileña<br><b>Migraciones exitosas</b> — Lideró migraciones complejas entre tecnologías sin downtime<br><b>Librería npm publicada</b> — ngx-ever-components, librería open source en producción<br><b>Salto internacional</b> — De Ecuador a España, integrándose exitosamente en el mercado europeo<br><b>Múltiples proyectos de IA</b> — Pionero en integrar IA como herramienta de desarrollo real',
-        en: 'Some of Everit\'s <b>most notable achievements</b>:<br><br><b>Frontend Lead in ~3 years</b> — Rapid promotion from junior developer to technical leader<br><b>7 enterprise projects</b> — Simultaneously manages 7 production projects for Mutua Madrileña<br><b>Successful migrations</b> — Led complex technology migrations without downtime<br><b>Published npm library</b> — ngx-ever-components, open source library in production<br><b>International leap</b> — From Ecuador to Spain, successfully integrating into the European market<br><b>Multiple AI projects</b> — Pioneer in integrating AI as a real development tool',
+        es: 'Algunos de los <b>logros más destacados</b> de Everit:<br><br><b>Frontend Lead a los ~3 años</b> — Ascenso rápido de developer junior a líder técnico<br><b>7 proyectos empresariales</b> — Gestiona simultáneamente 7 proyectos en producción para Mutua Madrileña<br><b>Migraciones exitosas</b> — Lideró migraciones complejas entre tecnologías sin downtime<br><b>Librería npm publicada</b> — ngx-ever-components, librería open source en producción<br><b>Múltiples proyectos de IA</b> — Pionero en integrar IA como herramienta de desarrollo real',
+        en: 'Some of Everit\'s <b>most notable achievements</b>:<br><br><b>Frontend Lead in ~3 years</b> — Rapid promotion from junior developer to technical leader<br><b>7 enterprise projects</b> — Simultaneously manages 7 production projects for Mutua Madrileña<br><b>Successful migrations</b> — Led complex technology migrations without downtime<br><b>Published npm library</b> — ngx-ever-components, open source library in production<br><b>Multiple AI projects</b> — Pioneer in integrating AI as a real development tool',
       },
     },
     {
@@ -362,15 +362,15 @@ export class ChatbotService {
     {
       keywords: ['mutua', 'profile software', 'actualmente', 'current', 'ahora', 'now', 'hoy', 'today', 'presente', 'present'],
       response: {
-        es: 'Actualmente Everit trabaja como <b>Frontend Developer & Frontend Lead</b> en <b>Profile Software Services</b> para el cliente <b>Mutua Madrileña</b> en Madrid, España (desde diciembre 2022).<br><br>Sus responsabilidades incluyen:<br>• Liderar la arquitectura frontend de <b>7 proyectos empresariales</b><br>• Instruir y mentorizar compañeros del equipo<br>• Implementar las mejores tecnologías y prácticas<br>• Realizar migraciones tecnológicas complejas<br>• Mantener estabilidad y calidad con CI/CD y testing<br>• Tomar decisiones técnicas de alto nivel',
-        en: 'Everit currently works as <b>Frontend Developer & Frontend Lead</b> at <b>Profile Software Services</b> for the client <b>Mutua Madrileña</b> in Madrid, Spain (since December 2022).<br><br>His responsibilities include:<br>• Leading frontend architecture for <b>7 enterprise projects</b><br>• Instructing and mentoring team colleagues<br>• Implementing the best technologies and practices<br>• Performing complex technology migrations<br>• Maintaining stability and quality with CI/CD and testing<br>• Making high-level technical decisions',
+        es: 'Actualmente Everit trabaja como <b>Frontend Developer & Frontend Lead</b> en <b>Profile Software Services</b> para el cliente <b>Mutua Madrileña</b> (desde diciembre 2022).<br><br>Sus responsabilidades incluyen:<br>• Liderar la arquitectura frontend de <b>7 proyectos empresariales</b><br>• Instruir y mentorizar compañeros del equipo<br>• Implementar las mejores tecnologías y prácticas<br>• Realizar migraciones tecnológicas complejas<br>• Mantener estabilidad y calidad con CI/CD y testing<br>• Tomar decisiones técnicas de alto nivel',
+        en: 'Everit currently works as <b>Frontend Developer & Frontend Lead</b> at <b>Profile Software Services</b> for the client <b>Mutua Madrileña</b> (since December 2022).<br><br>His responsibilities include:<br>• Leading frontend architecture for <b>7 enterprise projects</b><br>• Instructing and mentoring team colleagues<br>• Implementing the best technologies and practices<br>• Performing complex technology migrations<br>• Maintaining stability and quality with CI/CD and testing<br>• Making high-level technical decisions',
       },
     },
     {
-      keywords: ['noru', 'quito', 'anterior', 'previous', 'antes', 'before', 'pasado', 'past'],
+      keywords: ['noru', 'anterior', 'previous', 'antes', 'before', 'pasado', 'past'],
       response: {
-        es: 'Antes de su rol actual, Everit trabajó en <b>NORU</b> en Quito, Ecuador (Agosto 2019 – Septiembre 2022) como <b>Frontend Developer</b>:<br><br>• Desarrolló aplicaciones web y móviles híbridas con <b>React</b> y <b>Angular</b><br>• Lideró la arquitectura frontend de plataformas educativas<br>• Construyó portales internos con web components<br>• Trabajó con equipos multidisciplinarios<br><br>Y antes de eso fue <b>Instructor de Desarrollo Jr</b> en <b>Genius Plus</b> (Feb-Jul 2019), enseñando fundamentos web a principiantes.',
-        en: 'Before his current role, Everit worked at <b>NORU</b> in Quito, Ecuador (August 2019 – September 2022) as a <b>Frontend Developer</b>:<br><br>• Developed hybrid web and mobile applications with <b>React</b> and <b>Angular</b><br>• Led frontend architecture of educational platforms<br>• Built internal portals with web components<br>• Worked with multidisciplinary teams<br><br>And before that he was a <b>Jr Development Instructor</b> at <b>Genius Plus</b> (Feb-Jul 2019), teaching web fundamentals to beginners.',
+        es: 'Antes de su rol actual, Everit trabajó en <b>NORU</b> (Agosto 2019 – Septiembre 2022) como <b>Frontend Developer</b>:<br><br>• Desarrolló aplicaciones web y móviles híbridas con <b>React</b> y <b>Angular</b><br>• Lideró la arquitectura frontend de plataformas educativas<br>• Construyó portales internos con web components<br>• Trabajó con equipos multidisciplinarios<br><br>Y antes de eso fue <b>Instructor de Desarrollo Jr</b> en <b>Genius Plus</b> (Feb-Jul 2019), enseñando fundamentos web a principiantes.',
+        en: 'Before his current role, Everit worked at <b>NORU</b> (August 2019 – September 2022) as a <b>Frontend Developer</b>:<br><br>• Developed hybrid web and mobile applications with <b>React</b> and <b>Angular</b><br>• Led frontend architecture of educational platforms<br>• Built internal portals with web components<br>• Worked with multidisciplinary teams<br><br>And before that he was a <b>Jr Development Instructor</b> at <b>Genius Plus</b> (Feb-Jul 2019), teaching web fundamentals to beginners.',
       },
     },
     {
@@ -418,8 +418,50 @@ export class ChatbotService {
     {
       keywords: ['que puedo preguntar', 'what can i ask', 'que sabes', 'what do you know', 'ayuda', 'help', 'como funciona', 'how does this work', 'que haces', 'what do you do'],
       response: {
-        es: 'Puedes preguntarme <b>cualquier cosa sobre Everit</b> como profesional. Algunos temas populares:<br><br>• <b>Habilidades técnicas</b> — Angular, React, TypeScript, Node.js, mobile, etc.<br>• <b>Experiencia laboral</b> — Roles, empresas, responsabilidades<br>• <b>Proyectos</b> — Portfolio, open source, apps de IA<br>• <b>Arquitectura</b> — Patrones, micro-frontends, escalabilidad<br>• <b>Liderazgo</b> — Gestión de equipos, mentoría, procesos<br>• <b>Herramientas de IA</b> — Claude Code, Copilot, OpenAI API<br>• <b>Información personal profesional</b> — Formación, idiomas, ubicación<br>• <b>Contacto y disponibilidad</b><br><br>¡Pregunta con confianza, estoy preparada para responder sobre cualquier aspecto de su perfil!',
-        en: 'You can ask me <b>anything about Everit</b> as a professional. Some popular topics:<br><br>• <b>Technical skills</b> — Angular, React, TypeScript, Node.js, mobile, etc.<br>• <b>Work experience</b> — Roles, companies, responsibilities<br>• <b>Projects</b> — Portfolio, open source, AI apps<br>• <b>Architecture</b> — Patterns, micro-frontends, scalability<br>• <b>Leadership</b> — Team management, mentoring, processes<br>• <b>AI tools</b> — Claude Code, Copilot, OpenAI API<br>• <b>Professional personal info</b> — Education, languages, location<br>• <b>Contact and availability</b><br><br>Ask with confidence, I\'m prepared to answer about any aspect of his profile!',
+        es: 'Puedes preguntarme <b>cualquier cosa sobre Everit</b> como profesional. Algunos temas populares:<br><br>• <b>Habilidades técnicas</b> — Angular, React, TypeScript, Node.js, mobile, etc.<br>• <b>Experiencia laboral</b> — Roles, empresas, responsabilidades<br>• <b>Proyectos</b> — Portfolio, open source, apps de IA<br>• <b>Arquitectura</b> — Patrones, micro-frontends, escalabilidad<br>• <b>Liderazgo</b> — Gestión de equipos, mentoría, procesos<br>• <b>Herramientas de IA</b> — Claude Code, Copilot, OpenAI API<br>• <b>Contacto y disponibilidad</b><br><br>¡Pregunta con confianza, estoy preparada para responder sobre cualquier aspecto de su perfil!',
+        en: 'You can ask me <b>anything about Everit</b> as a professional. Some popular topics:<br><br>• <b>Technical skills</b> — Angular, React, TypeScript, Node.js, mobile, etc.<br>• <b>Work experience</b> — Roles, companies, responsibilities<br>• <b>Projects</b> — Portfolio, open source, AI apps<br>• <b>Architecture</b> — Patterns, micro-frontends, scalability<br>• <b>Leadership</b> — Team management, mentoring, processes<br>• <b>AI tools</b> — Claude Code, Copilot, OpenAI API<br>• <b>Contact and availability</b><br><br>Ask with confidence, I\'m prepared to answer about any aspect of his profile!',
+      },
+    },
+    {
+      keywords: ['graphql', 'rest api', 'rest', 'api design', 'http', 'fetch', 'axios', 'interceptor', 'endpoint', 'swagger', 'openapi'],
+      response: {
+        es: 'Everit tiene experiencia sólida en el <b>consumo y diseño de APIs</b>:<br><br><b>REST APIs</b> — Diseño e integración de endpoints con Angular HttpClient, interceptors para auth y error handling global<br><b>GraphQL</b> — Queries, mutations, Apollo Client para gestión de caché y estado remoto<br><b>Interceptors</b> — Refresh de tokens, logging de requests, manejo centralizado de errores HTTP<br><b>Swagger / OpenAPI</b> — Documentación y validación de contratos de API<br><b>Mock servers</b> — JSON Server, MSW para desarrollo desacoplado del backend<br><br>Entiende perfectamente la <b>comunicación cliente-servidor</b> y sabe optimizarla tanto en performance como en mantenibilidad.',
+        en: 'Everit has solid experience in <b>API consumption and design</b>:<br><br><b>REST APIs</b> — Endpoint design and integration with Angular HttpClient, interceptors for auth and global error handling<br><b>GraphQL</b> — Queries, mutations, Apollo Client for cache and remote state management<br><b>Interceptors</b> — Token refresh, request logging, centralized HTTP error handling<br><b>Swagger / OpenAPI</b> — API contract documentation and validation<br><b>Mock servers</b> — JSON Server, MSW for backend-decoupled development<br><br>He fully understands <b>client-server communication</b> and knows how to optimize it for both performance and maintainability.',
+      },
+    },
+    {
+      keywords: ['cloud', 'aws', 'azure', 'gcp', 'hosting', 'infraestructura', 'infrastructure', 'servidor', 'deployment', 'deploy', 'entorno', 'environment'],
+      response: {
+        es: 'En cuanto a <b>infraestructura y despliegue</b>, Everit trabaja con:<br><br><b>Vercel</b> — Deploy continuo de apps frontend con preview deployments automáticos<br><b>Docker</b> — Containerización de aplicaciones para entornos consistentes y reproducibles<br><b>Jenkins</b> — CI/CD enterprise con pipelines personalizados y gates de calidad<br><b>GitHub Actions</b> — Automatización de workflows: testing, linting, build y deploy<br><b>Nginx</b> — Configuración de servidores web para SPAs (routing, compresión, caché)<br><br>Su enfoque en DevOps garantiza que cada entrega sea <b>automatizada, testeada y predecible</b>.',
+        en: 'On <b>infrastructure and deployment</b>, Everit works with:<br><br><b>Vercel</b> — Continuous frontend deployment with automatic preview deployments<br><b>Docker</b> — Application containerization for consistent, reproducible environments<br><b>Jenkins</b> — Enterprise CI/CD with custom pipelines and quality gates<br><b>GitHub Actions</b> — Workflow automation: testing, linting, build and deploy<br><b>Nginx</b> — Web server configuration for SPAs (routing, compression, caching)<br><br>His DevOps mindset ensures every release is <b>automated, tested and predictable</b>.',
+      },
+    },
+    {
+      keywords: ['proceso', 'process', 'flujo de trabajo', 'workflow', 'dia a dia', 'day to day', 'como trabajas', 'how do you work', 'metodologia', 'enfoque', 'approach'],
+      response: {
+        es: 'El <b>flujo de trabajo diario</b> de Everit como Frontend Lead:<br><br><b>Planificación</b> — Refinamiento de requisitos, descomposición en tareas estimables, identificación de riesgos técnicos<br><b>Arquitectura first</b> — Antes de escribir código, define contratos, interfaces y estructura de datos<br><b>TDD cuando aplica</b> — Tests primero para lógica de negocio crítica<br><b>Code reviews</b> — Reviews rigurosos enfocados en mantenibilidad, no solo en funcionalidad<br><b>CI/CD siempre activo</b> — Nada llega a producción sin pasar por el pipeline<br><b>Iteración continua</b> — Feedback loops cortos, deploys frecuentes, métricas de impacto<br><br>Combina <b>rigor técnico con pragmatismo</b>: sabe cuándo aplicar la solución perfecta y cuándo entregar valor rápido.',
+        en: 'Everit\'s <b>daily workflow</b> as Frontend Lead:<br><br><b>Planning</b> — Requirements refinement, task decomposition, technical risk identification<br><b>Architecture first</b> — Before writing code, defines contracts, interfaces and data structures<br><b>TDD when applicable</b> — Tests first for critical business logic<br><b>Code reviews</b> — Rigorous reviews focused on maintainability, not just functionality<br><b>CI/CD always active</b> — Nothing reaches production without going through the pipeline<br><b>Continuous iteration</b> — Short feedback loops, frequent deploys, impact metrics<br><br>He combines <b>technical rigor with pragmatism</b>: knows when to apply the perfect solution and when to deliver value fast.',
+      },
+    },
+    {
+      keywords: ['buenas practicas', 'best practices', 'clean code', 'codigo limpio', 'solid', 'principios', 'calidad de codigo', 'code quality', 'mantenible', 'maintainable', 'deuda tecnica', 'tech debt'],
+      response: {
+        es: 'La <b>calidad de código</b> es un pilar central en el trabajo de Everit:<br><br><b>Clean Code</b> — Nombres descriptivos, funciones con responsabilidad única, sin magic numbers<br><b>SOLID</b> — Principios aplicados de forma pragmática: SRP, OCP, DIP como guías reales, no dogmas<br><b>DRY / KISS / YAGNI</b> — Evitar duplicación, mantener simplicidad, no sobre-ingeniería<br><b>Deuda técnica controlada</b> — La identifica, la documenta y la planifica activamente para no dejarla crecer<br><b>Code reviews</b> — Vector de transferencia de conocimiento y mantenimiento de estándares<br><b>Documentación</b> — ADRs para decisiones arquitectónicas, JSDocs para APIs públicas<br><br>Para Everit, el <b>código legible es código mantenible</b>, y el código mantenible es el que escala.',
+        en: '<b>Code quality</b> is a central pillar in Everit\'s work:<br><br><b>Clean Code</b> — Descriptive names, single-responsibility functions, no magic numbers<br><b>SOLID</b> — Pragmatically applied principles: SRP, OCP, DIP as real guides, not dogmas<br><b>DRY / KISS / YAGNI</b> — Avoid duplication, keep simplicity, no over-engineering<br><b>Controlled tech debt</b> — He identifies, documents and actively plans it to prevent accumulation<br><b>Code reviews</b> — Knowledge transfer vector and standards maintenance<br><b>Documentation</b> — ADRs for architectural decisions, JSDocs for public APIs<br><br>For Everit, <b>readable code is maintainable code</b>, and maintainable code is what scales.',
+      },
+    },
+    {
+      keywords: ['resolucion de problemas', 'problem solving', 'debugging', 'debug', 'como resuelves', 'how do you solve', 'enfrentas', 'tackle', 'desafio', 'challenge', 'bloqueado', 'stuck'],
+      response: {
+        es: 'El enfoque de Everit para la <b>resolución de problemas técnicos</b>:<br><br><b>1. Reproducir antes de corregir</b> — Entender el problema exacto antes de tocar código<br><b>2. Aislar variables</b> — Reducir el problema a su mínima expresión para encontrar la causa raíz<br><b>3. Hipótesis primero</b> — Formular teorías antes de experimentar; evitar cambios aleatorios<br><b>4. Logs y herramientas</b> — Chrome DevTools, Angular DevTools, breakpoints, performance profiler<br><b>5. Documentar el fix</b> — Un bug resuelto sin documentar es un bug que volverá<br><br>Su experiencia en <b>7 proyectos simultáneos</b> le ha dado un instinto desarrollado para diagnosticar rápidamente y priorizar qué resolver primero.',
+        en: 'Everit\'s approach to <b>technical problem solving</b>:<br><br><b>1. Reproduce before fixing</b> — Understand the exact problem before touching code<br><b>2. Isolate variables</b> — Reduce the problem to its minimum expression to find the root cause<br><b>3. Hypothesis first</b> — Form theories before experimenting; avoid random changes<br><b>4. Logs and tools</b> — Chrome DevTools, Angular DevTools, breakpoints, performance profiler<br><b>5. Document the fix</b> — A bug fixed without documentation is a bug that will return<br><br>His experience across <b>7 simultaneous projects</b> has given him a sharp instinct for fast diagnosis and prioritization.',
+      },
+    },
+    {
+      keywords: ['webpack', 'vite', 'esbuild', 'bundle', 'build tool', 'compilacion', 'compilation', 'transpil', 'babel', 'rollup', 'treeshaking', 'tree shaking'],
+      response: {
+        es: 'Everit domina las <b>herramientas de build modernas</b>:<br><br><b>Webpack 5</b> — Configuración avanzada, Module Federation, custom loaders y plugins<br><b>Vite / esbuild</b> — Build ultrarrápido, HMR instantáneo, configuración minimalista<br><b>Rollup</b> — Bundling de librerías con tree-shaking óptimo<br><b>Optimizaciones</b> — Code splitting automático, lazy chunks, preload, prefetch<br><b>Bundle analysis</b> — webpack-bundle-analyzer para identificar dependencias pesadas<br><br>Entiende el proceso de build de principio a fin, lo que le permite <b>optimizar tiempos de carga</b> y mantener bundles eficientes en producción.',
+        en: 'Everit masters <b>modern build tools</b>:<br><br><b>Webpack 5</b> — Advanced configuration, Module Federation, custom loaders and plugins<br><b>Vite / esbuild</b> — Ultra-fast build, instant HMR, minimalist configuration<br><b>Rollup</b> — Library bundling with optimal tree-shaking<br><b>Optimizations</b> — Automatic code splitting, lazy chunks, preload, prefetch<br><b>Bundle analysis</b> — webpack-bundle-analyzer to identify heavy dependencies<br><br>He understands the build process end-to-end, allowing him to <b>optimize load times</b> and keep production bundles efficient.',
       },
     },
   ];
@@ -442,8 +484,8 @@ export class ChatbotService {
     {
       triggers: ['cuanto', 'how much', 'how many', 'numero', 'number', 'cantidad', 'amount'],
       response: {
-        es: 'Algunos números clave sobre Everit:<br><br>• <b>+6 años</b> de experiencia profesional<br>• <b>7 proyectos</b> empresariales simultáneos<br>• <b>3 empresas</b> en su trayectoria<br>• <b>2 países</b> (Ecuador → España)<br>• <b>Múltiples tecnologías</b> en su stack<br><br>¿Sobre qué aspecto específico te gustaría más detalles?',
-        en: 'Some key numbers about Everit:<br><br>• <b>6+ years</b> of professional experience<br>• <b>7 simultaneous</b> enterprise projects<br>• <b>3 companies</b> in his trajectory<br>• <b>2 countries</b> (Ecuador → Spain)<br>• <b>Multiple technologies</b> in his stack<br><br>Which specific aspect would you like more details about?',
+        es: 'Algunos números clave sobre Everit:<br><br>• <b>+6 años</b> de experiencia profesional<br>• <b>7 proyectos</b> empresariales simultáneos<br>• <b>3 empresas</b> en su trayectoria<br>• <b>Múltiples tecnologías</b> en su stack<br><br>¿Sobre qué aspecto específico te gustaría más detalles?',
+        en: 'Some key numbers about Everit:<br><br>• <b>6+ years</b> of professional experience<br>• <b>7 simultaneous</b> enterprise projects<br>• <b>3 companies</b> in his trajectory<br>• <b>Multiple technologies</b> in his stack<br><br>Which specific aspect would you like more details about?',
       },
     },
   ];
@@ -508,27 +550,29 @@ export class ChatbotService {
       }
     }
 
-    if (bestMatch && bestScore > 0) {
+    if (bestMatch && bestScore >= 3) {
       return bestMatch.response[lang];
     }
 
     for (const fallback of this.contextualFallbacks) {
       for (const trigger of fallback.triggers) {
-        if (normalized.includes(trigger)) {
+        const nt = trigger.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/-/g, ' ');
+        if (normalized.includes(nt)) {
           return fallback.response[lang];
         }
       }
     }
 
-    const words = normalized.split(/\s+/).filter(w => w.length > 3);
+    const words = normalized.split(/\s+/).filter(w => w.length > 4);
     for (const pattern of allPatterns) {
       for (const keyword of pattern.keywords) {
+        if (keyword.length < 5) continue;
         const nk = keyword
           .normalize('NFD')
           .replace(/[̀-ͯ]/g, '')
           .replace(/-/g, ' ');
         for (const word of words) {
-          if (nk.includes(word) || word.includes(nk)) {
+          if (word.length > 4 && (nk === word || (nk.length >= 6 && nk.startsWith(word)) || (word.length >= 6 && word.startsWith(nk)))) {
             return pattern.response[lang];
           }
         }
@@ -595,6 +639,16 @@ export class ChatbotService {
       { es: '¿Cómo manejas el CSS avanzado?', en: 'How do you handle advanced CSS?' },
       { es: '¿Eres autodidacta?', en: 'Are you self-taught?' },
       { es: '¿Qué te hace único como developer?', en: 'What makes you unique as a developer?' },
+      { es: '¿Conoces GraphQL o REST APIs?', en: 'Do you know GraphQL or REST APIs?' },
+      { es: '¿Cómo haces debugging?', en: 'How do you debug?' },
+      { es: '¿Qué build tools usas?', en: 'What build tools do you use?' },
+      { es: '¿Cómo aplicas Clean Code?', en: 'How do you apply Clean Code?' },
+      { es: '¿Cómo es tu flujo de trabajo?', en: 'What is your workflow like?' },
+      { es: '¿Tienes experiencia con infraestructura?', en: 'Do you have infrastructure experience?' },
+      { es: '¿Qué son tus fortalezas clave?', en: 'What are your key strengths?' },
+      { es: '¿Qué te apasiona del frontend?', en: 'What are you passionate about in frontend?' },
+      { es: '¿Cómo gestionas la deuda técnica?', en: 'How do you manage tech debt?' },
+      { es: '¿Tienes experiencia con seguridad web?', en: 'Do you have web security experience?' },
     ];
   }
 

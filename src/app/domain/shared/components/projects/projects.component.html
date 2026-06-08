@@ -1,35 +1,75 @@
 <div class="projects-container">
-  @if ((projects$ | async); as projects) {
-    @if ((projectsText$ | async); as projectsText) {
-      <h2 class="head-title" appRevealOnScroll revealDirection="left">{{projectsText}}</h2>
-    }
-    <div class="projects-content">
-      @for (p of projects; track p.title; let i = $index) {
-        <div (click)="openProjectsModal(p)" class="projects glass-hover gradient-border"
-          appRevealOnScroll [revealDelay]="i * 120"
-          appTiltOnHover [tiltIntensity]="4" [tiltScale]="1.01"
-          [ngClass]="{'notselected': isHovered !== p.title}" (mouseenter)="isHovered = p.title"
-          (mouseleave)="isHovered = null">
-          <div class="img-content">
-            <img loading="lazy" [class]="p.className" [src]="p.img" [alt]="p.title" />
+  @if ((projectsText$ | async); as projectsText) {
+    <h2 class="head-title" appRevealOnScroll revealDirection="left">{{projectsText}}</h2>
+  }
+
+  <div class="projects-grid" [class.transitioning]="isTransitioning">
+    @for (p of paginatedProjects(); track p.title; let i = $index) {
+      <div
+        class="project-card gradient-border"
+        appRevealOnScroll revealDirection="up" [revealDelay]="i * 70"
+        appTiltOnHover [tiltIntensity]="5" [tiltScale]="1.02"
+        (click)="openProjectsModal(p)">
+
+        <div class="card-image-wrap">
+          <img loading="lazy" [src]="p.img" [alt]="p.title" class="card-img" />
+          <div class="card-overlay">
+            <span class="overlay-label">Ver proyecto</span>
+            <ng-icon name="ionChevronForward" class="overlay-icon"></ng-icon>
           </div>
-          <div class="content">
-            <p class="title">{{p.title}}</p>
-            <p class="description">{{p.description}}</p>
-            <div class="stack-content">
-              @for (tec of p.stack; track trackByFn($index, tec)) {
-                <div class="stack">
-                  @if (getSkillIcon(tec)) {
-                    <ng-icon [name]="getSkillIcon(tec)" [color]="getSkillColor(tec)"></ng-icon>
-                  }
-                  <p>{{tec}}</p>
-                </div>
-              }
-            </div>
+          <div class="card-image-gradient"></div>
+        </div>
+
+        <div class="card-body">
+          <p class="card-title">{{p.title}}</p>
+          <div class="card-stack">
+            @for (tec of p.stack.slice(0, 5); track $index) {
+              <div class="tec-badge">
+                @if (getSkillIcon(tec)) {
+                  <ng-icon [name]="getSkillIcon(tec)" [color]="getSkillColor(tec)"></ng-icon>
+                }
+                <span>{{tec}}</span>
+              </div>
+            }
+            @if (p.stack.length > 5) {
+              <div class="tec-badge tec-more">+{{p.stack.length - 5}}</div>
+            }
           </div>
         </div>
+      </div>
+    }
+  </div>
+
+  @if (totalPages() > 1) {
+    <nav class="pagination" aria-label="Projects pagination">
+      <button class="page-btn nav-btn" [disabled]="currentPage() === 1"
+        (click)="changePage(currentPage() - 1)" aria-label="Previous page">
+        <ng-icon name="ionChevronBack"></ng-icon>
+      </button>
+
+      @for (page of visiblePages(); track $index) {
+        @if (page === null) {
+          <span class="page-ellipsis">···</span>
+        } @else {
+          <button class="page-btn" [class.active]="page === currentPage()"
+            (click)="changePage(page)"
+            [attr.aria-current]="page === currentPage() ? 'page' : null">
+            {{page}}
+          </button>
+        }
       }
-    </div>
+
+      <button class="page-btn nav-btn" [disabled]="currentPage() === totalPages()"
+        (click)="changePage(currentPage() + 1)" aria-label="Next page">
+        <ng-icon name="ionChevronForward"></ng-icon>
+      </button>
+    </nav>
+
+    <p class="page-counter">
+      <span class="counter-current">{{currentPage()}}</span>
+      <span class="counter-sep">/</span>
+      <span class="counter-total">{{totalPages()}}</span>
+    </p>
   }
 </div>
 <projects-modal [project]="projectSelected"></projects-modal>

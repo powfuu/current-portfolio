@@ -5,9 +5,10 @@
       @for (exp of experience; track exp; let i = $index) {
         <div (click)="openExperienceModal(exp)" class="experience glass-hover gradient-border"
           appRevealOnScroll revealDirection="up" [revealDelay]="i * 80"
-          appTiltOnHover [tiltIntensity]="5" [tiltScale]="1.01"
-          [ngClass]="{'notselected': isHovered !== exp.title}" (mouseenter)="isHovered = exp.title"
+          appTiltOnHover [tiltIntensity]="4" [tiltScale]="1.02"
+          [class.notselected]="isHovered !== exp.title" (mouseenter)="isHovered = exp.title"
           (mouseleave)="isHovered = null">
+          <div class="scan-line"></div>
           <div class="timeline-dot"></div>
           <div class="date-content">
             <p>{{exp.date}}</p>

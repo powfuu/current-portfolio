@@ -1,39 +1,52 @@
-@if ((isModalOpen$ | async); as modalOpen) {
-  <div class="modal-background" (click)="closeModal()" @fadeInOut></div>
-  <div class="modal-content" (click)="$event.stopPropagation()" @slideInOut>
-    <div [ngClass]="{'header': project.url, 'header-with-url': !project.url}">
-      <div class="header-top">
-        <div class="header-title-row">
-          <div class="window-dots">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-          </div>
-          <h1>{{project.title}}</h1>
-        </div>
-        <ng-icon (click)="closeModal()" name="ionClose"></ng-icon>
+@if ((isModalOpen$ | async)) {
+  <div class="modal-backdrop" (click)="closeModal()" @backdropFade></div>
+
+  <div class="modal-wrap" (click)="closeModal()" @sheetReveal>
+    <div class="modal-sheet" (click)="$event.stopPropagation()">
+
+      <!-- Hero image -->
+      <div class="project-hero">
+        <img loading="lazy" [class]="project.className" [src]="project.img" [alt]="project.title" />
+        <div class="hero-bottom-fade"></div>
       </div>
-      @if (project.url) {
-        <a target="_blank" [href]="project.url">
-          <p class="visitar">Visitar proyecto</p>
-        </a>
-      }
-    </div>
-    <h1 [class]="project.url ? 'project-title-mvl' : 'project-title-mvl cannot_define'">
-    {{project.title}}</h1>
-    <p>{{project.description}}</p>
-    <div class="img-content">
-      <img loading="lazy" [class]="project.className" [src]="project.img" [alt]="project.title" />
-    </div>
-    <div class="stack-content">
-      @for (tec of project.stack; track trackByFn($index, tec)) {
-        <div class="tec">
-          @if (getSkillIcon(tec)) {
-            <ng-icon [name]="getSkillIcon(tec)" [color]="getSkillColor(tec)"></ng-icon>
+
+      <!-- Close -->
+      <button class="close-btn" (click)="closeModal()" aria-label="Close">
+        <ng-icon name="ionClose"></ng-icon>
+      </button>
+
+      <!-- Content -->
+      <div class="sheet-content">
+
+        <div class="sheet-header">
+          <h1 class="sheet-title">{{project.title}}</h1>
+          @if (project.url) {
+            <a class="visit-btn" [href]="project.url" target="_blank" rel="noopener noreferrer">
+              <ng-icon name="ionGlobeOutline"></ng-icon>
+              Visitar
+            </a>
           }
-          <p>{{tec}}</p>
         </div>
-      }
+
+        <div class="sheet-divider"></div>
+
+        <p class="sheet-description">{{project.description}}</p>
+
+        <div class="sheet-stack">
+          <span class="stack-label">STACK</span>
+          <div class="stack-grid">
+            @for (tec of project.stack; track trackByFn($index, tec)) {
+              <div class="tec">
+                @if (getSkillIcon(tec)) {
+                  <ng-icon [name]="getSkillIcon(tec)" [color]="getSkillColor(tec)"></ng-icon>
+                }
+                <p>{{tec}}</p>
+              </div>
+            }
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 }

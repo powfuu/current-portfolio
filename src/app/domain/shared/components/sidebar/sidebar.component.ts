@@ -76,7 +76,7 @@ export class SidebarComponent implements OnInit {
       return;
     }
 
-    const offset = 80;
+    const offset = window.innerHeight * 0.55;
     const above = (id: string) => {
       const el = document.getElementById(id);
       return el ? el.getBoundingClientRect().top <= offset : false;

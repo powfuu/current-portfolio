@@ -5,37 +5,34 @@ import { Experience } from '../../models/experience.model';
 import { NgIcon } from '@ng-icons/core';
 import { AsyncPipe } from '@angular/common';
 import { UtilService } from '../../services/util/util.service';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
-    selector: 'experience-modal',
-    templateUrl: './experience-modal.component.html',
-    styleUrls: ['./experience-modal.component.scss'],
-    standalone: true,
-    imports: [
-    NgIcon,
-    AsyncPipe
-],
-    animations: [
-      trigger('fadeInOut', [
-        transition(':enter', [
-          style({ opacity: 0 }),
-          animate('300ms ease-out', style({ opacity: 1 }))
-        ]),
-        transition(':leave', [
-          animate('300ms ease-in', style({ opacity: 0 }))
-        ])
+  selector: 'experience-modal',
+  templateUrl: './experience-modal.component.html',
+  styleUrls: ['./experience-modal.component.scss'],
+  standalone: true,
+  imports: [NgIcon, AsyncPipe],
+  animations: [
+    trigger('backdropFade', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('280ms ease-out', style({ opacity: 1 })),
       ]),
-      trigger('slideUp', [
-        transition(':enter', [
-          style({ opacity: 0, transform: 'translateY(40px) scale(0.97)' }),
-          animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({ opacity: 1, transform: 'translateY(0) scale(1)' }))
-        ]),
-        transition(':leave', [
-          animate('300ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({ opacity: 0, transform: 'translateY(40px) scale(0.97)' }))
-        ])
-      ])
-    ]
+      transition(':leave', [
+        animate('250ms ease-in', style({ opacity: 0 })),
+      ]),
+    ]),
+    trigger('panelSlide', [
+      transition(':enter', [
+        style({ transform: 'translateX(100%)' }),
+        animate('500ms cubic-bezier(0.16, 1, 0.3, 1)', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':leave', [
+        animate('380ms cubic-bezier(0.4, 0, 1, 1)', style({ transform: 'translateX(100%)' })),
+      ]),
+    ]),
+  ],
 })
 export class ExperienceModalComponent implements OnInit {
   @Input() experience!: Experience;
@@ -50,7 +47,7 @@ export class ExperienceModalComponent implements OnInit {
     this.isModalOpen$ = this.modalService.experienceModalStatus$;
   }
 
-  closeModal() {
+  closeModal(): void {
     this.modalService.closeExperienceModal();
   }
 
@@ -62,7 +59,7 @@ export class ExperienceModalComponent implements OnInit {
     return this.utilService.getIconColorForSkill(skill);
   }
 
-  trackByFn(index: number, item: any) {
-    return item.id;
+  trackByFn(index: number, _item: unknown): number {
+    return index;
   }
 }

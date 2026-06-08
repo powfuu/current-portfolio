@@ -9,6 +9,8 @@ import { NgIconsModule } from '@ng-icons/core';
 import {
   ionChevronUp,
   ionChevronDown,
+  ionChevronBack,
+  ionChevronForward,
   ionClose,
   ionDownload,
   ionLogoLinkedin,
@@ -111,6 +113,8 @@ bootstrapApplication(AppComponent, {
         ionDownload,
         ionChevronUp,
         ionChevronDown,
+        ionChevronBack,
+        ionChevronForward,
         ionSave,
         simpleAngular,
         simpleReactivex,

@@ -79,6 +79,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.modalService.openProjectsModal();
   }
 
+  private readonly topAlignedIds = new Set([112, 113, 115]);
+
+  isTopAligned(id: number): boolean {
+    return this.topAlignedIds.has(id);
+  }
+
   getSkillIcon(skill: string): string {
     return this.utilService.getIconForSkill(skill);
   }

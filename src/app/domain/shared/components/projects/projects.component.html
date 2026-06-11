@@ -12,7 +12,8 @@
         (click)="openProjectsModal(p)">
 
         <div class="card-image-wrap">
-          <img loading="lazy" [src]="p.imgs?.[0] ?? p.img" [alt]="p.title" class="card-img" />
+          <img loading="lazy" [src]="p.imgs?.[0] ?? p.img" [alt]="p.title"
+               [class]="isTopAligned(p.id) ? 'card-img card-img--top' : 'card-img'" />
           @if (p.imgs && p.imgs.length > 1) {
             <div class="card-img-count">
               <ng-icon name="ionImagesOutline"></ng-icon>

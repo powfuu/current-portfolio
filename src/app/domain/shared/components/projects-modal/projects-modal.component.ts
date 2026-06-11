@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ModalService } from '../../services/modal/modal.service';
 import { Observable } from 'rxjs';
 import { Projects } from '../../models/projects.model';
@@ -34,9 +34,10 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ]),
   ],
 })
-export class ProjectsModalComponent implements OnInit {
+export class ProjectsModalComponent implements OnInit, OnChanges {
   @Input() project!: Projects;
   isModalOpen$!: Observable<boolean>;
+  currentImgIndex: number = 0;
 
   constructor(
     private modalService: ModalService,
@@ -45,6 +46,38 @@ export class ProjectsModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.isModalOpen$ = this.modalService.projectsModalStatus$;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['project']) {
+      this.currentImgIndex = 0;
+    }
+  }
+
+  allImages(): string[] {
+    if (!this.project) return [];
+    return this.project.imgs?.length ? this.project.imgs : [this.project.img];
+  }
+
+  currentHeroImg(): string {
+    const imgs = this.allImages();
+    return imgs[this.currentImgIndex] ?? this.project?.img;
+  }
+
+  hasMultipleImages(): boolean {
+    return this.allImages().length > 1;
+  }
+
+  prevImage(): void {
+    if (this.currentImgIndex > 0) this.currentImgIndex--;
+  }
+
+  nextImage(): void {
+    if (this.currentImgIndex < this.allImages().length - 1) this.currentImgIndex++;
+  }
+
+  setImage(index: number): void {
+    this.currentImgIndex = index;
   }
 
   closeModal(): void {

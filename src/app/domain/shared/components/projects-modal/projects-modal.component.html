@@ -6,9 +6,35 @@
 
       <!-- Hero image -->
       <div class="project-hero">
-        <img loading="lazy" [class]="project.className" [src]="project.img" [alt]="project.title" />
+        <img loading="lazy" [class]="project.className" [src]="currentHeroImg()" [alt]="project.title" />
+
+        @if (hasMultipleImages()) {
+          <button class="hero-nav-btn hero-nav-prev" (click)="prevImage()" [disabled]="currentImgIndex === 0" aria-label="Previous image">
+            <ng-icon name="ionChevronBack"></ng-icon>
+          </button>
+          <button class="hero-nav-btn hero-nav-next" (click)="nextImage()" [disabled]="currentImgIndex === allImages().length - 1" aria-label="Next image">
+            <ng-icon name="ionChevronForward"></ng-icon>
+          </button>
+
+          <div class="hero-dots">
+            @for (img of allImages(); track img; let i = $index) {
+              <button class="hero-dot" [class.active]="i === currentImgIndex" (click)="setImage(i)" [attr.aria-label]="'Image ' + (i + 1)"></button>
+            }
+          </div>
+        }
+
         <div class="hero-bottom-fade"></div>
       </div>
+
+      @if (hasMultipleImages()) {
+        <div class="hero-thumbs">
+          @for (img of allImages(); track img; let i = $index) {
+            <button class="hero-thumb" [class.active]="i === currentImgIndex" (click)="setImage(i)" [attr.aria-label]="'View image ' + (i + 1)">
+              <img [src]="img" [alt]="project.title + ' ' + (i + 1)" loading="lazy" />
+            </button>
+          }
+        </div>
+      }
 
       <!-- Close -->
       <button class="close-btn" (click)="closeModal()" aria-label="Close">
@@ -20,12 +46,20 @@
 
         <div class="sheet-header">
           <h1 class="sheet-title">{{project.title}}</h1>
-          @if (project.url) {
-            <a class="visit-btn" [href]="project.url" target="_blank" rel="noopener noreferrer">
-              <ng-icon name="ionGlobeOutline"></ng-icon>
-              Visitar
-            </a>
-          }
+          <div class="sheet-actions">
+            @if (project.url) {
+              <a class="visit-btn" [href]="project.url" target="_blank" rel="noopener noreferrer">
+                <ng-icon name="ionGlobeOutline"></ng-icon>
+                Visitar
+              </a>
+            }
+            @if (project.githubUrl) {
+              <a class="github-btn" [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">
+                <ng-icon name="ionLogoGithub"></ng-icon>
+                GitHub
+              </a>
+            }
+          </div>
         </div>
 
         <div class="sheet-divider"></div>

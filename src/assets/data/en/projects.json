@@ -1,5 +1,50 @@
 [
   {
+    "id": 115,
+    "title": "FramePrompt — Visual UI Builder for AI Prompts",
+    "description": "Describing a UI to an AI agent in plain text produces unpredictable results: the model interprets the layout differently every time. FramePrompt solves this — a visual canvas where you design by dragging components and the result exports as structured YAML. The agent receives the exact layout context, not an ambiguous description.\n\nA visual editor similar to Figma but oriented toward generating AI prompts. The flow is straightforward: drag components onto the canvas, adjust properties from the inspector, organize layers, and export the YAML — ready to paste directly into the prompt. The exported component tree describes the interface deterministically, regardless of the model or agent.\n\nCanvas with 3 device modes (mobile, desktop, split). Over 50 component types in 5 categories: basic, forms, feedback, navigation, and complete blocks (navbar, hero, modal, sidebar, table, chart). Drag-and-drop with @dnd-kit, alignment guides, resize handles, full history with undo/redo, Framer Motion animations and localStorage persistence.",
+    "stack": ["React 18", "TypeScript", "Vite", "@dnd-kit", "Framer Motion", "Tailwind CSS", "Zustand", "js-yaml", "Lucide React"],
+    "img": "assets/projects/frameprompt1.png",
+    "imgs": [
+      "assets/projects/frameprompt1.png",
+      "assets/projects/frameprompt2.png",
+      "assets/projects/frameprompt3.png",
+      "assets/projects/frameprompt4.png",
+      "assets/projects/frameprompt5.png"
+    ],
+    "className": "desk-img-photo"
+  },
+  {
+    "id": 114,
+    "title": "EverVim — Neovim IDE for Software Development",
+    "description": "Most Neovim configurations demand days of setup, incompatible plugins, and endless tweaking before you can work. EverVim solves this: a production-ready Neovim IDE from day one, built from years of real professional use and engineered to eliminate every friction that generic setups leave unresolved.\n\nSupports virtually any modern language and ecosystem via LSP + Mason: TypeScript, JavaScript, Python, Go, Ruby, Rust, cloud/DevOps tooling and more. The same environment adapts to any type of project without reconfiguration. The setup has been refined through real production projects, prioritizing what actually matters in a professional developer's daily workflow.\n\nVS Code-identical keymap to eliminate the switching curve: Cmd+P for files, Cmd+S with auto-format (Prettier), Cmd+Z/Y for undo/redo, Cmd+W to close splits. Git deeply integrated: always-visible inline blame GitLens-style, full LazyGit in one keystroke, side-by-side Diffview, and one-shortcut merge conflict resolution. Telescope fuzzy finder, per-project persistent sessions, Trouble diagnostics panel and 90+ themes with live preview.",
+    "stack": ["Neovim 0.10+", "Lua", "NvChad v2.5", "Mason", "nvim-lspconfig", "Telescope", "LazyGit", "Treesitter", "conform.nvim", "nvim-cmp", "Diffview", "which-key"],
+    "img": "assets/projects/evervim1.png",
+    "imgs": [
+      "assets/projects/evervim1.png",
+      "assets/projects/evervim2.png",
+      "assets/projects/evervim3.png",
+      "assets/projects/evervim4.png"
+    ],
+    "className": "desk-img-photo",
+    "githubUrl": "https://github.com/powfuu/EverVim"
+  },
+  {
+    "id": 113,
+    "title": "ctxflow — Context Scaffolding CLI for AI Agents",
+    "description": "AI agents code without knowing the project. They ignore the stack, architectural constraints, and decisions already made — the result is code that needs hours of correction. ctxflow eliminates this by structuring context before the agent writes the first line.\n\nWith a single command, ctxflow init generates the correct context file for each tool in the team: CLAUDE.md for Claude Code, AGENTS.md for Codex, .cursor/rules/project.md for Cursor, .github/copilot-instructions.md for GitHub Copilot, and 6 more agents. The agent knows the stack, prior decisions, and project constraints from the very first prompt — no need to re-explain them every session.\n\nFor specific features, ctxflow new <feature> generates docs/features/<feature>/ with three artifacts: requirements.md (problem, affected stack, acceptance criteria), plan.md (tasks with checkboxes, file structure) and decisions.md (architectural decision record). This portfolio was built using ctxflow. Published on npm · v1.1.4.",
+    "stack": ["Node.js", "TypeScript", "Commander.js", "Inquirer.js", "npm", "ESM", "Chalk"],
+    "img": "assets/projects/ctxflow1.png",
+    "imgs": [
+      "assets/projects/ctxflow1.png",
+      "assets/projects/ctxflow2.png",
+      "assets/projects/ctxflow3.png"
+    ],
+    "className": "desk-img-photo",
+    "url": "https://www.npmjs.com/package/ctxflow",
+    "githubUrl": "https://github.com/powfuu/ctxflow"
+  },
+  {
     "id": 108,
     "title": "Angular Initializr — Web Scaffolding Tool for Angular",
     "description": "SPA that replicates and extends the Spring Initializr experience for the Angular ecosystem. Generates fully configured Angular projects (v14–v21) with package.json, angular.json, tsconfig and production-ready folder structure. Supports 10 optional features: standalone components, routing, SSR, NgRx Store + Effects, Angular Material, HTTP interceptors, ESLint + Prettier, Font Awesome, environments and Cypress e2e. Automatically resolves version compatibility between Angular, TypeScript, zone.js, Jasmine/Karma and third-party dependencies. Embedded code editor (CodeMirror 6) with syntax highlighting for TS, Angular HTML, SCSS, JSON and Markdown with light/dark themes. Packages and downloads as .zip directly in the browser using JSZip — 100% client-side, no backend.",

@@ -58,31 +58,140 @@
 .project-hero {
   position: relative;
   width: 100%;
-  height: 280px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.3);
+  height: 340px;
+  background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
   }
+}
 
-  // Specific overrides for very large/small images
-  .desk-img, .desk-small-img, .desk-big-img, .desk-img-photo {
+// ─── Carousel nav buttons ───────────────────────────────────────────────────
+
+.hero-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: 0.25s all cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+
+  ng-icon {
+    color: var(--white);
+    font-size: 16px;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(var(--primary-rgb), 0.35);
+    border-color: var(--green);
+    box-shadow: var(--glow-green);
+  }
+
+  &:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+}
+
+.hero-nav-prev { left: 12px; }
+.hero-nav-next { right: 12px; }
+
+// ─── Dot indicators ─────────────────────────────────────────────────────────
+
+.hero-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: 0.2s all;
+  padding: 0;
+
+  &.active {
+    background: var(--green);
+    box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.6);
+    width: 18px;
+    border-radius: 4px;
+  }
+
+  &:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.65);
+  }
+}
+
+// ─── Thumbnail strip ────────────────────────────────────────────────────────
+
+.hero-thumbs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.1);
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+.hero-thumb {
+  flex-shrink: 0;
+  width: 72px;
+  height: 46px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s all cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  background: rgba(0, 0, 0, 0.4);
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    display: block;
+  }
+
+  &.active {
+    border-color: var(--green);
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.4);
+  }
+
+  &:hover:not(.active) {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
   }
 }
+
+// ─── Hero bottom fade ───────────────────────────────────────────────────────
 
 .hero-bottom-fade {
   position: absolute;
@@ -166,29 +275,51 @@
   flex: 1;
 }
 
-.visit-btn {
+.sheet-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.visit-btn, .github-btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   padding: 9px 18px;
   border-radius: 10px;
-  border: 1px solid rgba(var(--primary-rgb), 0.3);
-  background: var(--green-tint);
-  color: var(--green);
   font-size: var(--fz-x);
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
   transition: 0.3s all cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
 
   ng-icon {
     font-size: 16px;
   }
+}
+
+.visit-btn {
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  background: var(--green-tint);
+  color: var(--green);
 
   &:hover {
     border-color: var(--green);
     box-shadow: var(--glow-green);
+    transform: translateY(-2px);
+  }
+}
+
+.github-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--light-slate);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
     transform: translateY(-2px);
   }
 }
@@ -277,7 +408,7 @@
   }
 
   .project-hero {
-    height: 220px;
+    height: 260px;
     flex-shrink: 0;
   }
 

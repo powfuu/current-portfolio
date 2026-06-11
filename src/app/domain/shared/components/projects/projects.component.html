@@ -12,7 +12,13 @@
         (click)="openProjectsModal(p)">
 
         <div class="card-image-wrap">
-          <img loading="lazy" [src]="p.img" [alt]="p.title" class="card-img" />
+          <img loading="lazy" [src]="p.imgs?.[0] ?? p.img" [alt]="p.title" class="card-img" />
+          @if (p.imgs && p.imgs.length > 1) {
+            <div class="card-img-count">
+              <ng-icon name="ionImagesOutline"></ng-icon>
+              <span>{{p.imgs.length}}</span>
+            </div>
+          }
           <div class="card-overlay">
             <span class="overlay-label">Ver proyecto</span>
             <ng-icon name="ionChevronForward" class="overlay-icon"></ng-icon>

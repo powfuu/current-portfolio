@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { ModalService } from '../../services/modal/modal.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Experience } from '../../models/experience.model';
 import { NgIcon } from '@ng-icons/core';
 import { AsyncPipe } from '@angular/common';
@@ -34,9 +34,11 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ]),
   ],
 })
-export class ExperienceModalComponent implements OnInit {
+export class ExperienceModalComponent implements OnInit, OnDestroy {
   @Input() experience!: Experience;
   isModalOpen$!: Observable<boolean>;
+  private isOpen = false;
+  private modalSub!: Subscription;
 
   constructor(
     private modalService: ModalService,
@@ -45,6 +47,19 @@ export class ExperienceModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.isModalOpen$ = this.modalService.experienceModalStatus$;
+    this.modalSub = this.isModalOpen$.subscribe(open => this.isOpen = open);
+  }
+
+  ngOnDestroy(): void {
+    this.modalSub?.unsubscribe();
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onDocKeydown(event: KeyboardEvent): void {
+    if (this.isOpen && event.key === 'Escape') {
+      event.preventDefault();
+      this.closeModal();
+    }
   }
 
   closeModal(): void {

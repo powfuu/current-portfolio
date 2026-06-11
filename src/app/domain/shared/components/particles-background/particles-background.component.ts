@@ -6,6 +6,7 @@ import {
   AfterViewInit,
   NgZone,
   HostListener,
+  Input,
   inject,
   PLATFORM_ID,
 } from '@angular/core';
@@ -56,7 +57,7 @@ const CODE_GLYPHS = [
 
 @Component({
   selector: 'app-particles-background',
-  template: `<canvas #canvas class="glyph-canvas"></canvas>`,
+  template: `<canvas #canvas [class]="mode === 'absolute' ? 'glyph-canvas glyph-canvas--abs' : 'glyph-canvas'"></canvas>`,
   styles: [`
     .glyph-canvas {
       position: fixed;
@@ -65,10 +66,15 @@ const CODE_GLYPHS = [
       z-index: -1;
       pointer-events: none;
     }
+    .glyph-canvas--abs {
+      position: absolute !important;
+      z-index: 0 !important;
+    }
   `],
   standalone: true,
 })
 export class ParticlesBackgroundComponent implements AfterViewInit, OnDestroy {
+  @Input() mode: 'fixed' | 'absolute' = 'fixed';
   @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
 
   private ctx!: CanvasRenderingContext2D;

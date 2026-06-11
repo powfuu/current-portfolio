@@ -29,6 +29,7 @@ import {
   ionHammerOutline,
   ionLayersOutline,
   ionExtensionPuzzleOutline,
+  ionExpandOutline,
 } from '@ng-icons/ionicons';
 import {
   simpleAngular,
@@ -220,6 +221,7 @@ bootstrapApplication(AppComponent, {
         simpleLucide,
         ionLogoGithub,
         ionImagesOutline,
+        ionExpandOutline,
         ionTerminalOutline,
         ionCodeSlashOutline,
         ionKeypadOutline,

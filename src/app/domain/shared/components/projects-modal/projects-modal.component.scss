@@ -59,18 +59,44 @@
   position: relative;
   width: 100%;
   height: 340px;
-  background: rgba(0, 0, 0, 0.35);
+  background: #070c18;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
 
-  img {
+  // Dot grid
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(var(--primary-rgb), 0.13) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Radial glow center
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 55%, rgba(var(--primary-rgb), 0.11) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-img-abs {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 4px 28px rgba(0, 0, 0, 0.8));
+    cursor: zoom-in;
   }
 }
 
@@ -203,11 +229,44 @@
   pointer-events: none;
 }
 
+
+// ─── Expand + Close buttons ─────────────────────────────────────────────────
+
+.expand-btn, .close-btn {
+  position: absolute;
+  top: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: 0.3s all cubic-bezier(0.16, 1, 0.3, 1);
+
+  ng-icon {
+    color: var(--white);
+    font-size: 18px;
+  }
+}
+
+.expand-btn {
+  right: 64px;
+
+  &:hover {
+    background: rgba(var(--primary-rgb), 0.18);
+    border-color: var(--green);
+    box-shadow: var(--glow-green);
+    transform: scale(1.1);
+  }
+}
+
 // ─── Close button ──────────────────────────────────────────────────────────
 
 .close-btn {
-  position: absolute;
-  top: 18px;
   right: 20px;
   width: 38px;
   height: 38px;
@@ -424,5 +483,137 @@
 
   .visit-btn {
     align-self: flex-start;
+  }
+
+  .expand-btn {
+    right: 64px;
+  }
+}
+
+// ─── Lightbox ───────────────────────────────────────────────────────────────
+
+.lightbox-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 80px;
+  box-sizing: border-box;
+  cursor: zoom-out;
+  background: #070c18;
+  overflow: hidden;
+
+  // Dot grid — mismo patrón que el hero del modal
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(var(--primary-rgb), 0.13) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Radial glow central
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(var(--primary-rgb), 0.1) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.lightbox-img-wrap {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 160px);
+  height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.lightbox-img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.lightbox-nav {
+  position: fixed;
+  z-index: 999999;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999;
+  cursor: pointer;
+  transition: 0.25s all cubic-bezier(0.16, 1, 0.3, 1);
+
+  ng-icon {
+    color: var(--white);
+    font-size: 22px;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(var(--primary-rgb), 0.3);
+    border-color: var(--green);
+    box-shadow: var(--glow-green);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+}
+
+.lightbox-nav-prev { left: 24px; }
+.lightbox-nav-next { right: 24px; }
+
+.lightbox-close {
+  position: fixed;
+  z-index: 999999;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--primary-rgb), 0.25);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999;
+  transition: 0.3s all cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+
+  ng-icon {
+    color: var(--white);
+    font-size: 20px;
+  }
+
+  &:hover {
+    background: rgba(var(--primary-rgb), 0.2);
+    border-color: var(--green);
+    box-shadow: var(--glow-green);
+    transform: scale(1.1) rotate(90deg);
   }
 }

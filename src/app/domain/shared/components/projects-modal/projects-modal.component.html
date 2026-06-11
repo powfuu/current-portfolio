@@ -6,7 +6,12 @@
 
       <!-- Hero image -->
       <div class="project-hero">
-        <img loading="lazy" [class]="project.className" [src]="currentHeroImg()" [alt]="project.title" />
+        <img loading="lazy"
+             [class]="'hero-img-abs ' + project.className"
+             [@imageFade]="currentImgIndex"
+             [src]="currentHeroImg()"
+             [alt]="project.title"
+             (click)="openLightbox()" />
 
         @if (hasMultipleImages()) {
           <button class="hero-nav-btn hero-nav-prev" (click)="prevImage()" [disabled]="currentImgIndex === 0" aria-label="Previous image">
@@ -36,7 +41,10 @@
         </div>
       }
 
-      <!-- Close -->
+      <!-- Expand + Close buttons -->
+      <button class="expand-btn" (click)="openLightbox()" aria-label="Expand image">
+        <ng-icon name="ionExpandOutline"></ng-icon>
+      </button>
       <button class="close-btn" (click)="closeModal()" aria-label="Close">
         <ng-icon name="ionClose"></ng-icon>
       </button>
@@ -83,4 +91,36 @@
       </div>
     </div>
   </div>
+
+  <!-- Lightbox -->
+  @if (isLightboxOpen) {
+    <div class="lightbox-wrap" (click)="closeLightbox()" @lightboxFade>
+
+      <div class="lightbox-img-wrap">
+        <img class="lightbox-img"
+             [@imageFade]="currentImgIndex"
+             [src]="currentHeroImg()"
+             [alt]="project.title" />
+      </div>
+
+      @if (hasMultipleImages()) {
+        <button class="lightbox-nav lightbox-nav-prev"
+                (click)="$event.stopPropagation(); prevImage()"
+                [disabled]="currentImgIndex === 0"
+                aria-label="Previous image">
+          <ng-icon name="ionChevronBack"></ng-icon>
+        </button>
+        <button class="lightbox-nav lightbox-nav-next"
+                (click)="$event.stopPropagation(); nextImage()"
+                [disabled]="currentImgIndex === allImages().length - 1"
+                aria-label="Next image">
+          <ng-icon name="ionChevronForward"></ng-icon>
+        </button>
+      }
+
+      <button class="lightbox-close" (click)="closeLightbox()" aria-label="Close fullscreen">
+        <ng-icon name="ionClose"></ng-icon>
+      </button>
+    </div>
+  }
 }

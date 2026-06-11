@@ -64,24 +64,61 @@
   position: relative;
   height: 165px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
+  background: #070c18;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
+  // Dot grid texture
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(var(--primary-rgb), 0.13) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Radial glow behind the image — intensifies on hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 55%, rgba(var(--primary-rgb), 0.13) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.project-card:hover .card-image-wrap::after {
+  opacity: 1;
 }
 
 .card-img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center center;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(2.2);
+  transform-origin: center center;
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   display: block;
+  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.8));
 }
 
 .project-card:hover .card-img {
-  transform: scale(1.07);
+  transform: scale(1);
+  filter:
+    drop-shadow(0 0 20px rgba(var(--primary-rgb), 0.3))
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.65));
 }
 
 // Bottom fade from image into card body
@@ -91,8 +128,9 @@
   left: 0;
   right: 0;
   height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(var(--primary-rgb), 0.04));
+  background: linear-gradient(to bottom, transparent, rgba(7, 12, 24, 0.85));
   pointer-events: none;
+  z-index: 2;
 }
 
 // ─── Multi-image badge ───────────────────────────────────────────────────────
@@ -109,7 +147,7 @@
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 
   ng-icon {
@@ -118,7 +156,7 @@
   }
 
   span {
-    color: var(--white);
+    color: var(--green);
     font-size: 11px;
     font-weight: 600;
     line-height: 1;
@@ -140,6 +178,7 @@
   justify-content: center;
   gap: 8px;
   opacity: 0;
+  z-index: 4;
   transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -223,12 +262,18 @@
 .tec-more {
   background: transparent;
   border: 1px solid rgba(var(--primary-rgb), 0.28);
+  padding: 3px 8px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 
   span {
     color: var(--green);
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.03em;
+    font-size: 10px;
+    font-weight: 700;
   }
 
   &:hover {

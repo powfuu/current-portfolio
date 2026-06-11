@@ -141,6 +141,7 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
       this.loadSuggestions();
       this.shouldScroll = true;
       setTimeout(() => { this.scrollToBottom(); }, 50);
+      setTimeout(() => { this.inputField?.nativeElement?.focus(); }, 100);
       return;
     }
 
@@ -183,6 +184,7 @@ export class AiChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
           this.shouldScroll = true;
           clearInterval(interval);
           setTimeout(() => { this.scrollToBottom(); }, 150);
+          setTimeout(() => { this.inputField?.nativeElement?.focus(); }, 200);
         }
       });
     }, 8);

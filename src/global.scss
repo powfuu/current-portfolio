@@ -222,7 +222,7 @@ div {
 
 // ===== CUSTOM CURSOR: suppress default cursor on fine-pointer devices =====
 @media (pointer: fine) {
-  *, *::before, *::after {
+  html, body, *, *::before, *::after {
     cursor: none !important;
   }
 }

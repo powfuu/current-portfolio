@@ -328,7 +328,7 @@
 
 .sheet-title {
   color: var(--white);
-  font-size: clamp(18px, 2.4vw, 26px);
+  font-size: clamp(15px, 2vw, 22px);
   font-weight: 700;
   line-height: 1.25;
   flex: 1;
@@ -587,6 +587,34 @@
 .lightbox-nav-prev { left: 24px; }
 .lightbox-nav-next { right: 24px; }
 
+@media screen and (max-width: 600px) {
+  .lightbox-wrap {
+    padding: 56px 0 0;
+  }
+
+  .lightbox-img-wrap {
+    width: 100%;
+    height: calc(100vh - 56px);
+  }
+
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+
+    ng-icon { font-size: 18px; }
+  }
+
+  .lightbox-nav-prev { left: 6px; }
+  .lightbox-nav-next { right: 6px; }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
 .lightbox-close {
   position: fixed;
   z-index: 999999;
@@ -615,5 +643,35 @@
     border-color: var(--green);
     box-shadow: var(--glow-green);
     transform: scale(1.1) rotate(90deg);
+  }
+}
+
+// ─── Light mode overrides ────────────────────────────────────────────────────
+
+:host-context(.light) {
+  .github-btn {
+    border-color: var(--dark-slate);
+    background: transparent;
+    color: var(--slate);
+
+    &:hover {
+      border-color: var(--green);
+      background: var(--green-tint);
+      color: var(--important);
+      box-shadow: none;
+    }
+  }
+
+  .hero-thumbs {
+    background: rgba(var(--primary-rgb), 0.05);
+    border-bottom-color: rgba(var(--primary-rgb), 0.1);
+  }
+
+  .hero-thumb {
+    background: rgba(var(--primary-rgb), 0.07);
+
+    &:hover:not(.active) {
+      border-color: rgba(var(--primary-rgb), 0.4);
+    }
   }
 }

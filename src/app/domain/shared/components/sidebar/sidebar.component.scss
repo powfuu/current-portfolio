@@ -400,6 +400,23 @@ a .end-ring {
   }
 }
 
+// ─── Light mode overrides ────────────────────────────────────────────────────
+
+:host-context(.light) {
+  .social-icon ng-icon {
+    color: var(--light-slate);
+  }
+
+  .scroll-top {
+    border-color: var(--dark-slate);
+    background: var(--navy);
+
+    ng-icon {
+      color: var(--light-slate);
+    }
+  }
+}
+
 @keyframes profileBorderBreath {
   0%, 100% {
     opacity: 1;
